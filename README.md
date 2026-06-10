@@ -27,3 +27,7 @@ Open `index.html` in a browser. That's it.
 ## Disclaimer
 
 Not affiliated with or endorsed by the American Sailing Association. Built by a sailing student as a study aid.
+
+## Deploys
+
+Pushes to `main` auto-deploy to production via Vercel (project `house-boat-studios/asa101-trainer`).
