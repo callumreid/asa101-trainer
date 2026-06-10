@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free ASA 101 Practice Test &amp; Sailing Trainer</title>
+<meta name="description" content="Free interactive practice for the ASA 101 basic keelboat written test — points of sail, helm and trim, right of way scenarios, boat parts, and a practice quiz scored against the 80% pass mark.">
+<link rel="canonical" href="https://asa101-trainer.vercel.app/">
+<meta property="og:title" content="Free ASA 101 Practice Test &amp; Sailing Trainer">
+<meta property="og:description" content="Five interactive practice stations for the ASA 101 basic keelboat written exam. Free, no sign-up, progress saves in your browser.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://asa101-trainer.vercel.app/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<style>
+*{box-sizing:border-box}
+:root{--bg:#f5f3ec;--card:#ffffff;--text:#22303a;--muted:#5e6c78;--border:#d9d4c6;--accent:#1d5f7e;--okbg:#e7f3e9;--oktx:#1e6b38;--nobg:#fbe9e9;--notx:#a32d2d;--midbg:#eee9dd}
+@media(prefers-color-scheme:dark){:root{--bg:#0f171d;--card:#19242d;--text:#e7e3d6;--muted:#98a6b0;--border:#2d3a44;--accent:#6fb3d2;--okbg:#15301d;--oktx:#8fd1a3;--nobg:#3a1a1a;--notx:#f09595;--midbg:#222d36}}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{max-width:760px;margin:0 auto;padding:28px 16px 8px}
+main{max-width:760px;margin:0 auto;padding:0 16px 32px}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;color:var(--muted);font-size:13px}
+h1{font-size:26px;margin:0;font-weight:600}
+.tag{color:var(--muted);font-size:15px;margin:4px 0 0}
+button{font:inherit;font-size:14px;color:var(--text);background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 14px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button:disabled{opacity:.5;cursor:default}
+.tabbtn.active{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 14px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 16px}
+.lbl{font-size:13px;color:var(--muted)}
+.val{font-size:24px;font-weight:600}
+#tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
+.opt{display:block;width:100%;text-align:left;margin:6px 0}
+.opt.ok{border-color:var(--oktx);background:var(--okbg);color:var(--oktx)}
+.opt.no{border-color:var(--notx);background:var(--nobg);color:var(--notx)}
+.fb{font-size:14px;margin:10px 0;padding:10px 14px;border-radius:10px}
+.fb.ok{background:var(--okbg);color:var(--oktx)}
+.fb.no{background:var(--nobg);color:var(--notx)}
+.fb.mid{background:var(--midbg)}
+.ctl{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}
+.muted{font-size:13px;color:var(--muted)}
+svg [data-part]{cursor:pointer}
+.home{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.home button{text-align:left;padding:14px 16px;border-radius:12px}
+.hT{font-weight:600;font-size:15px;margin-bottom:4px}
+.hD{font-size:13px;color:var(--muted)}
+@media(max-width:520px){h1{font-size:22px}.val{font-size:19px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>⛵ ASA 101 skipper trainer</h1>
+  <p class="tag">Free practice for the ASA 101 basic keelboat written test — five interactive stations. Progress saves in your browser.</p>
+  <nav style="display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:8px;font-size:14px;" aria-label="Study guides">
+    <a href="/study-guide" style="color:var(--accent);text-decoration:none;">Study guide</a>
+    <a href="/points-of-sail" style="color:var(--accent);text-decoration:none;">Points of sail</a>
+    <a href="/right-of-way" style="color:var(--accent);text-decoration:none;">Right of way</a>
+    <a href="/sailing-terms" style="color:var(--accent);text-decoration:none;">Glossary</a>
+    <a href="/faq" style="color:var(--accent);text-decoration:none;">FAQ</a>
+  </nav>
+</header>
+<main>
+  <div class="cards">
+    <div class="card"><div class="lbl">Score</div><div class="val" id="scoreV">0</div></div>
+    <div class="card"><div class="lbl">Streak</div><div class="val" id="streakV">0</div></div>
+    <div class="card"><div class="lbl">Accuracy</div><div class="val" id="accV">&mdash;</div></div>
+  </div>
+  <nav id="tabs" aria-label="Practice stations"></nav>
+  <div id="stage" style="min-height:360px;"></div>
+  <section style="margin-top:40px;border-top:1px solid var(--border);padding-top:18px;">
+    <h2 style="font-size:20px;margin:0 0 8px;">About the ASA 101 written test</h2>
+    <p style="font-size:15px;">ASA 101 (Basic Keelboat Sailing) ends with a written exam — usually around 100 multiple-choice questions with an 80% passing score, drawn from the official textbook <em>Sailing Made Easy</em>. The most-tested topics are points of sail, right of way rules, sailing terminology, parts of the boat, safety, and knots.</p>
+    <p style="font-size:15px;">This trainer drills each of those areas as a game: identify <a href="/points-of-sail">points of sail</a>, steer and trim in the helm simulator, judge <a href="/right-of-way">right of way</a> crossings, click boat parts on a rigged sloop, and take a <a href="/sailing-terms">terminology</a>-heavy practice quiz scored against the real pass mark. It's free, there's no sign-up, and your progress stays in your browser. New to the exam? Start with the <a href="/study-guide">study guide</a> or the <a href="/faq">FAQ</a>.</p>
+    <div class="card" style="font-size:15px;"><span style="font-weight:600;">The official textbook:</span> <em>Sailing Made Easy</em> is the ASA's own book — the written test comes directly from it. <a href="https://www.amazon.com/s?k=Sailing+Made+Easy+American+Sailing+Association" rel="nofollow sponsored">Find it on Amazon</a>.</div>
+    <!-- AD SLOT: AdSense unit goes here after approval -->
+    <div class="adslot" id="ad-home"></div>
+  </section>
+</main>
+<footer>
+  <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links may be affiliate links; as an Amazon Associate this site may earn from qualifying purchases. Fair winds.</p>
+  <p><a href="/study-guide" style="color:var(--muted);">Study guide</a> · <a href="/privacy" style="color:var(--muted);">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer" style="color:var(--muted);">GitHub</a></p>
+  <p><button onclick="resetStats()" style="font-size:12px;padding:4px 10px;">Reset saved stats</button></p>
+</footer>
+<script>
+const $=id=>document.getElementById(id);
+const shuf=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(p=>p[1]);
+const KEY="asa101.stats.v1";
+let S={score:0,streak:0,best:0,hits:0,tries:0};
+try{const v=JSON.parse(localStorage.getItem(KEY));if(v&&typeof v.score==="number")S=Object.assign(S,v);}catch(err){}
+function saveS(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(err){}}
+function resetStats(){if(!confirm("Wipe your saved score and streak?"))return;S={score:0,streak:0,best:0,hits:0,tries:0};saveS();paintHeader();}
+function award(ok,pts){S.tries++;if(ok){S.score+=pts+Math.min(S.streak,5)*2;S.hits++;S.streak++;S.best=Math.max(S.best,S.streak);}else{S.streak=0;}saveS();paintHeader();}
+function paintHeader(){$("scoreV").textContent=S.score;$("streakV").textContent=S.streak+(S.best>0?" (best "+S.best+")":"");$("accV").textContent=S.tries?Math.round(S.hits/S.tries*100)+"%":"—";}
+const PTS=[
+ {k:"irons",n:"In irons (no-go zone)",lo:5,hi:30},
+ {k:"ch",n:"Close-hauled",lo:40,hi:50},
+ {k:"cr",n:"Close reach",lo:58,hi:78},
+ {k:"bm",n:"Beam reach",lo:84,hi:96},
+ {k:"br",n:"Broad reach",lo:112,hi:158},
+ {k:"run",n:"Run",lo:171,hi:180}];
+const HINT={
+ irons:"Inside roughly 45° of the wind the sails can't fill — the boat stalls. Back the jib or fall off to escape.",
+ ch:"As close to the wind as she'll sail, about 45° off, sheets hauled in tight.",
+ cr:"Between close-hauled and a beam reach — sheets eased just a touch.",
+ bm:"Wind square over the side, about 90° — usually the fastest, easiest point of sail.",
+ br:"Wind over the quarter, sails well eased. Watch for an accidental jibe as you head deeper.",
+ run:"Wind dead astern, main all the way out. Steer carefully — a jibe is one wobble away."};
+function bandOf(h){const a=Math.abs(h);if(a<35)return"irons";if(a<55)return"ch";if(a<81)return"cr";if(a<100)return"bm";if(a<168)return"br";return"run";}
+function nameOf(k){return PTS.find(p=>p.k===k).n;}
+function idealBoom(h){const a=Math.max(40,Math.min(180,Math.abs(h)));return Math.round(10+(a-40)*75/140);}
+function boatG(x,y,hdg,o){o=o||{};const sc=o.scale||1;let body="";
+ if(o.ship){body='<path d="M0,-66 L20,-38 L20,56 L-20,56 L-20,-38 Z" fill="#8E8779" stroke="#26261F" stroke-width="1.5"/><rect x="-12" y="24" width="24" height="22" rx="2" fill="#D8D3C4" stroke="#26261F" stroke-width="1"/>';}
+ else{body='<path d="M0,-34 C11,-25 13,-5 10,26 L-10,26 C-13,-5 -11,-25 0,-34 Z" fill="#F2EEE2" stroke="#2F2F2D" stroke-width="1.2"/>';
+  if(o.power){body+='<rect x="-6" y="-14" width="12" height="18" rx="3" fill="#D8D3C4" stroke="#2F2F2D" stroke-width="1"/><path d="M-6,30 L-10,46 M0,30 L0,48 M6,30 L10,46" stroke="rgba(255,255,255,.6)" stroke-width="1.5" fill="none"/>';}
+  else if(o.boom!=null){const r=o.boom*Math.PI/180,sd=o.side||1,bx=Math.sin(r)*30*sd,by=-5+Math.cos(r)*30;
+   body+='<path d="M0,-22 Q'+(bx*0.55+sd*5)+','+((by-22)*0.5)+' '+bx+','+by+'" fill="none" stroke="#FFFFFF" stroke-width="2.5"/><line x1="0" y1="-5" x2="'+bx+'" y2="'+by+'" stroke="#3F3F3B" stroke-width="2"/><circle cx="0" cy="-5" r="2.4" fill="#2F2F2D"/>';}}
+ const wake=o.arrow?'<line x1="0" y1="-40" x2="0" y2="-60" stroke="rgba(255,255,255,.75)" stroke-width="1.5" stroke-dasharray="4 4"/><path d="M-4,-58 L0,-66 L4,-58" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.5"/>':"";
+ return '<g transform="translate('+x+','+y+') rotate('+hdg+') scale('+sc+')">'+body+wake+'</g>';}
+function windArr(x,y){return '<line x1="'+x+'" y1="'+y+'" x2="'+x+'" y2="'+(y+30)+'" stroke="#FFFFFF" stroke-width="2"/><path d="M'+(x-5)+','+(y+24)+' L'+x+','+(y+32)+' L'+(x+5)+','+(y+24)+'" fill="none" stroke="#FFFFFF" stroke-width="2"/><text x="'+(x+10)+'" y="'+(y+14)+'" fill="#FFFFFF" font-size="12">wind</text>';}
+const MODES=[
+ {id:"home",icon:"⌂",label:"Stations"},
+ {id:"pos",icon:"⛵",label:"Points of sail"},
+ {id:"helm",icon:"🧭",label:"Helm and trim"},
+ {id:"row",icon:"⚖️",label:"Right of way"},
+ {id:"parts",icon:"🛠️",label:"Boat parts"},
+ {id:"quiz",icon:"📝",label:"Written quiz"}];
+let cur="home";
+function setMode(id){cur=id;$("tabs").innerHTML=MODES.map(m=>'<button class="tabbtn'+(m.id===cur?" active":"")+'" onclick="setMode(\''+m.id+'\')">'+m.icon+' '+m.label+'</button>').join("");
+ if(id==="home")renderHome();else if(id==="pos")renderPos();else if(id==="helm")renderHelm();else if(id==="row")renderRow();else if(id==="parts")renderParts();else renderQuiz();}
+function renderHome(){$("stage").innerHTML='<div class="home">'+
+ '<button onclick="setMode(\'pos\')"><div class="hT">⛵ Points of sail</div><div class="hD">Name the point of sail from the boat\'s angle to the wind — the most-tested concept on the exam.</div></button>'+
+ '<button onclick="setMode(\'helm\')"><div class="hT">🧭 Helm and trim</div><div class="hD">Steer to the skipper\'s orders and trim the main. Tacks and jibes called live. Arrow keys work.</div></button>'+
+ '<button onclick="setMode(\'row\')"><div class="hT">⚖️ Right of way</div><div class="hD">Eight crossing scenarios — port vs starboard tack, overtaking, sail vs power, big ships in channels.</div></button>'+
+ '<button onclick="setMode(\'parts\')"><div class="hT">🛠️ Boat parts</div><div class="hD">Click the rigging, hull, and sail parts on a sloop. Fifteen parts, standing and running rigging.</div></button>'+
+ '<button onclick="setMode(\'quiz\')"><div class="hT">📝 Written quiz</div><div class="hD">26 test-style questions on terminology, commands, knots, safety, and rules — scored against the 80% pass mark.</div></button>'+
+ '</div>';}
+let q1=null;
+function newQ1(){const c=PTS[Math.floor(Math.random()*PTS.length)];const mag=c.lo+Math.random()*(c.hi-c.lo);q1={h:(Math.random()<0.5?-1:1)*mag,k:c.k,picked:-1};paintQ1();}
+function renderPos(){if(!q1)newQ1();else paintQ1();}
+function paintQ1(){const h=q1.h,a=Math.abs(h),boom=q1.k==="irons"?4:idealBoom(a),sd=h>0?1:-1;
+ const svg='<svg width="100%" viewBox="0 0 680 380" role="img" aria-label="A sailboat shown from above with the wind direction marked"><circle cx="340" cy="200" r="158" fill="#2B6E91"/>'+windArr(340,52)+boatG(340,208,h,{boom:boom,side:sd,scale:1.5,arrow:true})+'</svg>';
+ let fb="";
+ if(q1.picked>=0){const ok=PTS[q1.picked].k===q1.k;const tk=q1.k==="irons"?"no tack — head to wind":(h>0?"port tack (wind over the port side, boom to starboard)":"starboard tack (wind over the starboard side, boom to port)");
+  fb='<div class="fb '+(ok?"ok":"no")+'">'+(ok?"Right — ":"Not quite — ")+"she's about "+Math.round(a)+"° off the wind on "+tk+". That's "+nameOf(q1.k).toLowerCase()+". "+HINT[q1.k]+'</div><div class="ctl"><button onclick="newQ1()">Next boat →</button></div>';}
+ $("stage").innerHTML='<p style="font-size:15px;margin:0 0 8px;">What point of sail is this boat on?</p>'+svg+'<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px;margin-top:10px;">'+PTS.map((p,i)=>{let cl="opt";if(q1.picked>=0){if(p.k===q1.k)cl+=" ok";else if(i===q1.picked)cl+=" no";}return '<button class="'+cl+'" onclick="ans1('+i+')">'+p.n+'</button>';}).join("")+'</div>'+fb;}
+function ans1(i){if(q1.picked>=0)return;q1.picked=i;award(PTS[i].k===q1.k,10);paintQ1();}
+let H={h:-110,boom:60,target:null,locked:false,msg:""};
+function newTarget(){const ks=["ch","cr","bm","br","run"];let t;do{t={k:ks[Math.floor(Math.random()*ks.length)],tack:Math.random()<0.5?"port":"starboard"};}while(H.target&&t.k===H.target.k&&t.tack===H.target.tack);H.target=t;}
+function trimState(){const a=Math.abs(H.h);if(a<35)return["irons","In irons — she won't sail this close to the wind. Fall off!","no"];
+ const d=H.boom-idealBoom(H.h);if(d<-12)return["stall","Oversheeted — the sail is stalled. Ease out.","no"];if(d>12)return["luff","Luffing — too much ease. Sheet in.","no"];return["good","Good trim.","ok"];}
+function renderHelm(){if(!H.target)newTarget();paintHelm();}
+function paintHelm(){const a=Math.abs(H.h),sd=H.h>0?1:-1,ts=trimState(),band=bandOf(H.h),tk=H.h>0?"port":"starboard";
+ const dis=H.locked?" disabled":"";
+ const svg='<svg width="100%" viewBox="0 0 680 380" role="img" aria-label="Helm simulator: steer the boat and trim the sail"><circle cx="340" cy="200" r="158" fill="#2B6E91"/><path d="M340,200 L238.4,79 A158,158 0 0 1 441.6,79 Z" fill="rgba(226,75,74,.28)"/><text x="340" y="102" fill="#FFFFFF" font-size="11" text-anchor="middle" opacity=".85">no-go zone</text>'+windArr(340,46)+boatG(340,208,H.h,{boom:H.boom,side:sd,scale:1.5,arrow:true})+'</svg>';
+ $("stage").innerHTML='<div class="fb mid" style="margin-top:0;"><span style="font-weight:600;">Orders:</span> sail '+nameOf(H.target.k).toLowerCase()+' on '+H.target.tack+' tack, properly trimmed.</div>'+svg+
+ '<p style="font-size:14px;margin:10px 0 2px;">Now: <span style="font-weight:600;">'+(a<35?"in irons":nameOf(band).toLowerCase()+", "+tk+" tack")+'</span> · '+Math.round(a)+'° off the wind · boom at '+Math.round(H.boom)+'°</p>'+
+ '<p class="fb '+ts[2]+'" style="margin-top:6px;">'+ts[1]+'</p>'+
+ '<div class="ctl"><span class="muted">Steer</span><button onclick="helmTurn(-10)"'+dis+'>← port 10°</button><button onclick="helmTurn(-3)"'+dis+'>port 3°</button><button onclick="helmTurn(3)"'+dis+'>starboard 3°</button><button onclick="helmTurn(10)"'+dis+'>starboard 10° →</button></div>'+
+ '<div class="ctl"><span class="muted">Trim</span><button onclick="helmTrim(-6)"'+dis+'>sheet in</button><button onclick="helmTrim(6)"'+dis+'>ease out</button><span class="muted">arrow keys steer (shift = 10°), up/down trim</span></div>'+
+ (H.msg?'<div class="fb ok">'+H.msg+'</div>':"");}
+function helmTurn(d){if(H.locked)return;const prev=H.h;H.h+=d;if(H.h>180)H.h-=360;if(H.h<=-180)H.h+=360;
+ if(prev!==0&&Math.sign(prev)!==Math.sign(H.h)&&H.h!==0){H.msg=Math.abs(prev)<90?"Helm's alee — bow through the wind. Nice tack.":"Jibe-ho — stern through the wind. Mind the boom!";}else if(H.msg&&!H.msg.startsWith("Well")){H.msg="";}
+ paintHelm();checkHelm();}
+function helmTrim(d){if(H.locked)return;H.boom=Math.min(88,Math.max(6,H.boom+d));paintHelm();checkHelm();}
+function checkHelm(){if(H.locked)return;const a=Math.abs(H.h);if(a<35)return;
+ if(bandOf(H.h)===H.target.k&&(H.h>0?"port":"starboard")===H.target.tack&&trimState()[0]==="good"){H.locked=true;award(true,25);H.msg="Well sailed, skipper — orders complete. New orders coming…";paintHelm();setTimeout(()=>{H.locked=false;H.msg="";newTarget();paintHelm();},1600);}}
+document.addEventListener("keydown",e=>{if(cur!=="helm")return;const k=e.key;
+ if(k==="ArrowLeft"){e.preventDefault();helmTurn(e.shiftKey?-10:-3);}
+ else if(k==="ArrowRight"){e.preventDefault();helmTurn(e.shiftKey?10:3);}
+ else if(k==="ArrowUp"){e.preventDefault();helmTrim(-6);}
+ else if(k==="ArrowDown"){e.preventDefault();helmTrim(6);}});
+const ROWS=[
+ {boats:[{x:190,y:215,h:45,boom:12,side:1},{x:490,y:215,h:-45,boom:12,side:-1}],ans:0,
+  note:"Two sailboats converging. A has the wind over her port side, B over her starboard side.",
+  why:"Opposite tacks: the port-tack boat keeps clear of the starboard-tack boat. A must tack away or duck behind B."},
+ {boats:[{x:280,y:100,h:90,boom:38,side:1},{x:280,y:225,h:90,boom:38,side:1}],ans:0,
+  note:"Both on port tack, beam reaching. A is the windward boat — closer to the wind.",
+  why:"Same tack: the windward boat keeps clear of the leeward boat. A gives way."},
+ {boats:[{x:150,y:165,h:90,boom:38,side:1},{x:430,y:165,h:90,boom:38,side:1}],ans:0,
+  note:"A is coming up from astern, sailing faster than B.",
+  why:"An overtaking vessel always keeps clear of the vessel being overtaken — sail or power, no exceptions."},
+ {boats:[{x:200,y:235,h:45,boom:12,side:1},{x:485,y:95,h:-150,power:true}],ans:1,
+  note:"A is under sail. B is a powerboat under engine. Their courses cross.",
+  why:"A power-driven vessel keeps clear of a vessel under sail in open water, unless she is being overtaken, fishing, or restricted in her ability to maneuver."},
+ {boats:[{x:160,y:165,h:90,boom:38,side:1},{x:430,y:165,h:90,power:true}],ans:0,
+  note:"A, under sail, is overtaking powerboat B from astern.",
+  why:"Overtaking trumps sail-over-power. Any overtaking vessel keeps clear, even a sailboat overtaking a powerboat."},
+ {boats:[{x:185,y:250,h:30,boom:10,side:1},{x:430,y:160,h:-90,ship:true}],ans:0,
+  extra:'<line x1="30" y1="106" x2="650" y2="106" stroke="rgba(255,255,255,.45)" stroke-width="1.5" stroke-dasharray="10 8"/><line x1="30" y1="214" x2="650" y2="214" stroke="rgba(255,255,255,.45)" stroke-width="1.5" stroke-dasharray="10 8"/>',
+  note:"B is a deep-draft ship transiting a marked channel. A wants to cross.",
+  why:"A keeps clear. A vessel constrained by her draft in a narrow channel cannot maneuver around you — never impede her. Cross well astern."},
+ {boats:[{x:200,y:225,h:-45,boom:12,side:-1},{x:470,y:225,h:45,boom:12,side:1}],ans:1,
+  note:"Both beating to windward, close-hauled, converging. A: starboard tack. B: port tack.",
+  why:"Starboard tack stands on. B, on port tack, keeps clear — she should tack away or bear off behind A."},
+ {boats:[{x:215,y:185,h:90,boom:38,side:1},{x:465,y:250,h:45,boom:12,side:1}],ans:0,
+  note:"A is motorsailing — sails up but engine on and in gear. B is under sail alone.",
+  why:"An engine in gear makes A a power-driven vessel under the rules, even with sails set. She keeps clear of B."}];
+let R=null;
+function renderRow(){if(!R)R={order:shuf(ROWS.map((_,i)=>i)),i:0,picked:-1};paintRow();}
+function paintRow(){const sc=ROWS[R.order[R.i]];
+ const svg='<svg width="100%" viewBox="0 0 680 290" role="img" aria-label="Two vessels on the water; decide who gives way"><rect x="0" y="0" width="680" height="290" rx="12" fill="#2B6E91"/>'+(sc.extra||"")+windArr(340,16)+sc.boats.map((b,i)=>boatG(b.x,b.y,b.h,{boom:b.boom,side:b.side,power:b.power,ship:b.ship,arrow:true})+'<circle cx="'+(b.x+32)+'" cy="'+(b.y-30)+'" r="11" fill="rgba(10,35,50,.6)"/><text x="'+(b.x+32)+'" y="'+(b.y-30)+'" fill="#FFFFFF" font-size="12" font-weight="600" text-anchor="middle" dominant-baseline="central">'+(i===0?"A":"B")+'</text>').join("")+'</svg>';
+ let fb="";
+ if(R.picked>=0){const ok=R.picked===sc.ans;fb='<div class="fb '+(ok?"ok":"no")+'">'+(ok?"Correct. ":"Not this time — vessel "+(sc.ans===0?"A":"B")+" gives way. ")+sc.why+'</div><div class="ctl"><button onclick="nextRow()">Next scenario →</button></div>';}
+ $("stage").innerHTML='<p style="font-size:15px;margin:0 0 8px;">Which vessel must give way?</p>'+svg+'<p class="muted" style="margin:8px 0;">'+sc.note+'</p><div class="ctl"><button class="opt" style="width:auto;" onclick="ansRow(0)">Vessel A gives way</button><button class="opt" style="width:auto;" onclick="ansRow(1)">Vessel B gives way</button></div>'+fb;}
+function ansRow(i){if(R.picked>=0)return;R.picked=i;award(i===ROWS[R.order[R.i]].ans,15);paintRow();}
+function nextRow(){R.i++;R.picked=-1;if(R.i>=R.order.length){R.order=shuf(ROWS.map((_,i)=>i));R.i=0;}paintRow();}
+const PART_NAMES={mast:"mast",boom:"boom",forestay:"forestay",backstay:"backstay",shroud:"shroud",hull:"hull",keel:"keel",rudder:"rudder",tiller:"tiller",main:"mainsail",jib:"jib",headc:"head of the mainsail",tackc:"tack of the mainsail",clewc:"clew of the mainsail",leech:"leech of the mainsail"};
+function partsSVG(){
+ function ln(x1,y1,x2,y2,part,w,col){return '<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+col+'" stroke-width="'+w+'" stroke-linecap="round"/><line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="rgba(0,0,0,0)" stroke-width="16" data-part="'+part+'"/>';}
+ function dot(x,y,part){return '<circle cx="'+x+'" cy="'+y+'" r="7" fill="#EF9F27" stroke="#633806" stroke-width="1.5" data-part="'+part+'"/>';}
+ return '<svg id="psvg" width="100%" viewBox="0 0 680 420" role="img" aria-label="Side view of a sloop; click the named part">'+
+ '<rect x="0" y="0" width="680" height="420" rx="14" fill="#D7E7F1"/>'+
+ '<path d="M0,332 H680 V406 Q680,420 666,420 H14 Q0,420 0,406 Z" fill="#2B6E91"/>'+
+ '<path d="M148,296 L592,296 L630,308 L600,338 L182,338 L148,312 Z" fill="#F2EEE2" stroke="#2F2F2D" stroke-width="1.5" data-part="hull"/>'+
+ '<path d="M348,338 L360,394 L398,394 L406,338 Z" fill="#7A766B" stroke="#2F2F2D" stroke-width="1" data-part="keel"/>'+
+ '<path d="M198,338 L190,384 L212,384 L218,338 Z" fill="#7A766B" stroke="#2F2F2D" stroke-width="1" data-part="rudder"/>'+
+ ln(206,293,272,285,"tiller",4,"#6B4F2E")+
+ '<path d="M416,74 L610,296 L470,286 Z" fill="#EFEDE3" stroke="#9A988F" stroke-width="1" data-part="jib"/>'+
+ '<path d="M412,64 L412,266 L246,266 Z" fill="#FBFAF5" stroke="#9A988F" stroke-width="1" data-part="main"/>'+
+ ln(410,270,242,270,"boom",5,"#6B4F2E")+
+ ln(412,296,412,58,"mast",5,"#6B4F2E")+
+ ln(412,58,152,294,"backstay",1.5,"#55534E")+
+ ln(412,58,464,294,"shroud",1.5,"#55534E")+
+ ln(412,58,628,306,"forestay",1.5,"#55534E")+
+ '<line x1="412" y1="64" x2="246" y2="266" stroke="rgba(0,0,0,0)" stroke-width="14" data-part="leech"/>'+
+ dot(412,64,"headc")+dot(412,266,"tackc")+dot(246,266,"clewc")+'</svg>';}
+let P=null;
+function renderParts(){if(!P)P={order:shuf(Object.keys(PART_NAMES)),i:0,firstTry:true,msg:"",cls:"mid"};paintParts();}
+function paintParts(){
+ if(P.i>=P.order.length){$("stage").innerHTML='<div class="fb ok">Rig inspection complete — all '+P.order.length+' parts found. Ready to splice the mainbrace.</div><div class="ctl"><button onclick="resetParts()">Run it again</button></div>';return;}
+ const target=PART_NAMES[P.order[P.i]];
+ $("stage").innerHTML='<p style="font-size:15px;margin:0 0 8px;">Click the <span style="font-weight:600;">'+target+'</span> <span class="muted">('+(P.i+1)+' of '+P.order.length+')</span></p>'+partsSVG()+(P.msg?'<div class="fb '+P.cls+'">'+P.msg+'</div>':"");
+ $("psvg").addEventListener("click",e=>{const t=e.target.closest("[data-part]");if(t)partClick(t.getAttribute("data-part"));});}
+function partClick(k){const want=P.order[P.i];
+ if(k===want){award(true,P.firstTry?10:5);P.msg="Found it — that's the "+PART_NAMES[k]+".";P.cls="ok";P.i++;P.firstTry=true;}
+ else{if(P.firstTry)award(false,0);P.firstTry=false;P.msg="That's the "+PART_NAMES[k]+" — keep hunting for the "+PART_NAMES[want]+".";P.cls="no";}
+ paintParts();}
+function resetParts(){P={order:shuf(Object.keys(PART_NAMES)),i:0,firstTry:true,msg:"",cls:"mid"};paintParts();}
+const QUIZ=[
+ {q:"The forward edge of a sail is called the:",o:["Leech","Luff","Foot","Head"],a:1,why:"Luff is the forward edge, leech the aft edge, foot the bottom. The luff flutters first when you point too close to the wind."},
+ {q:"The lower aft corner of the mainsail, out at the end of the boom, is the:",o:["Tack","Head","Clew","Cringle"],a:2,why:"Corners: head at the top, tack at the forward bottom by the gooseneck, clew at the aft bottom."},
+ {q:"Which of these is standing rigging?",o:["The main halyard","The jib sheet","The shrouds","The mainsheet"],a:2,why:"Standing rigging — shrouds, forestay, backstay — holds the mast up and stays fixed. Halyards and sheets are running rigging."},
+ {q:"A halyard is used to:",o:["Trim a sail in and out","Raise and lower a sail","Hold the mast up","Secure the boat to a dock"],a:1,why:"Halyards hoist, sheets trim."},
+ {q:"You adjust the mainsail's angle to the wind with the:",o:["Main halyard","Boom vang","Mainsheet","Outhaul"],a:2,why:"The mainsheet trims the main in and out. The vang holds the boom down; the outhaul tensions the foot."},
+ {q:"The wind is coming over your boat's starboard side. You are on:",o:["Port tack","Starboard tack","A run","A header"],a:1,why:"The tack is named for the windward side. Wind over starboard means starboard tack, boom out to port."},
+ {q:"To tack, or come about, means to:",o:["Turn the stern through the wind","Turn the bow through the wind onto the other tack","Ease the sails and head downwind","Stop the boat head to wind"],a:1,why:"Tacking swings the bow through the eye of the wind. Jibing swings the stern through it."},
+ {q:"The correct command sequence for a tack is:",o:["“Prepare to jibe” then “Jibe-ho”","“Ready about” then “Helm's alee”","“Helm's alee” then “Ready about”","“Coming down” then “Trim on”"],a:1,why:"Skipper: “Ready about.” Crew: “Ready.” Skipper: “Helm's alee” as the turn begins."},
+ {q:"During a jibe, the part of the boat that passes through the wind is the:",o:["Bow","Beam","Stern","Masthead"],a:2,why:"In a downwind turn the stern crosses the wind and the boom sweeps across — keep heads down and control it with the mainsheet."},
+ {q:"The no-go zone extends roughly how far to either side of the true wind?",o:["10 degrees","25 degrees","45 degrees","90 degrees"],a:2,why:"Most boats can't sail closer than about 45 degrees to the wind; inside that cone the sails just luff."},
+ {q:"A boat stopped head-to-wind with sails flapping and no steerage is:",o:["Hove-to","In irons","By the lee","Becalmed"],a:1,why:"In irons. Back the jib, or reverse the rudder while making sternway, to fall off onto a tack."},
+ {q:"Apparent wind is:",o:["The wind measured at the masthead","The forecast gradient wind","The wind you feel aboard — true wind combined with the wind made by the boat's motion","Gusts bouncing off the sails"],a:2,why:"As the boat moves, the wind you experience shifts forward and strengthens. That's what your telltales and sails respond to."},
+ {q:"The keel's two main jobs are:",o:["Steering and speed","Resisting leeway and providing ballast for stability","Holding the rudder and supporting the mast","Reducing draft and adding buoyancy"],a:1,why:"The keel resists sideways slip, called leeway, and its weight counters heeling."},
+ {q:"With a tiller, to turn the bow to starboard you move the tiller:",o:["To starboard","To port","Amidships","It depends on the tack"],a:1,why:"The tiller works opposite to the turn: push it one way and the bow goes the other."},
+ {q:"Close-hauled with sheets fully trimmed, your sails begin to luff. You should:",o:["Sheet in harder","Bear away slightly until they fill","Head up more","Ease the halyard"],a:1,why:"If everything is already trimmed tight, luffing means you're pinching — fall off a few degrees."},
+ {q:"On a run, the mainsail should be:",o:["Trimmed in tight","Eased out nearly all the way","Halfway in","Lowered"],a:1,why:"Rule of thumb: ease until it luffs, trim until it stops. Dead downwind that puts the main way out."},
+ {q:"The best knot for tying the jib sheets to the clew of the jib is the:",o:["Clove hitch","Square knot","Bowline","Figure-eight"],a:2,why:"The bowline makes a secure loop that won't slip yet unties easily — the sailor's go-to knot."},
+ {q:"A figure-eight knot is tied in the end of a sheet to:",o:["Attach it to the sail","Stop it from running out through a block","Join two lines together","Secure it to a cleat"],a:1,why:"It's a stopper knot."},
+ {q:"A crewmember falls overboard. Your immediate actions are:",o:["Start the engine and reverse toward them","Shout “crew overboard”, throw flotation, and have someone point at them continuously","Drop the sails and drift back","Radio the Coast Guard before anything else"],a:1,why:"Shout, throw, point — keep eyes on the person the whole time while the helm begins the return."},
+ {q:"Your final approach to a person in the water should be:",o:["On a run at full speed","On a close reach, luffing the sails to control speed","On a beam reach, sheets in tight","Under full sail from dead downwind"],a:1,why:"A close reach lets you power up or luff to a stop right alongside."},
+ {q:"A sailboat is overtaking a powerboat. Who keeps clear?",o:["The powerboat — power gives way to sail","The sailboat — an overtaking vessel always keeps clear","Whoever is to port","Neither; both hold course"],a:1,why:"Overtaking beats every other rule, regardless of sail or power."},
+ {q:"Two sailboats on the same tack are converging. Which keeps clear?",o:["The leeward boat","The windward boat","The faster boat","The smaller boat"],a:1,why:"Same tack: windward keeps clear of leeward."},
+ {q:"Returning from sea into harbor, you keep red navigation buoys:",o:["On your port side","On your starboard side","Directly ahead","Behind you"],a:1,why:"Red, right, returning."},
+ {q:"A sailboat motorsailing — engine on and in gear with sails up — is treated under the rules as:",o:["A sailing vessel","A power-driven vessel","A vessel restricted in maneuverability","A vessel not under command"],a:1,why:"An engine in gear makes you power-driven, with a powerboat's give-way duties."},
+ {q:"The fitting that connects the boom to the mast is the:",o:["Gooseneck","Tang","Chainplate","Gudgeon"],a:0,why:"The gooseneck lets the boom swing and pivot. Chainplates anchor the shrouds; gudgeons hold the rudder."},
+ {q:"Leeward means:",o:["Toward the wind","Away from the wind — the downwind side","The left side of the boat","The direction of the current"],a:1,why:"Windward is toward the wind, leeward away from it. The boom always rides to leeward."}];
+let Q=null;
+function buildQuizOrder(){return shuf(QUIZ.map(item=>{const idx=shuf([0,1,2,3]);return{q:item.q,o:idx.map(i=>item.o[i]),a:idx.indexOf(item.a),why:item.why};}));}
+function renderQuiz(){if(!Q)Q={order:buildQuizOrder(),i:0,picked:-1,right:0,missed:[]};paintQuiz();}
+function paintQuiz(){
+ if(Q.i>=Q.order.length){const pct=Math.round(Q.right/Q.order.length*100);
+  let rev="";
+  if(Q.missed.length){rev='<h3 style="font-size:16px;margin:18px 0 6px;">Review your misses</h3>'+Q.missed.map(m=>'<div class="fb mid"><span style="font-weight:600;">'+m.q+'</span><br>Answer: '+m.correct+' — '+m.why+'</div>').join("");}
+  $("stage").innerHTML='<div class="fb '+(pct>=80?"ok":"no")+'">Quiz complete: '+Q.right+' of '+Q.order.length+' ('+pct+'%). '+(pct>=80?"That clears the typical ASA pass mark of 80% — nicely done.":"The ASA pass mark is typically 80% — worth another lap through the stations.")+'</div><div class="ctl"><button onclick="restartQuiz()">Retake quiz</button></div>'+rev;return;}
+ const it=Q.order[Q.i];let fb="";
+ if(Q.picked>=0){const ok=Q.picked===it.a;
+  fb='<div class="fb '+(ok?"ok":"no")+'">'+(ok?"Correct. ":"Not quite. ")+it.why+'</div><div class="ctl"><button onclick="nextQuiz()">Next question →</button></div>';}
+ $("stage").innerHTML='<p class="muted" style="margin:0 0 4px;">Question '+(Q.i+1)+' of '+Q.order.length+' · '+Q.right+' correct so far</p><p style="font-size:16px;margin:0 0 10px;">'+it.q+'</p>'+it.o.map((o,i)=>{let cl="opt";if(Q.picked>=0){if(i===it.a)cl+=" ok";else if(i===Q.picked)cl+=" no";}return '<button class="'+cl+'" onclick="ansQ('+i+')">'+o+'</button>';}).join("")+fb;}
+function ansQ(i){if(Q.picked>=0)return;Q.picked=i;const it=Q.order[Q.i];const ok=i===it.a;if(ok)Q.right++;else Q.missed.push({q:it.q,correct:it.o[it.a],why:it.why});award(ok,10);paintQuiz();}
+function nextQuiz(){Q.i++;Q.picked=-1;paintQuiz();}
+function restartQuiz(){Q={order:buildQuizOrder(),i:0,picked:-1,right:0,missed:[]};paintQuiz();}
+paintHeader();
+setMode({"#pos":"pos","#helm":"helm","#row":"row","#parts":"parts","#quiz":"quiz"}[location.hash]||"home");
+</script>
+</body>
+</html>
