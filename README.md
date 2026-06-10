@@ -2,7 +2,7 @@
 
 Free interactive practice for the ASA 101 (Basic Keelboat Sailing) written test.
 
-**Live site:** https://asa101-trainer.vercel.app
+**Live site:** https://sailingtrainer.com
 
 Five practice stations:
 
@@ -12,7 +12,7 @@ Five practice stations:
 - **Boat parts** — click-the-part on a sloop diagram (15 parts)
 - **Written quiz** — 26 test-style questions scored against the 80% pass mark
 
-Plus study content: a [study guide](https://asa101-trainer.vercel.app/study-guide), [points of sail explainer](https://asa101-trainer.vercel.app/points-of-sail), [right of way guide](https://asa101-trainer.vercel.app/right-of-way), [glossary](https://asa101-trainer.vercel.app/sailing-terms), and [FAQ](https://asa101-trainer.vercel.app/faq).
+Plus study content: a [study guide](https://sailingtrainer.com/study-guide), [points of sail explainer](https://sailingtrainer.com/points-of-sail), [right of way guide](https://sailingtrainer.com/right-of-way), [glossary](https://sailingtrainer.com/sailing-terms), and [FAQ](https://sailingtrainer.com/faq).
 
 ## Stack
 

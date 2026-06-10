@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://asa101-trainer.vercel.app/sitemap.xml
+Sitemap: https://sailingtrainer.com/sitemap.xml
