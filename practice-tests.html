@@ -55,7 +55,7 @@
 </header>
 <main>
 <h1>ASA 101 practice tests</h1>
-<p class="lead">Generate a fresh test from a broader question bank. Short mode is for daily reps; full-bank mode is for final review before class.</p>
+<p class="lead">Generate a fresh test from a broader question bank. Short mode is for daily reps, category drill targets one topic, and full-bank mode is for final review before class.</p>
 
 <div class="statbar">
   <div class="stat"><span class="mini">Bank size</span><b id="bankSize">0</b></div>
@@ -69,6 +69,8 @@
   <button class="btn secondary" onclick="startTest(50)">Start 50-question test</button>
   <button class="btn secondary" onclick="startTest(BANK.length)">Full bank</button>
   <button class="btn secondary" onclick="startWeak()">Weak-area review</button>
+  <select id="categorySelect" style="padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit"><option>Boat</option><option>Wind</option><option>Rules</option><option>Aids</option><option>Safety</option><option>Knots</option><option>Seamanship</option></select>
+  <button class="btn secondary" onclick="startCategory()">Category drill</button>
   <a class="btn secondary" href="/flashcards">Review flashcards</a>
 </div>
 
@@ -166,7 +168,30 @@ const BANK=[
 ["Seamanship","One hand for the boat means:",["Keep yourself secure while moving aboard","Always steer one-handed","Never use both hands on a line","Hold the mast in lightning"],0,"Stay attached and balanced."],
 ["Seamanship","A responsible skipper should assign:",["A lookout","A passenger to nap","No roles","Only a photographer"],0,"Lookout is a real safety role."],
 ["Seamanship","If uncertain about local rules or hazards, use:",["Charts, local notices, instructors, and harbor guidance","Guesswork","Only social media","Only sail color"],0,"Local knowledge matters."],
-["Seamanship","A beginner certificate does not mean:",["You are ready for every weather, boat, or waterway","You learned the basics","You can keep practicing","You passed a standard"],0,"Stay within conditions and experience."]
+["Seamanship","A beginner certificate does not mean:",["You are ready for every weather, boat, or waterway","You learned the basics","You can keep practicing","You passed a standard"],0,"Stay within conditions and experience."],
+["Seamanship","Before entering a marina fairway to dock, you should:",["Rig fenders and lines and brief crew roles","Wait until the bow is inside the slip","Ask guests to jump to the dock","Leave the engine in gear at high idle"],0,"Docking preparation happens before the tight space."],
+["Seamanship","If a docking approach is going wrong while you still have room, the best move is often to:",["Abort and go around","Commit because you started","Have crew fend off with feet","Shift randomly between forward and reverse"],0,"A calm go-around prevents damage and injury."],
+["Seamanship","A safe docking crew instruction is:",["Step off only when safe; never jump","Put a foot between hull and dock","Catch the piling with a hand","Stand outside the lifelines while moving"],0,"Crew bodies are not fenders. Step, do not jump."],
+["Seamanship","Spring lines are especially useful because they can:",["Limit fore-and-aft motion and help pivot the boat","Replace all fenders","Hoist the mainsail","Change the wind direction"],0,"Springs control movement along the dock and can help with close-quarters pivots."],
+["Seamanship","When wind pins the boat against a dock, a smart departure plan may include:",["Using a spring line to pivot under control","Casting off all lines at once","Pushing with hands between boat and dock","Backing hard without a lookout"],0,"A spring can hold one point while the boat pivots, but crew must stay clear of loaded lines and pinch points."],
+["Seamanship","When picking up a mooring buoy, approach:",["Slowly into wind or current with the buoy near the bow","Fast from downwind","With the buoy near the propeller","With sails flogging and no crew brief"],0,"Approach into the stronger force and keep lines away from the prop."],
+["Seamanship","For anchoring, 'scope' should be based on:",["Rode length compared with total bow-to-bottom height","Only the charted depth","Anchor weight divided by boat length","Distance to the nearest dock"],0,"Use water depth plus bow height, and allow for tide where relevant."],
+["Seamanship","In 10 ft of water with a bow roller 3 ft above the surface and 2 ft of possible tide rise, 5:1 scope is about:",["75 ft","50 ft","15 ft","150 ft"],0,"10 + 3 + 2 = 15 ft. 15 x 5 = 75 ft."],
+["Seamanship","After setting the anchor, changing bearings on two shore objects may indicate:",["The anchor is dragging","The sails are trimmed perfectly","The PFDs fit","The boat is on starboard tack"],0,"Transits are a simple way to detect dragging."],
+["Seamanship","A crowded anchorage with poor swing room is a reason to:",["Find another anchoring spot","Use less scope than needed","Anchor by the stern","Tie to another boat's rode"],0,"You need room for your swing circle and other boats' swing circles."],
+["Seamanship","The anchor should normally be lowered from the:",["Bow","Stern quarter","Boom end","Lifeline gate"],0,"Bow anchoring keeps the boat aligned to wind/current and reduces swamping risk."],
+["Seamanship","If the boat is on a lee shore and wind is increasing, a conservative beginner decision is:",["Shorten the plan or avoid the exposure","Sail closer to the shore for fun","Anchor in the breaking waves","Ignore it if the sun is out"],0,"A lee shore reduces escape room. Keep margin early."],
+["Safety","For a beginner weather call, gusts are important because:",["The boat and crew must handle the gust, not just the average wind","Gusts only affect powerboats","Gusts make PFDs optional","Only sustained wind matters"],0,"Plan for the highest likely wind you will need to control."],
+["Safety","Dense fog in a busy harbor is usually a reason for a new skipper to:",["Delay until visibility improves","Rely only on being under sail","Send everyone below","Sail faster to finish sooner"],0,"Fog changes lookout, sound signals, navigation, and collision risk."],
+["Safety","Warm air over cold water means:",["Dress for cold-water immersion risk","PFDs are unnecessary","Cotton is the safest layer","Swimming ability solves the risk"],0,"Cold shock and hypothermia can matter even on a warm day."],
+["Safety","A dark line on the water, sudden cool air, and a fast wind shift are cues to:",["Shorten sail and head for safe harbor early","Keep practicing until rain starts","Anchor in the channel","Stand near the boom for balance"],0,"Those are squall/front warning signs. Reduce exposure before the boat is overpowered."],
+["Safety","If a Small Craft Advisory is posted for your planned ASA 101-style practice sail, the safest beginner call is usually:",["Stay dockside or go only with an instructor and a conservative plan","Ignore it because the boat is a sailboat","Leave with full sail to learn faster","Sail only downwind"],0,"Advisories mean conditions may be hazardous for small craft."],
+["Safety","The best time to brief crew-overboard and docking roles is:",["Before leaving the dock","After someone falls in","When entering the slip","Only after sunset"],0,"Crew briefs prevent confusion when time and space shrink."],
+["Rules","When you are the stand-on vessel but the give-way vessel is not taking action, you should:",["Act to avoid collision when necessary","Hold course into collision","Turn randomly at the last second","Assume the rules protect you"],0,"All vessels must avoid collision. Stand-on status is not permission to hit someone."],
+["Rules","In restricted visibility, navigation rules still require:",["A proper lookout and safe speed","Racing tactics only","No sound signals ever","Sailboats to ignore powerboats"],0,"Lookout and safe speed matter in all visibility conditions."],
+["Aids","White markers with an orange circle usually indicate:",["A controlled area such as speed limit or no wake","Safe water all around","A preferred channel split","A sailing race mark only"],0,"Orange circle regulatory markers often show controlled areas."],
+["Aids","If lateral marks are confusing in unfamiliar waters, the prudent skipper should:",["Slow down and confirm the chart, direction of buoyage, and local marks","Guess using whichever color is closer","Follow the nearest boat blindly","Ignore marks in daylight"],0,"Do not guess around navigation aids. Confirm the system before committing."],
+["Knots","A cleat hitch on a dock line should finish with:",["A locking turn that can be released under control","A square knot around the cleat base","A pile of loose half hitches","No final turn"],0,"A proper cleat hitch holds securely and can be untied deliberately."]
 ];
 const shuf=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);
 let T={order:[],i:0,right:0,missed:[],picked:false};
@@ -175,9 +200,10 @@ function buildItems(n){return shuf(BANK).slice(0,Math.min(n,BANK.length)).map(q=
 function startTest(n){T={order:buildItems(n),i:0,right:0,missed:[],picked:false};paint()}
 function weakList(){try{const v=JSON.parse(localStorage.getItem("asa101.weak.v1")||"[]");return Array.isArray(v)?v:[]}catch(err){return[]}}
 function startWeak(){const weak=weakList();const pool=weak.length?BANK.filter((_,i)=>weak.includes(i)):BANK.filter(q=>["Rules","Aids","Safety","Knots"].includes(q[0]));T={order:buildItemsFrom(pool,Math.min(30,pool.length)),i:0,right:0,missed:[],picked:false};paint()}
+function startCategory(){const cat=document.getElementById("categorySelect").value;const pool=BANK.filter(q=>q[0]===cat);T={order:buildItemsFrom(pool,Math.min(25,pool.length)),i:0,right:0,missed:[],picked:false};paint()}
 function buildItemsFrom(pool,n){return shuf(pool).slice(0,n).map(q=>{const idx=shuf([0,1,2,3]);return{cat:q[0],q:q[1],o:idx.map(i=>q[2][i]),a:idx.indexOf(q[3]),why:q[4],raw:BANK.indexOf(q)}})}
 function paint(){const stage=document.getElementById("testStage");document.getElementById("scoreBox").textContent=T.order.length?`${T.right}/${T.i}`:"-";document.getElementById("qBox").textContent=T.order.length?`${Math.min(T.i+1,T.order.length)}/${T.order.length}`:"-";
- if(!T.order.length){stage.innerHTML="<p>Choose a test length to begin. Every run randomizes both questions and answer order.</p>";return}
+ if(!T.order.length){stage.innerHTML="<p>Choose a test length, weak-area review, or category drill to begin. Every run randomizes both questions and answer order.</p>";return}
  if(T.i>=T.order.length){const pct=Math.round(T.right/T.order.length*100);let byCat={};T.missed.forEach(m=>byCat[m.cat]=(byCat[m.cat]||0)+1);stage.innerHTML="<div class='callout'><strong>Finished: "+T.right+"/"+T.order.length+" ("+pct+"%).</strong> "+(pct>=80?"That clears the pass line.":"Below the 80% pass line - review misses and retest.")+"</div><h2>Missed questions</h2>"+(T.missed.length?T.missed.map(m=>"<div class='card'><span class='pill'>"+m.cat+"</span><p><strong>"+m.q+"</strong></p><p>Answer: "+m.correct+"</p><p class='mini'>"+m.why+"</p></div>").join(""):"<p>No misses.</p>")+"<h2>Weak categories</h2><p>"+Object.entries(byCat).map(([k,v])=>k+': '+v).join(' · ')+"</p>";return}
  const it=T.order[T.i];stage.innerHTML="<p class='mini'>"+it.cat+" · Question "+(T.i+1)+" of "+T.order.length+"</p><h2 style='margin-top:0'>"+it.q+"</h2>"+it.o.map((o,i)=>"<button class='choice' onclick='answer("+i+")'>"+o+"</button>").join("")}
 function answer(i){if(T.picked)return;T.picked=true;const it=T.order[T.i], ok=i===it.a;if(ok)T.right++;else T.missed.push({cat:it.cat,q:it.q,correct:it.o[it.a],why:it.why});[...document.querySelectorAll(".choice")].forEach((b,j)=>{if(j===it.a)b.classList.add("ok");else if(j===i)b.classList.add("no");b.disabled=true});const raw=BANK.findIndex(q=>q[1]===it.q);if(!ok&&raw>=0){const weak=new Set(weakList());weak.add(raw);localStorage.setItem("asa101.weak.v1",JSON.stringify([...weak].slice(0,80)));}const next=document.createElement("button");next.className="btn";next.textContent=T.i+1>=T.order.length?"Finish and review":"Next question";next.onclick=()=>{T.i++;T.picked=false;paint()};document.getElementById("testStage").appendChild(next);document.getElementById("scoreBox").textContent=`${T.right}/${T.i+1}`}
