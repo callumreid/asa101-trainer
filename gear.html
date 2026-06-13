@@ -59,6 +59,24 @@
 
 <div class="callout"><strong>For ASA 101:</strong> ask your school what they provide. Many provide PFDs and safety gear. Your personal must-haves are usually gloves, non-marking shoes, sun protection, layers, water, and a small dry bag.</div>
 
+<h2>ASA 101 day-pack checklist</h2>
+<div class="statbar">
+  <div class="stat"><span class="mini">Packed</span><b id="gearProgress">0/0</b></div>
+  <div class="stat"><span class="mini">Rule</span><b>comfort first</b></div>
+</div>
+<ul class="checklist" id="gearPack">
+  <li><label><input type="checkbox"> Sailing gloves</label></li>
+  <li><label><input type="checkbox"> Non-marking closed-toe shoes</label></li>
+  <li><label><input type="checkbox"> PFD, if your school does not provide one</label></li>
+  <li><label><input type="checkbox"> Sunglasses with retainer and hat clip</label></li>
+  <li><label><input type="checkbox"> Sunscreen and lip balm</label></li>
+  <li><label><input type="checkbox"> Water bottle and snacks</label></li>
+  <li><label><input type="checkbox"> Quick-dry layers or light foul-weather shell</label></li>
+  <li><label><input type="checkbox"> Small dry bag for phone, wallet, and notebook</label></li>
+  <li><label><input type="checkbox"> Notebook, pencil, and a short line for knot practice</label></li>
+</ul>
+<p><button class="btn secondary" onclick="resetGearPack()">Reset packing list</button></p>
+
 <h2>Fast starter kit</h2>
 <div class="card">
   <div class="buy-row">
@@ -105,6 +123,17 @@
   <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases.</p>
   <p><a href="/">Trainer</a> · <a href="/simulator">Simulator</a> · <a href="/practice-tests">Practice tests</a> · <a href="/flashcards">Flashcards</a> · <a href="/gear">Gear</a> · <a href="/community">Community</a> · <a href="/checklist">Checklist</a> · <a href="/resources">Resources</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
 </footer>
+<script>
+const gearKey="asa101.gearpack.v1";
+const gearInputs=[...document.querySelectorAll("#gearPack input")];
+let gearPacked=new Set();
+try{const saved=JSON.parse(localStorage.getItem(gearKey)||"[]");if(Array.isArray(saved))gearPacked=new Set(saved);}catch(err){}
+function saveGearPack(){try{localStorage.setItem(gearKey,JSON.stringify([...gearPacked]));}catch(err){}}
+function updateGearPack(){document.getElementById("gearProgress").textContent=gearPacked.size+"/"+gearInputs.length;}
+function resetGearPack(){if(!confirm("Clear saved packing list?"))return;gearPacked.clear();saveGearPack();gearInputs.forEach(input=>input.checked=false);updateGearPack();}
+gearInputs.forEach((input,i)=>{input.checked=gearPacked.has(i);input.onchange=()=>{if(input.checked)gearPacked.add(i);else gearPacked.delete(i);saveGearPack();updateGearPack();};});
+updateGearPack();
+</script>
 <!-- Vercel Web Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
