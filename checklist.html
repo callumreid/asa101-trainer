@@ -59,6 +59,12 @@
 
 <div class="callout">The official ASA 101 standard is broader than the written exam. It includes knowledge you can study here and practical skills your instructor must see on the water. This checklist separates both so you know what to drill before class and what to ask to practice aboard.</div>
 
+<div class="statbar">
+<div class="stat"><span class="mini">Saved progress</span><b id="progressBox">0/0</b></div>
+<div class="stat"><span class="mini">Next step</span><b id="nextBox">start with terms</b></div>
+</div>
+<p><button class="btn secondary" onclick="resetChecklist()">Reset checklist progress</button></p>
+
 <h2>1. Boat parts, rigging, and sail controls</h2>
 <ul class="checklist">
 <li><strong>Hull and deck:</strong> hull, deck, bow, stern, transom, cockpit, cabin, keel, rudder, helm, tiller or wheel. <a href="/#parts">Drill the diagram</a>.</li>
@@ -145,6 +151,17 @@
   <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases.</p>
   <p><a href="/">Trainer</a> · <a href="/simulator">Simulator</a> · <a href="/practice-tests">Practice tests</a> · <a href="/flashcards">Flashcards</a> · <a href="/gear">Gear</a> · <a href="/community">Community</a> · <a href="/checklist">Checklist</a> · <a href="/resources">Resources</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
 </footer>
+<script>
+const checklistKey="asa101.checklist.v1";
+const checklistItems=[...document.querySelectorAll(".checklist li")];
+let checked=new Set();
+try{const saved=JSON.parse(localStorage.getItem(checklistKey)||"[]");if(Array.isArray(saved))checked=new Set(saved);}catch(err){}
+function saveChecklist(){try{localStorage.setItem(checklistKey,JSON.stringify([...checked]));}catch(err){}}
+function updateChecklistProgress(){const done=checked.size,total=checklistItems.length;document.getElementById("progressBox").textContent=done+"/"+total;const next=checklistItems.find((_,i)=>!checked.has(i));document.getElementById("nextBox").textContent=next?next.dataset.title.slice(0,34)+"...":"ready for final review";}
+function resetChecklist(){if(!confirm("Clear saved checklist progress?"))return;checked.clear();saveChecklist();document.querySelectorAll("[data-check-item]").forEach(input=>input.checked=false);updateChecklistProgress();}
+checklistItems.forEach((li,i)=>{li.dataset.title=li.textContent.replace(/\\s+/g," ").trim();const label=document.createElement("label");label.className="pill";label.style.cursor="pointer";const input=document.createElement("input");input.type="checkbox";input.dataset.checkItem=i;input.checked=checked.has(i);input.onchange=()=>{if(input.checked)checked.add(i);else checked.delete(i);saveChecklist();updateChecklistProgress();};label.appendChild(input);label.append(" done");li.prepend(label," ");});
+updateChecklistProgress();
+</script>
 <!-- Vercel Web Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
