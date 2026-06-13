@@ -25,6 +25,9 @@
 <meta name="twitter:image" content="https://sailingtrainer.com/og.png">
 <!-- /SEO enhancements -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<meta name="apple-mobile-web-app-title" content="Sailing Trainer">
 <link rel="stylesheet" href="/site.css">
 <meta name="google-adsense-account" content="ca-pub-1188658046265173">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
@@ -115,6 +118,15 @@ function answer(i){if(answered)return;answered=true;const s=SCENARIOS[order[idx]
 function paint(picked){const s=SCENARIOS[order[idx]];document.getElementById("scenarioBox").textContent=(idx+1)+"/"+order.length;document.getElementById("scoreBox").textContent=score;document.getElementById("streakBox").textContent=streak;let html="<p class='mini'>Forecast</p><h2 style='margin-top:0'>"+s.forecast+"</h2><p><strong>Setting:</strong> "+s.setting+"</p><p class='mini'>Choose the best beginner skipper call.</p>";html+=s.choices.map((c,i)=>{let cls="choice";if(answered){if(i===s.best)cls+=" ok";else if(i===picked)cls+=" no";}return "<button class='"+cls+"' onclick='answer("+i+")'>"+c+"</button>";}).join("");if(answered){const ok=picked===s.best;html+="<div class='callout'><strong>"+(ok?"Good call.":"Better call: "+s.choices[s.best]+".")+"</strong> "+s.why+"</div>";}document.getElementById("stage").innerHTML=html;}
 restart();
 </script>
+<!-- Offline support -->
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/service-worker.js").catch(function () {});
+  });
+}
+</script>
+<!-- /Offline support -->
 <!-- Vercel Web Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };

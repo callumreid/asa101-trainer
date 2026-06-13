@@ -25,6 +25,9 @@
 <meta name="twitter:image" content="https://sailingtrainer.com/og.png">
 <!-- /SEO enhancements -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<meta name="apple-mobile-web-app-title" content="Sailing Trainer">
 <link rel="stylesheet" href="/site.css">
 <style>
 @media print{.nav,footer,.no-print{display:none}body{background:#fff;color:#000}main{max-width:none;padding:0}a{color:#000;text-decoration:none}.card,.callout{border:1px solid #999;background:#fff}h1{font-size:22px}h2{font-size:16px;margin-top:18px}table{font-size:12px}p,li{font-size:12px;line-height:1.4}}
@@ -135,6 +138,15 @@
   <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases.</p>
   <p><a href="/">Trainer</a> · <a href="/simulator">Simulator</a> · <a href="/practice-tests">Practice tests</a> · <a href="/flashcards">Flashcards</a> · <a href="/gear">Gear</a> · <a href="/community">Community</a> · <a href="/checklist">Checklist</a> · <a href="/exam-cram">Exam cram</a> · <a href="/resources">Resources</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
 </footer>
+<!-- Offline support -->
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/service-worker.js").catch(function () {});
+  });
+}
+</script>
+<!-- /Offline support -->
 <!-- Vercel Web Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };

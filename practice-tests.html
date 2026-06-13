@@ -25,6 +25,9 @@
 <meta name="twitter:image" content="https://sailingtrainer.com/og.png">
 <!-- /SEO enhancements -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<meta name="apple-mobile-web-app-title" content="Sailing Trainer">
 <link rel="stylesheet" href="/site.css">
 <meta name="google-adsense-account" content="ca-pub-1188658046265173">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
@@ -225,6 +228,15 @@ function paint(){const stage=document.getElementById("testStage");document.getEl
 function answer(i){if(T.picked)return;T.picked=true;const it=T.order[T.i], ok=i===it.a;if(ok)T.right++;else T.missed.push({cat:it.cat,q:it.q,correct:it.o[it.a],why:it.why});[...document.querySelectorAll(".choice")].forEach((b,j)=>{if(j===it.a)b.classList.add("ok");else if(j===i)b.classList.add("no");b.disabled=true});const raw=BANK.findIndex(q=>q[1]===it.q);if(!ok&&raw>=0){const weak=new Set(weakList());weak.add(raw);localStorage.setItem("asa101.weak.v1",JSON.stringify([...weak].slice(0,80)));}const next=document.createElement("button");next.className="btn";next.textContent=T.i+1>=T.order.length?"Finish and review":"Next question";next.onclick=()=>{T.i++;T.picked=false;paint()};document.getElementById("testStage").appendChild(next);document.getElementById("scoreBox").textContent=`${T.right}/${T.i+1}`}
 paint();
 </script>
+<!-- Offline support -->
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/service-worker.js").catch(function () {});
+  });
+}
+</script>
+<!-- /Offline support -->
 <!-- Vercel Web Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };

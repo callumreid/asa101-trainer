@@ -25,6 +25,9 @@
 <meta name="twitter:image" content="https://sailingtrainer.com/og.png">
 <!-- /SEO enhancements -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<meta name="apple-mobile-web-app-title" content="Sailing Trainer">
 <style>
 *{box-sizing:border-box}
 :root{--bg:#f7f5ef;--card:#ffffff;--text:#20313b;--muted:#60707b;--border:#d9d3c5;--accent:#146a8c;--okbg:#e7f3e9;--oktx:#1e6b38;--nobg:#fbe9e9;--notx:#a32d2d;--midbg:#edf1ef}
@@ -442,6 +445,15 @@ function restartQuiz(){Q={order:buildQuizOrder(),i:0,picked:-1,right:0,missed:[]
 paintHeader();
 setMode({"#pos":"pos","#helm":"helm","#row":"row","#parts":"parts","#nav":"nav","#safety":"safety","#quiz":"quiz"}[location.hash]||"home");
 </script>
+<!-- Offline support -->
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/service-worker.js").catch(function () {});
+  });
+}
+</script>
+<!-- /Offline support -->
 <!-- Vercel Web Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };

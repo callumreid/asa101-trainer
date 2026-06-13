@@ -25,6 +25,9 @@
 <meta name="twitter:image" content="https://sailingtrainer.com/og.png">
 <!-- /SEO enhancements -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<meta name="apple-mobile-web-app-title" content="Sailing Trainer">
 <link rel="stylesheet" href="/site.css">
 <meta name="google-adsense-account" content="ca-pub-1188658046265173">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
@@ -113,6 +116,15 @@ function answer(n){if(answered)return;answered=true;const it=ITEMS[order[i]];if(
 function paint(picked){const it=ITEMS[order[i]];document.getElementById("qBox").textContent=(i+1)+"/"+order.length;document.getElementById("scoreBox").textContent=score;let html="<h2 style='margin-top:0'>"+it.q+"</h2>"+it.o.map((o,n)=>{let cls="choice";if(answered){if(n===it.a)cls+=" ok";else if(n===picked)cls+=" no";}return "<button class='"+cls+"' onclick='answer("+n+")'>"+o+"</button>";}).join("");if(answered){html+="<div class='callout'><strong>"+(picked===it.a?"Correct.":"Better answer: "+it.o[it.a]+".")+"</strong> "+it.why+"</div>";}document.getElementById("stage").innerHTML=html;}
 restart();
 </script>
+<!-- Offline support -->
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/service-worker.js").catch(function () {});
+  });
+}
+</script>
+<!-- /Offline support -->
 <!-- Vercel Web Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };

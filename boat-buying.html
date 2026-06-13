@@ -25,6 +25,9 @@
 <meta name="twitter:image" content="https://sailingtrainer.com/og.png">
 <!-- /SEO enhancements -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<meta name="apple-mobile-web-app-title" content="Sailing Trainer">
 <link rel="stylesheet" href="/site.css">
 <style>
 label{display:block;font-weight:600;margin:10px 0 4px}
@@ -114,6 +117,15 @@ function num(id){return Number(document.getElementById(id).value)||0;}
 function calcBudget(){const total=IDS.reduce((sum,id)=>sum+num(id),0);const purchase=num("purchase");document.getElementById("total").textContent=money(total);document.getElementById("ratio").textContent=purchase?`First-year estimate is ${Math.round(total/purchase*100)}% of purchase price.`:"Add a purchase price to compare total first-year cost.";}
 calcBudget();
 </script>
+<!-- Offline support -->
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/service-worker.js").catch(function () {});
+  });
+}
+</script>
+<!-- /Offline support -->
 <!-- Vercel Web Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };

@@ -25,6 +25,9 @@
 <meta name="twitter:image" content="https://sailingtrainer.com/og.png">
 <!-- /SEO enhancements -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<meta name="apple-mobile-web-app-title" content="Sailing Trainer">
 <link rel="stylesheet" href="/site.css">
 <meta name="google-adsense-account" content="ca-pub-1188658046265173">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
@@ -102,6 +105,15 @@ const siteSearch=document.getElementById("siteSearch"), results=document.getElem
 function renderSearch(){const q=siteSearch.value.trim().toLowerCase();const words=q.split(/\s+/).filter(Boolean);const matches=PAGES.map(page=>{const hay=(page.title+" "+page.type+" "+page.text).toLowerCase();const score=words.reduce((sum,word)=>sum+(hay.includes(word)?1:0),0);return {...page,score};}).filter(page=>!words.length||page.score>0).sort((a,b)=>b.score-a.score||a.title.localeCompare(b.title));resultCount.textContent=q?"Showing "+matches.length+" matching topics":"Showing all "+PAGES.length+" topics";results.innerHTML=matches.map(page=>"<a class='card' href='"+page.url+"' style='text-decoration:none;color:var(--text)'><span class='pill'>"+page.type+"</span><h2 style='margin-top:8px'>"+page.title+"</h2><p>"+page.text+"</p></a>").join("")||"<div class='callout'>No match. Try a broader term like rules, safety, weather, knots, docking, or gear.</div>";}
 const initial=new URLSearchParams(location.search).get("q");if(initial)siteSearch.value=initial;renderSearch();
 </script>
+<!-- Offline support -->
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/service-worker.js").catch(function () {});
+  });
+}
+</script>
+<!-- /Offline support -->
 <!-- Vercel Web Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };

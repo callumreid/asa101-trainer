@@ -37,6 +37,8 @@ for (const file of files) {
     ["canonical", /<link rel="canonical" href="[^"]+"/],
     ["og image", /<meta property="og:image" content="https:\/\/sailingtrainer\.com\/og\.png"/],
     ["twitter card", /<meta name="twitter:card" content="summary_large_image"/],
+    ["web app manifest", /<link rel="manifest" href="\/site\.webmanifest"/],
+    ["service worker", /navigator\.serviceWorker\.register\("\/service-worker\.js"\)/],
     ["analytics", /\/_vercel\/insights\/script\.js/],
     ["speed insights", /\/_vercel\/speed-insights\/script\.js/],
   ];
@@ -72,6 +74,11 @@ for (const page of files.filter((file) => file !== "privacy.html")) {
 }
 
 JSON.parse(fs.readFileSync(path.join(root, "vercel.json"), "utf8"));
+JSON.parse(fs.readFileSync(path.join(root, "site.webmanifest"), "utf8"));
+
+["service-worker.js", "icon-192.png", "icon-512.png", "llms.txt"].forEach((file) => {
+  if (!fs.existsSync(path.join(root, file))) failures.push(`missing ${file}`);
+});
 
 if (failures.length) {
   console.error(failures.join("\n"));

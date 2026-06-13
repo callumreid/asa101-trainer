@@ -25,6 +25,9 @@
 <meta name="twitter:image" content="https://sailingtrainer.com/og.png">
 <!-- /SEO enhancements -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<meta name="apple-mobile-web-app-title" content="Sailing Trainer">
 <link rel="stylesheet" href="/site.css">
 <style>
 .trim-scene{background:#2b6e91;border-radius:8px;margin:10px 0;padding:10px}
@@ -131,6 +134,15 @@ function scene(state){const heel=state==="overpowered"?-16:0;const boom=state===
 function paint(picked){const card=current();document.getElementById("cardBox").textContent=(idx+1)+"/"+order.length;document.getElementById("scoreBox").textContent=score;let html="<p class='mini'>"+card.topic+"</p>"+scene(card.state)+"<h2 style='margin-top:0'>"+card.q+"</h2>"+card.choices.map((choice,i)=>{let cls='choice';if(answered){if(i===card.best)cls+=' ok';else if(i===picked)cls+=' no';}return "<button class='"+cls+"' onclick='answer("+i+")'>"+choice+"</button>";}).join("");if(answered){html+="<div class='callout'><strong>"+(picked===card.best?"Correct.":"Better answer: "+card.choices[card.best]+".")+"</strong> "+card.why+"</div>";}document.getElementById("stage").innerHTML=html;}
 restart();
 </script>
+<!-- Offline support -->
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/service-worker.js").catch(function () {});
+  });
+}
+</script>
+<!-- /Offline support -->
 <!-- Vercel Web Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
