@@ -14,9 +14,10 @@ Core interactive practice:
 - **Safety & knots** — required gear, float plans, crew overboard, weather choices, and knot purpose
 - **Written quiz** — comprehensive test-style questions scored against the 80% pass mark
 - **Sailing simulator** — mission-based steering, trim, reefing, traffic, and decision cards
-- **Practice tests** — randomized 25-question, 50-question, full-bank, and weak-area review modes
+- **Practice tests** — randomized 25-question, 50-question, full-bank, weak-area, and category review modes
+- **Sail trim, sound, VHF, and float plan tools** — telltale practice, horn/whistle signals, radio calls, and a printable safety plan
 
-Plus study content: a [study guide](https://sailingtrainer.com/study-guide), [ASA 101 checklist](https://sailingtrainer.com/checklist), [points of sail explainer](https://sailingtrainer.com/points-of-sail), [maneuver guide](https://sailingtrainer.com/maneuvers), [right of way guide](https://sailingtrainer.com/right-of-way), [aids to navigation guide](https://sailingtrainer.com/navigation-aids), [safety guide](https://sailingtrainer.com/safety), [knots guide](https://sailingtrainer.com/knots), [weather guide](https://sailingtrainer.com/weather), [gear guide](https://sailingtrainer.com/gear), [podcasts/forums/boat buying links](https://sailingtrainer.com/community), [glossary](https://sailingtrainer.com/sailing-terms), [FAQ](https://sailingtrainer.com/faq), and [sources/resources](https://sailingtrainer.com/resources).
+Plus study content: a [study guide](https://sailingtrainer.com/study-guide), [ASA 101 checklist](https://sailingtrainer.com/checklist), [points of sail explainer](https://sailingtrainer.com/points-of-sail), [sail trim trainer](https://sailingtrainer.com/sail-trim), [maneuver guide](https://sailingtrainer.com/maneuvers), [right of way guide](https://sailingtrainer.com/right-of-way), [aids to navigation guide](https://sailingtrainer.com/navigation-aids), [navigation lights trainer](https://sailingtrainer.com/navigation-lights), [sound signals trainer](https://sailingtrainer.com/sound-signals), [safety guide](https://sailingtrainer.com/safety), [float plan builder](https://sailingtrainer.com/float-plan), [VHF radio trainer](https://sailingtrainer.com/vhf-radio), [knots guide](https://sailingtrainer.com/knots), [weather guide](https://sailingtrainer.com/weather), [gear guide](https://sailingtrainer.com/gear), [podcasts/forums/boat buying links](https://sailingtrainer.com/community), [glossary](https://sailingtrainer.com/sailing-terms), [FAQ](https://sailingtrainer.com/faq), and [sources/resources](https://sailingtrainer.com/resources).
 
 ## Stack
 
@@ -27,6 +28,12 @@ Progress (score, streak, accuracy) persists in the browser via localStorage. Not
 ## Develop
 
 Open `index.html` in a browser. That's it.
+
+Run the static quality gate before pushing:
+
+```sh
+node scripts/validate-site.mjs
+```
 
 ## Disclaimer
 
