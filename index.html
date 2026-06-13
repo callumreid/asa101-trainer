@@ -73,6 +73,7 @@ svg [data-part]{cursor:pointer}
   <nav style="display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:8px;font-size:14px;" aria-label="Study guides">
     <a href="/simulator" style="color:var(--accent);text-decoration:none;">Simulator</a>
     <a href="/practice-tests" style="color:var(--accent);text-decoration:none;">Practice tests</a>
+    <a href="/flashcards" style="color:var(--accent);text-decoration:none;">Flashcards</a>
     <a href="/gear" style="color:var(--accent);text-decoration:none;">Gear</a>
     <a href="/community" style="color:var(--accent);text-decoration:none;">Community</a>
     <a href="/study-guide" style="color:var(--accent);text-decoration:none;">Study guide</a>
@@ -109,7 +110,7 @@ svg [data-part]{cursor:pointer}
 </main>
 <footer>
   <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links may be affiliate links; as an Amazon Associate this site earns from qualifying purchases. Fair winds.</p>
-  <p><a href="/simulator" style="color:var(--muted);">Simulator</a> · <a href="/practice-tests" style="color:var(--muted);">Practice tests</a> · <a href="/gear" style="color:var(--muted);">Gear</a> · <a href="/community" style="color:var(--muted);">Community</a> · <a href="/resources" style="color:var(--muted);">Resources</a> · <a href="/privacy" style="color:var(--muted);">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer" style="color:var(--muted);">GitHub</a></p>
+  <p><a href="/simulator" style="color:var(--muted);">Simulator</a> · <a href="/practice-tests" style="color:var(--muted);">Practice tests</a> · <a href="/flashcards" style="color:var(--muted);">Flashcards</a> · <a href="/gear" style="color:var(--muted);">Gear</a> · <a href="/community" style="color:var(--muted);">Community</a> · <a href="/resources" style="color:var(--muted);">Resources</a> · <a href="/privacy" style="color:var(--muted);">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer" style="color:var(--muted);">GitHub</a></p>
   <p><button onclick="resetStats()" style="font-size:12px;padding:4px 10px;">Reset saved stats</button></p>
 </footer>
 <script>
@@ -163,6 +164,7 @@ function setMode(id){cur=id;$("tabs").innerHTML=MODES.map(m=>'<button class="tab
 function renderHome(){$("stage").innerHTML='<div class="home">'+
  '<a class="card" href="/simulator"><div class="hT">🧭 Sailing simulator</div><div class="hD">Mission-based practice: steer, trim, tack, reef, handle traffic, and answer skipper decision cards.</div></a>'+
  '<a class="card" href="/practice-tests"><div class="hT">📝 Full practice tests</div><div class="hD">Generate 25-question, 50-question, full-bank, or weak-area tests with explanations for every miss.</div></a>'+
+ '<a class="card" href="/flashcards"><div class="hT">▣ Spaced flashcards</div><div class="hD">Drill terms, boat parts, rules, aids, safety, weather, maneuvers, and knots with cards that repeat when you miss them.</div></a>'+
  '<button onclick="setMode(\'pos\')"><div class="hT">⛵ Points of sail</div><div class="hD">Name the point of sail from the boat\'s angle to the wind — the most-tested concept on the exam.</div></button>'+
  '<button onclick="setMode(\'helm\')"><div class="hT">🧭 Helm and trim</div><div class="hD">Steer to the skipper\'s orders and trim the main. Tacks and jibes called live. Arrow keys work.</div></button>'+
  '<button onclick="setMode(\'row\')"><div class="hT">⚖️ Right of way</div><div class="hD">Eight crossing scenarios — port vs starboard tack, overtaking, sail vs power, big ships in channels.</div></button>'+
