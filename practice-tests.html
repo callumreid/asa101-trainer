@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASA 101 Practice Tests - Full Question Bank and Review Mode</title>
+<meta name="description" content="Generate ASA 101 practice tests from a large question bank. Choose 25, 50, or full-bank mode and review every missed answer with explanations.">
+<link rel="canonical" href="https://sailingtrainer.com/practice-tests">
+<meta property="og:title" content="ASA 101 Practice Tests">
+<meta property="og:description" content="Randomized 25, 50, and full-bank Basic Keelboat practice tests with answer review.">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="stylesheet" href="/site.css">
+<meta name="google-adsense-account" content="ca-pub-1188658046265173">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/">⛵ ASA 101 Skipper Trainer</a>
+  <a href="/simulator">Simulator</a>
+  <a href="/practice-tests" class="on">Tests</a>
+  <a href="/gear">Gear</a>
+  <a href="/community">Community</a>
+  <a href="/study-guide">Study</a>
+  <a href="/checklist">Checklist</a>
+  <a href="/points-of-sail">Points</a>
+  <a href="/maneuvers">Maneuvers</a>
+  <a href="/right-of-way">Rules</a>
+  <a href="/navigation-aids">Aids</a>
+  <a href="/safety">Safety</a>
+  <a href="/knots">Knots</a>
+  <a href="/weather">Weather</a>
+  <a href="/sailing-terms">Terms</a>
+  <a href="/resources">Resources</a>
+  <a href="/faq">FAQ</a>
+</header>
+<main>
+<h1>ASA 101 practice tests</h1>
+<p class="lead">Generate a fresh test from a broader question bank. Short mode is for daily reps; full-bank mode is for final review before class.</p>
+
+<div class="statbar">
+  <div class="stat"><span class="mini">Bank size</span><b id="bankSize">0</b></div>
+  <div class="stat"><span class="mini">Current score</span><b id="scoreBox">-</b></div>
+  <div class="stat"><span class="mini">Question</span><b id="qBox">-</b></div>
+  <div class="stat"><span class="mini">Pass line</span><b>80%</b></div>
+</div>
+
+<div class="controls" style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0">
+  <button class="btn" onclick="startTest(25)">Start 25-question test</button>
+  <button class="btn secondary" onclick="startTest(50)">Start 50-question test</button>
+  <button class="btn secondary" onclick="startTest(BANK.length)">Full bank</button>
+  <button class="btn secondary" onclick="startWeak()">Weak-area review</button>
+</div>
+
+<section id="testStage" class="card"></section>
+
+<h2>Categories covered</h2>
+<div class="grid">
+<div class="card"><h3>Boat and rig</h3><p>Parts, standing/running rigging, sail controls, sail edges, deck hardware.</p></div>
+<div class="card"><h3>Wind and trim</h3><p>Points of sail, tacks, apparent wind, luffing, weather helm, reefing.</p></div>
+<div class="card"><h3>Rules and aids</h3><p>Stand-on/give-way, port/starboard, overtaking, narrow channels, buoys, lights.</p></div>
+<div class="card"><h3>Safety and seamanship</h3><p>PFDs, distress signals, weather calls, crew overboard, docking, anchoring, knots.</p></div>
+</div>
+</main>
+<footer>
+  <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases.</p>
+  <p><a href="/">Trainer</a> · <a href="/simulator">Simulator</a> · <a href="/practice-tests">Practice tests</a> · <a href="/gear">Gear</a> · <a href="/community">Community</a> · <a href="/checklist">Checklist</a> · <a href="/resources">Resources</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
+</footer>
+<script>
+const BANK=[
+["Boat","The fitting that connects the boom to the mast is the:",["Gooseneck","Chainplate","Gudgeon","Hank"],0,"The gooseneck lets the boom pivot on the mast."],
+["Boat","The aft lower corner of a triangular sail is the:",["Head","Tack","Clew","Luff"],2,"Corners are head, tack, and clew."],
+["Boat","The forward edge of a sail is the:",["Luff","Leech","Foot","Batten"],0,"The luff is the leading edge."],
+["Boat","The fixed wires that hold the mast up are:",["Standing rigging","Running rigging","Sheets","Dock lines"],0,"Standing rigging includes shrouds and stays."],
+["Boat","A halyard is used to:",["Raise or lower a sail","Trim a sail in and out","Steer the boat","Tie to a dock"],0,"Halyards hoist sails."],
+["Boat","A sheet is used to:",["Trim a sail","Hold up the mast","Mark a channel","Secure an anchor"],0,"Sheets control sail angle."],
+["Boat","The keel mainly:",["Resists leeway and provides ballast","Raises sails","Turns the rudder","Stops the boom"],0,"Keels reduce sideways slip and add stability."],
+["Boat","With a tiller, moving the tiller to port turns the bow:",["Starboard","Port","Aft","Leeward only"],0,"Tiller steering is opposite."],
+["Boat","The outhaul controls:",["Foot tension on the mainsail","Anchor scope","Rudder angle","Mast height"],0,"The outhaul pulls the clew aft."],
+["Boat","The boom vang controls:",["Boom lift and leech tension","Which tack you are on","The jib luff only","The anchor rode"],0,"The vang holds the boom down."],
+["Boat","A winch is used to:",["Add mechanical advantage to loaded lines","Measure wind speed","Hold a PFD","Display navigation lights"],0,"Winches help tension sheets and halyards."],
+["Boat","A fairlead is:",["A fitting that leads a line cleanly","A safe-water mark","A type of knot","A sail corner"],0,"Fairleads guide lines."],
+["Boat","Chainplates attach:",["Standing rigging to the hull or deck","Sheets to winches","Buoys to anchors","PFDs to crew"],0,"Chainplates carry rig loads into the boat."],
+["Boat","Telltales are used to:",["Read airflow over a sail","Tie dock lines","Signal distress","Measure depth"],0,"Telltales are trim indicators."],
+["Boat","The transom is:",["The flat aft surface of the stern","The front pulpit","A sail edge","A knot"],0,"The transom is at the stern."],
+["Wind","The no-go zone is roughly:",["45 degrees either side of the wind","5 degrees either side of the wind","90 degrees either side of the wind","Only dead downwind"],0,"Most keelboats cannot sail closer than about 45 degrees to the wind."],
+["Wind","Close-hauled means:",["As close to the wind as the boat will sail","Wind dead astern","Sails lowered","Stopped head-to-wind"],0,"Close-hauled is the upwind point of sail."],
+["Wind","A beam reach has wind:",["Over the side around 90 degrees","Dead ahead","Dead astern","Only over starboard"],0,"Beam reach is wind abeam."],
+["Wind","A run has wind:",["Dead astern","Directly ahead","Only over port","Only over starboard"],0,"Running is sailing downwind."],
+["Wind","If sails luff while close-hauled and trimmed in, you should:",["Bear away slightly","Sheet in forever","Jibe","Drop anchor"],0,"You are pinching. Bear away."],
+["Wind","Apparent wind is:",["Wind felt aboard from true wind plus boat motion","Forecast wind only","Current direction","A navigation light"],0,"The boat's motion changes what the sails feel."],
+["Wind","Wind over the starboard side means:",["Starboard tack","Port tack","No tack","A run only"],0,"Tack is named for the windward side."],
+["Wind","Tacking turns the:",["Bow through the wind","Stern through the wind","Keel through the water","Anchor through the mud"],0,"Tack = bow through."],
+["Wind","Jibing turns the:",["Stern through the wind","Bow through the wind","Mast forward","Keel upward"],0,"Jibe = stern through."],
+["Wind","In irons means:",["Stopped head-to-wind with sails luffing","Sailing fast on a reach","Anchored securely","Docked"],0,"In irons is a no-go-zone stall."],
+["Wind","By the lee is dangerous because:",["The boom may jibe unexpectedly","The keel disappears","You lose all PFDs","The anchor sets"],0,"By the lee is accidental-jibe territory."],
+["Wind","Wing-on-wing means:",["Main and headsail on opposite sides downwind","Both sails centered","No sails up","Only the jib is reefed"],0,"Wing-on-wing is a downwind sail plan."],
+["Wind","Weather helm means the boat wants to:",["Turn toward the wind","Turn away from the wind","Sink","Stop all motion"],0,"Weather helm rounds the boat up."],
+["Wind","Reefing means:",["Reducing sail area","Adding more sail","Tying to a reef","Running aground"],0,"Reef early to depower."],
+["Wind","Heaving-to is:",["Balancing sails and helm to nearly park the boat","Jibing quickly","Docking under power","A knot"],0,"Heaving-to is a controlled pause."],
+["Rules","Two sailboats on opposite tacks: who keeps clear?",["Port-tack boat","Starboard-tack boat","Leeward boat always","The smaller boat"],0,"Port keeps clear of starboard."],
+["Rules","Two sailboats on the same tack: who keeps clear?",["Windward boat","Leeward boat","The faster boat","The anchored boat"],0,"Windward keeps clear of leeward."],
+["Rules","An overtaking vessel:",["Always keeps clear","Always stands on","Only keeps clear if powered","Has priority under sail"],0,"Overtaking overrides most other rules."],
+["Rules","A sailboat overtaking a powerboat:",["Keeps clear","Stands on because sail beats power","Must anchor","Must call Mayday"],0,"The overtaker keeps clear."],
+["Rules","A motorsailing sailboat with engine in gear is treated as:",["Power-driven","Sailing only","Restricted in maneuverability","Not under command"],0,"Engine in gear makes you power-driven."],
+["Rules","The stand-on vessel should generally:",["Hold course and speed","Make random turns","Stop immediately","Ignore danger"],0,"Holding course helps the give-way vessel plan."],
+["Rules","The give-way vessel should act:",["Early and obviously","At the last second","Only by radio","Only after collision"],0,"Give-way action should be clear."],
+["Rules","A proper lookout is required:",["By sight, hearing, and all available means","Only at night","Only offshore","Only for powerboats"],0,"Rule 5 requires a proper lookout."],
+["Rules","Five or more short blasts means:",["Danger or doubt","I am anchored","I am fishing","I am backing a sail"],0,"It is the danger/doubt signal."],
+["Rules","In a narrow channel, a small sailboat should:",["Avoid impeding vessels constrained to the channel","Claim right of way over ships","Anchor mid-channel","Cross close ahead"],0,"Do not impede large constrained traffic."],
+["Rules","Power generally gives way to sail except:",["Overtaking, restricted vessels, fishing, narrow channels, not-under-command situations","Always with no exceptions","Only on weekends","Only on port tack"],0,"There are important exceptions."],
+["Rules","A vessel not under command is:",["Unable to maneuver as required","A boat with no skipper certificate","Any anchored boat","Any racing boat"],0,"NUC vessels have limited ability to avoid others."],
+["Aids","Red, right, returning means:",["Keep red marks to starboard when returning","Keep red marks to port when returning","Red means danger always","Green means stop"],0,"Red lateral marks are starboard when returning."],
+["Aids","Green can buoys are usually:",["Odd-numbered port-side marks when returning","Even-numbered starboard marks","Safe-water marks","Regulatory marks"],0,"Green cans are odd and port when returning."],
+["Aids","Red nun buoys are usually:",["Even-numbered starboard-side marks when returning","Odd port-side marks","Safe-water marks","No-wake marks"],0,"Red nuns are even and starboard when returning."],
+["Aids","Red-and-white vertical stripes indicate:",["Safe water all around","No wake","Danger on every side","A speed zone"],0,"Safe-water marks show navigable water around."],
+["Aids","White markers with orange symbols are:",["Information or regulatory markers","Preferred channel marks","Only mooring balls","Only race marks"],0,"They show warnings, controls, hazards, or exclusions."],
+["Aids","Preferred channel marks use top color to show:",["The preferred side/channel","Water temperature","Speed limit","Depth in fathoms"],0,"Top color matters."],
+["Aids","Port navigation light color is:",["Red","Green","Blue","Yellow"],0,"Port is red."],
+["Aids","Starboard navigation light color is:",["Green","Red","White","Orange"],0,"Starboard is green."],
+["Aids","A white sternlight is visible from:",["Aft","Ahead only","Port only","Below deck"],0,"The sternlight shows aft."],
+["Aids","Numbers on lateral marks generally increase:",["As you return from sea or go upstream","As you head offshore","Only on odd days","Never"],0,"Numbers increase returning."],
+["Safety","A 25-foot recreational sailboat must carry:",["A wearable USCG-approved PFD for each person","One PFD total","Only a throwable cushion","No PFDs if close to shore"],0,"One wearable PFD per person."],
+["Safety","A throwable device on a 25-foot boat should be:",["Immediately available","Locked below","Optional in daylight","Used as a seat cushion only"],0,"Throwable PFDs must be immediately available."],
+["Safety","Crew overboard first actions:",["Shout, throw, point","Drop sails first","Call for lunch","Anchor immediately"],0,"Shout, throw flotation, point continuously."],
+["Safety","Final crew-overboard approach under sail is often:",["Close reach with luffing for speed control","Full-speed run","Beam reach with sheets tight","Dead upwind"],0,"Close reach gives control."],
+["Safety","A float plan includes:",["Crew, boat, route, return time, emergency contacts","Only the boat name","Only the weather","Only the dock number"],0,"Leave enough info for someone ashore."],
+["Safety","Visual distress signals are used to:",["Attract help","Trim sails","Mark tacks","Measure current"],0,"They signal distress."],
+["Safety","A sound-producing device is:",["Required equipment on small recreational vessels","Only for racing","Only for fog offshore","Never needed"],0,"Small boats need an efficient sound signal."],
+["Safety","Boating under the influence is:",["Illegal and dangerous","Allowed if under sail","Only illegal offshore","An ASA knot"],0,"Boat sober."],
+["Safety","If lightning is near:",["Head for safe harbor early","Hold the mast","Keep sailing for practice","Swim ashore"],0,"Lightning is a serious no-go/return signal."],
+["Safety","Small Craft Advisory for a new skipper usually means:",["Do not go unless with an instructor and a plan","Perfect beginner weather","Only applies to ships","Exactly 10 kt wind"],0,"Advisories mean hazardous conditions for small craft."],
+["Safety","Reefing early helps:",["Reduce heel and weather helm","Increase chaos","Make PFDs unnecessary","Change buoy colors"],0,"Reef before overpowered."],
+["Knots","A figure-eight knot is used as:",["A stopper","A fixed loop","A dock cleat","A reefing line only"],0,"Figure-eight stops a line running through a block."],
+["Knots","A bowline makes:",["A fixed loop","A stopper","A temporary rail hitch","A square lashing"],0,"Bowline = fixed loop."],
+["Knots","A cleat hitch secures:",["A line to a cleat","A sail to the mast","A buoy to a channel","A rudder to a keel"],0,"Use it for dock lines."],
+["Knots","A clove hitch is best for:",["Quick temporary attachment","Critical permanent mooring","A stopper","A non-slipping loop"],0,"Back it up if it matters."],
+["Knots","Round turn and two half hitches is useful for:",["Securing to a ring or piling","Joining two equal lines","Stopping a sheet","Raising a sail"],0,"The round turn adds friction."],
+["Knots","A square knot should not be used for:",["Critical loads","Light-duty temporary joining","Reefing small bundles","Practice"],0,"It can capsize or jam under poor loading."],
+["Seamanship","When docking, approach:",["No faster than you are willing to hit the dock","At full speed","With no fenders","Dead downwind whenever possible"],0,"Slow is controlled."],
+["Seamanship","Fenders should be rigged:",["Before entering the tight docking space","After impact","Only after tying up","Never on sailboats"],0,"Prepare early."],
+["Seamanship","Spring lines control:",["Fore-and-aft movement","Mast height","Sail luff","Navigation lights"],0,"Springs stop the boat moving along the dock."],
+["Seamanship","Anchor scope is:",["Rode length compared with water depth","Anchor weight","Wind speed","Boat beam"],0,"More scope gives a flatter pull."],
+["Seamanship","When anchoring, lower the anchor and:",["Pay out rode under control","Throw it as far as possible","Tie rode to a lifeline","Set from the stern first"],0,"Controlled lowering and rode payout matter."],
+["Seamanship","Before leaving the dock, check:",["Weather, gear, crew briefing, route, and return plan","Only snack supply","Only sail color","Nothing if sunny"],0,"Pre-departure checks prevent surprises."],
+["Seamanship","One hand for the boat means:",["Keep yourself secure while moving aboard","Always steer one-handed","Never use both hands on a line","Hold the mast in lightning"],0,"Stay attached and balanced."],
+["Seamanship","A responsible skipper should assign:",["A lookout","A passenger to nap","No roles","Only a photographer"],0,"Lookout is a real safety role."],
+["Seamanship","If uncertain about local rules or hazards, use:",["Charts, local notices, instructors, and harbor guidance","Guesswork","Only social media","Only sail color"],0,"Local knowledge matters."],
+["Seamanship","A beginner certificate does not mean:",["You are ready for every weather, boat, or waterway","You learned the basics","You can keep practicing","You passed a standard"],0,"Stay within conditions and experience."]
+];
+const shuf=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);
+let T={order:[],i:0,right:0,missed:[],picked:false};
+document.getElementById("bankSize").textContent=BANK.length;
+function buildItems(n){return shuf(BANK).slice(0,Math.min(n,BANK.length)).map(q=>{const idx=shuf([0,1,2,3]);return{cat:q[0],q:q[1],o:idx.map(i=>q[2][i]),a:idx.indexOf(q[3]),why:q[4]}})}
+function startTest(n){T={order:buildItems(n),i:0,right:0,missed:[],picked:false};paint()}
+function weakList(){try{const v=JSON.parse(localStorage.getItem("asa101.weak.v1")||"[]");return Array.isArray(v)?v:[]}catch(err){return[]}}
+function startWeak(){const weak=weakList();const pool=weak.length?BANK.filter((_,i)=>weak.includes(i)):BANK.filter(q=>["Rules","Aids","Safety","Knots"].includes(q[0]));T={order:buildItemsFrom(pool,Math.min(30,pool.length)),i:0,right:0,missed:[],picked:false};paint()}
+function buildItemsFrom(pool,n){return shuf(pool).slice(0,n).map(q=>{const idx=shuf([0,1,2,3]);return{cat:q[0],q:q[1],o:idx.map(i=>q[2][i]),a:idx.indexOf(q[3]),why:q[4],raw:BANK.indexOf(q)}})}
+function paint(){const stage=document.getElementById("testStage");document.getElementById("scoreBox").textContent=T.order.length?`${T.right}/${T.i}`:"-";document.getElementById("qBox").textContent=T.order.length?`${Math.min(T.i+1,T.order.length)}/${T.order.length}`:"-";
+ if(!T.order.length){stage.innerHTML="<p>Choose a test length to begin. Every run randomizes both questions and answer order.</p>";return}
+ if(T.i>=T.order.length){const pct=Math.round(T.right/T.order.length*100);let byCat={};T.missed.forEach(m=>byCat[m.cat]=(byCat[m.cat]||0)+1);stage.innerHTML="<div class='callout'><strong>Finished: "+T.right+"/"+T.order.length+" ("+pct+"%).</strong> "+(pct>=80?"That clears the pass line.":"Below the 80% pass line - review misses and retest.")+"</div><h2>Missed questions</h2>"+(T.missed.length?T.missed.map(m=>"<div class='card'><span class='pill'>"+m.cat+"</span><p><strong>"+m.q+"</strong></p><p>Answer: "+m.correct+"</p><p class='mini'>"+m.why+"</p></div>").join(""):"<p>No misses.</p>")+"<h2>Weak categories</h2><p>"+Object.entries(byCat).map(([k,v])=>k+': '+v).join(' · ')+"</p>";return}
+ const it=T.order[T.i];stage.innerHTML="<p class='mini'>"+it.cat+" · Question "+(T.i+1)+" of "+T.order.length+"</p><h2 style='margin-top:0'>"+it.q+"</h2>"+it.o.map((o,i)=>"<button class='choice' onclick='answer("+i+")'>"+o+"</button>").join("")}
+function answer(i){if(T.picked)return;T.picked=true;const it=T.order[T.i], ok=i===it.a;if(ok)T.right++;else T.missed.push({cat:it.cat,q:it.q,correct:it.o[it.a],why:it.why});[...document.querySelectorAll(".choice")].forEach((b,j)=>{if(j===it.a)b.classList.add("ok");else if(j===i)b.classList.add("no");b.disabled=true});const raw=BANK.findIndex(q=>q[1]===it.q);if(!ok&&raw>=0){const weak=new Set(weakList());weak.add(raw);localStorage.setItem("asa101.weak.v1",JSON.stringify([...weak].slice(0,80)));}const next=document.createElement("button");next.className="btn";next.textContent=T.i+1>=T.order.length?"Finish and review":"Next question";next.onclick=()=>{T.i++;T.picked=false;paint()};document.getElementById("testStage").appendChild(next);document.getElementById("scoreBox").textContent=`${T.right}/${T.i+1}`}
+paint();
+</script>
+</body>
+</html>

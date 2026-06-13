@@ -4,7 +4,7 @@ Free interactive practice for the ASA 101 (Basic Keelboat Sailing) written test.
 
 **Live site:** https://sailingtrainer.com
 
-Eight practice stations:
+Core interactive practice:
 
 - **Points of sail** — name the point of sail from the boat's angle to the wind
 - **Helm and trim** — steer to orders and trim the mainsail, with live tack/jibe calls
@@ -13,8 +13,10 @@ Eight practice stations:
 - **Aids to navigation** — red-right-returning, buoys, safe water marks, regulatory marks, and lights
 - **Safety & knots** — required gear, float plans, crew overboard, weather choices, and knot purpose
 - **Written quiz** — comprehensive test-style questions scored against the 80% pass mark
+- **Sailing simulator** — mission-based steering, trim, reefing, traffic, and decision cards
+- **Practice tests** — randomized 25-question, 50-question, full-bank, and weak-area review modes
 
-Plus study content: a [study guide](https://sailingtrainer.com/study-guide), [ASA 101 checklist](https://sailingtrainer.com/checklist), [points of sail explainer](https://sailingtrainer.com/points-of-sail), [maneuver guide](https://sailingtrainer.com/maneuvers), [right of way guide](https://sailingtrainer.com/right-of-way), [aids to navigation guide](https://sailingtrainer.com/navigation-aids), [safety guide](https://sailingtrainer.com/safety), [knots guide](https://sailingtrainer.com/knots), [weather guide](https://sailingtrainer.com/weather), [glossary](https://sailingtrainer.com/sailing-terms), [FAQ](https://sailingtrainer.com/faq), and [sources/resources](https://sailingtrainer.com/resources).
+Plus study content: a [study guide](https://sailingtrainer.com/study-guide), [ASA 101 checklist](https://sailingtrainer.com/checklist), [points of sail explainer](https://sailingtrainer.com/points-of-sail), [maneuver guide](https://sailingtrainer.com/maneuvers), [right of way guide](https://sailingtrainer.com/right-of-way), [aids to navigation guide](https://sailingtrainer.com/navigation-aids), [safety guide](https://sailingtrainer.com/safety), [knots guide](https://sailingtrainer.com/knots), [weather guide](https://sailingtrainer.com/weather), [gear guide](https://sailingtrainer.com/gear), [podcasts/forums/boat buying links](https://sailingtrainer.com/community), [glossary](https://sailingtrainer.com/sailing-terms), [FAQ](https://sailingtrainer.com/faq), and [sources/resources](https://sailingtrainer.com/resources).
 
 ## Stack
 
