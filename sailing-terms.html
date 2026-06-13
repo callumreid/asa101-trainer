@@ -57,6 +57,12 @@
 <h1>Sailing terms glossary</h1>
 <p class="lead">Plain-English definitions for the vocabulary on the ASA 101 written test. When you can use these without thinking, the rest of the exam gets much easier.</p>
 
+<section class="card" aria-label="Search sailing terms">
+  <label for="termSearch" class="mini">Search glossary</label>
+  <input id="termSearch" type="search" placeholder="Search terms, knots, rigging, rules..." autocomplete="off" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit;margin-top:6px" oninput="filterTerms()">
+  <p class="mini" id="termCount" aria-live="polite">Showing all terms</p>
+</section>
+
 <h2>Directions and orientation</h2>
 <dl>
 <dt>Bow / stern</dt><dd>The front / the back of the boat.</dd>
@@ -181,12 +187,54 @@
 <!-- AD SLOT: AdSense unit goes here after approval -->
 <div class="adslot" id="ad-terms"></div>
 
-<p><a class="btn" href="/#quiz">Quiz yourself on these terms →</a></p>
+<p><a class="btn" href="/#quiz">Quiz yourself on these terms →</a><a class="btn secondary" href="/flashcards">Review flashcards</a></p>
 </main>
 <footer>
   <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases. Fair winds.</p>
   <p><a href="/">Trainer</a> · <a href="/simulator">Simulator</a> · <a href="/practice-tests">Practice tests</a> · <a href="/flashcards">Flashcards</a> · <a href="/gear">Gear</a> · <a href="/community">Community</a> · <a href="/checklist">Checklist</a> · <a href="/resources">Resources</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
 </footer>
+<script>
+const termSearch = document.getElementById("termSearch");
+const termCount = document.getElementById("termCount");
+const termSections = [...document.querySelectorAll("main h2")].map((heading) => {
+  const pairs = [];
+  let node = heading.nextElementSibling;
+  while (node && node.tagName !== "H2") {
+    if (node.tagName === "DL") {
+      [...node.querySelectorAll("dt")].forEach((term) => {
+        const definition = term.nextElementSibling;
+        if (definition && definition.tagName === "DD") pairs.push({ term, definition });
+      });
+    }
+    node = node.nextElementSibling;
+  }
+  return { heading, pairs };
+}).filter((section) => section.pairs.length);
+
+function filterTerms() {
+  const query = termSearch.value.trim().toLowerCase();
+  let visibleCount = 0;
+  let totalCount = 0;
+  termSections.forEach((section) => {
+    let sectionHasMatch = false;
+    section.pairs.forEach(({ term, definition }) => {
+      totalCount++;
+      const haystack = `${term.textContent} ${definition.textContent}`.toLowerCase();
+      const visible = !query || haystack.includes(query);
+      term.hidden = !visible;
+      definition.hidden = !visible;
+      if (visible) {
+        visibleCount++;
+        sectionHasMatch = true;
+      }
+    });
+    section.heading.hidden = !sectionHasMatch;
+  });
+  termCount.textContent = query ? `Showing ${visibleCount} of ${totalCount} terms` : `Showing all ${totalCount} terms`;
+}
+
+filterTerms();
+</script>
 <!-- Vercel Web Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
