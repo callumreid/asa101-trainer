@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rules of the Road Sailing Game - Right of Way, Lights, Sound Signals</title>
+<meta name="description" content="Play mixed sailing rules-of-the-road scenarios for ASA 101: port and starboard tack, windward and leeward, overtaking, traffic, lights, sound signals, and fog.">
+<link rel="canonical" href="https://sailingtrainer.com/rules-road-game">
+<meta property="og:title" content="Rules of the Road Sailing Game">
+<meta property="og:description" content="Mixed ASA 101 scenarios for right of way, lights, sound signals, traffic, and fog.">
+<meta property="og:type" content="article">
+<!-- SEO enhancements -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#146a8c">
+<meta property="og:site_name" content="ASA 101 Skipper Trainer">
+<meta property="og:url" content="https://sailingtrainer.com/rules-road-game">
+<meta property="og:image" content="https://sailingtrainer.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rules of the Road Sailing Game">
+<meta name="twitter:description" content="Practice port/starboard, windward/leeward, overtaking, traffic, lights, sounds, and fog.">
+<meta name="twitter:image" content="https://sailingtrainer.com/og.png">
+<!-- /SEO enhancements -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="stylesheet" href="/site.css">
+<meta name="google-adsense-account" content="ca-pub-1188658046265173">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","@id":"https://sailingtrainer.com/rules-road-game#learning-resource","url":"https://sailingtrainer.com/rules-road-game","name":"Rules of the Road Sailing Game - Right of Way, Lights, Sound Signals","headline":"Rules of the Road Sailing Game - Right of Way, Lights, Sound Signals","description":"Play mixed sailing rules-of-the-road scenarios for ASA 101: port and starboard tack, windward and leeward, overtaking, traffic, lights, sound signals, and fog.","isAccessibleForFree":true,"inLanguage":"en-US","educationalLevel":"Beginner","audience":{"@type":"EducationalAudience","educationalRole":"student"},"learningResourceType":"Game","about":[{"@type":"Thing","name":"navigation rules"},{"@type":"Thing","name":"right of way sailing"},{"@type":"Thing","name":"ASA 101"}],"isPartOf":{"@id":"https://sailingtrainer.com/#website"}}</script>
+<!-- /Structured data -->
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/">⛵ ASA 101 Skipper Trainer</a>
+  <a href="/simulator">Simulator</a>
+  <a href="/practice-tests">Tests</a>
+  <a href="/course-plan">Plan</a>
+  <a href="/chartwork">Charts</a>
+  <a href="/rules-road-game" class="on">Rules game</a>
+  <a href="/flashcards">Cards</a>
+  <a href="/gear">Gear</a>
+  <a href="/community">Community</a>
+  <a href="/study-guide">Study</a>
+  <a href="/checklist">Checklist</a>
+  <a href="/right-of-way">Rules</a>
+  <a href="/navigation-aids">Aids</a>
+  <a href="/navigation-lights">Lights</a>
+  <a href="/sound-signals">Signals</a>
+  <a href="/safety">Safety</a>
+  <a href="/weather">Weather</a>
+  <a href="/resources">Resources</a>
+  <a href="/faq">FAQ</a>
+</header>
+<main>
+<h1>Rules of the road scenario game</h1>
+<p class="lead">A mixed skipper-decision drill. Some questions are right of way, some are lights, some are sound signals, and some test whether you should slow down, hold course, communicate, or keep clear.</p>
+
+<div class="statbar">
+  <div class="stat"><span class="mini">Score</span><b id="scoreBox">-</b></div>
+  <div class="stat"><span class="mini">Scenario</span><b id="qBox">-</b></div>
+  <div class="stat"><span class="mini">Streak</span><b id="streakBox">0</b></div>
+  <div class="stat"><span class="mini">Mode</span><b id="modeBox">practice</b></div>
+</div>
+
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0">
+  <button class="btn" onclick="startGame(10,'practice')">10-scenario run</button>
+  <button class="btn secondary" onclick="startGame(20,'exam')">20-scenario run</button>
+  <button class="btn secondary" onclick="startHard()">Hard mix</button>
+  <a class="btn secondary" href="/right-of-way">Study rules</a>
+  <a class="btn secondary" href="/navigation-lights">Study lights</a>
+  <a class="btn secondary" href="/sound-signals">Study signals</a>
+</div>
+
+<section id="stage" class="card"></section>
+
+<h2>Rule habits this game is trying to build</h2>
+<div class="grid">
+  <div class="card"><h3>Lookout first</h3><p>Do not treat rules as a quiz you answer after the danger develops. Spot the situation early, communicate with crew, and keep a safe speed.</p></div>
+  <div class="card"><h3>Stand-on is not stubborn</h3><p>Holding course and speed helps the give-way vessel, but every vessel must act to avoid collision when the other boat is not responding.</p></div>
+  <div class="card"><h3>Exceptions matter</h3><p>Sail generally has priority over power, but overtaking, narrow channels, constrained traffic, fishing, restricted maneuverability, and not-under-command status can change the answer.</p></div>
+  <div class="card"><h3>Signals are language</h3><p>Lights, sounds, VHF, and vessel aspect help you understand what another skipper is doing before you are close enough to shout.</p></div>
+</div>
+
+<h2>Sources</h2>
+<ul class="source-list">
+  <li><a href="https://www.navcen.uscg.gov/navigation-rules-amalgamated">USCG NAVCEN Navigation Rules Amalgamated</a> - primary rule source.</li>
+  <li><a href="https://www.ecfr.gov/current/title-33/chapter-I/subchapter-E/part-83">33 CFR Part 83</a> - current U.S. inland navigation rules.</li>
+  <li><a href="https://boatus.org/study-guide/navigation-maneuvering/navigation-lights/">BoatUS Foundation Navigation Lights</a> - beginner light recognition.</li>
+  <li><a href="https://boatus.org/study-guide/navigation-maneuvering/navigation-sounds/">BoatUS Foundation Navigation Sounds</a> - beginner sound signal explanations.</li>
+</ul>
+
+<p><a class="btn" href="/practice-tests">Take practice tests</a><a class="btn secondary" href="/simulator">Run simulator missions</a><a class="btn secondary" href="/chartwork">Practice chartwork</a></p>
+</main>
+<footer>
+  <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases.</p>
+  <p><a href="/">Trainer</a> · <a href="/course-plan">Learning plan</a> · <a href="/chartwork">Chartwork</a> · <a href="/rules-road-game">Rules game</a> · <a href="/simulator">Simulator</a> · <a href="/practice-tests">Practice tests</a> · <a href="/resources">Resources</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
+</footer>
+<script>
+const SCENARIOS=[
+["right of way","You are on port tack. A similar sailboat is approaching on starboard tack. What is your role?",["Keep clear early and obviously","Stand on because you are under sail","Sound five short blasts and hold course","Speed up to cross ahead"],0,"Port-tack sailing vessels keep clear of starboard-tack sailing vessels.","/right-of-way",false],
+["right of way","Two sailboats are on the same tack. You are windward. What should you do?",["Keep clear of the leeward boat","Hold course as stand-on","Ask the leeward boat to tack","Turn on your engine to gain priority"],0,"On the same tack, the windward boat keeps clear of the leeward boat.","/right-of-way",false],
+["overtaking","You are sailing faster and coming up from abaft another boat's beam. Who keeps clear?",["You do","The boat ahead always does","Only powerboats do","Nobody if both are sailing"],0,"An overtaking vessel keeps clear until finally past and clear.","/right-of-way",false],
+["power and sail","A powerboat crosses from your port side while you are sailing. You are stand-on, but it is not changing course. What is the skipper-level answer?",["Hold course at first, then act to avoid collision if needed","Never alter because stand-on means absolute priority","Turn randomly and hope they understand","Stop looking because power must solve it"],0,"Stand-on vessels generally hold course and speed, but every vessel must avoid collision.","/right-of-way",true],
+["narrow channel","You are daysailing across a marked narrow channel with a deep-draft commercial vessel coming along the channel. What should you do?",["Avoid impeding it; cross astern or wait","Claim sail priority and cross ahead","Anchor in the channel","Sail close alongside for practice"],0,"Small sailing vessels must not impede vessels that can safely navigate only within a narrow channel.","/right-of-way",true],
+["motorsailing","Your mainsail is up and the engine is in gear. Under the rules you are treated as:",["Power-driven","Sailing only","Not under command","Restricted in ability to maneuver"],0,"A sailboat propelled by machinery is treated as a power-driven vessel.","/right-of-way",false],
+["lights","At night you see only a green sidelight. Which side of that vessel are you seeing?",["Its starboard side","Its port side","Its stern only","Its masthead from ahead"],0,"Green is the starboard sidelight.","/navigation-lights",false],
+["lights","At night a small sailboat at anchor should show:",["An all-around white anchor light","Red over green side lights only","Five short flashes every minute","No light if under 25 ft"],0,"Anchored vessels display an anchor light where required; small-boat details depend on size and area, but one all-around white light is the beginner answer.","/navigation-lights",true],
+["lights","You see red and green sidelights together on a vessel ahead. What aspect are you probably seeing?",["It is approaching bow-on","It is stern-on","It is anchored","It is definitely aground"],0,"Seeing both sidelights usually means you are looking toward the bow sector.","/navigation-lights",false],
+["sounds","A vessel in sight gives one short blast. It means:",["I am altering course to starboard","I am altering course to port","I am operating astern propulsion","I am anchored"],0,"One short blast is the starboard alteration signal.","/sound-signals",false],
+["sounds","A vessel in sight gives two short blasts. It means:",["I am altering course to port","I am altering course to starboard","I am anchored","I am fishing"],0,"Two short blasts is the port alteration signal.","/sound-signals",false],
+["sounds","Three short blasts mean:",["I am operating astern propulsion","I am turning to starboard","I am a sailing vessel in fog","I am safe water"],0,"Three short blasts indicate operating astern propulsion.","/sound-signals",false],
+["sounds","Five or more short blasts should make you think:",["Danger or doubt","Routine radio check","Anchored and safe","Leaving dock"],0,"Five or more short blasts is the danger/doubt signal.","/sound-signals",false],
+["fog","In restricted visibility, a sailing vessel underway sounds:",["One prolonged followed by two short blasts","One short blast","Two short blasts only","A bell every second"],0,"A sailing vessel in restricted visibility sounds one prolonged plus two short blasts at required intervals.","/sound-signals",true],
+["lookout","The rules require a proper lookout:",["By sight, hearing, and all available means","Only on boats over 26 ft","Only at night","Only when racing"],0,"Rule 5 requires a proper lookout by all available means.","/right-of-way",false],
+["safe speed","Fog forms in a busy harbor while you are under sail. The first rule habit is:",["Slow down, increase lookout, use appropriate signals, and consider stopping","Keep sailing fast because sail has priority","Turn off lights to reduce confusion","Send everyone below"],0,"Restricted visibility changes speed, lookout, navigation, and signals.","/weather",true],
+["traffic","A vessel displays shapes/lights indicating restricted ability to maneuver. A beginner skipper should:",["Keep well clear and avoid forcing it to maneuver","Expect it to dodge you","Cross close ahead to save distance","Ignore it if you are under sail"],0,"Restricted or constrained vessels may not be able to maneuver normally.","/right-of-way",true],
+["stand-on","You are stand-on and the give-way vessel has taken early, obvious action. What should you do?",["Hold course and speed so their plan works","Make a surprise turn toward them","Speed up to test them","Sound Mayday"],0,"Stand-on conduct is predictable conduct.","/right-of-way",false],
+["vessel status","A vessel not under command means:",["Unable to maneuver as required by the rules","No certified skipper aboard","Anchored for lunch","Racing"],0,"Not-under-command status describes inability to maneuver normally.","/right-of-way",true],
+["VHF","A risk of collision is developing with another recreational boat. What should you rely on first?",["Rules, lookout, sound signals, and obvious maneuvering; VHF can help but is not a substitute","A long casual VHF debate on Channel 16","Texting the other skipper","Waiting because radios solve priority"],0,"Radio can clarify, but collision avoidance comes from early, clear action under the rules.","/vhf-radio",true],
+["anchored","You are approaching an anchored boat. What is your obligation?",["Keep clear and leave room for its swing","Pass close because it cannot move","Ask it to move by horn","Treat it as give-way"],0,"Anchored boats can swing with wind/current; the moving vessel should leave room.","/docking-anchoring",false],
+["current","Wind is light, current is setting you toward a moored boat, and you are stand-on under sail. What is prudent?",["Allow for set and keep clear with margin","Ignore current because the rules say stand-on","Aim directly at the mooring","Wait until the last second"],0,"Seamanship includes current, leeway, and margin, not just rule labels.","/chartwork",true],
+["crew","Before a traffic-heavy harbor exit, the skipper should:",["Assign a lookout and brief likely calls","Send crew below to reduce windage","Wait to explain until the first close crossing","Focus only on sail shape"],0,"Crew roles and lookout are part of safe navigation.","/safety",false],
+["sound gear","A small recreational sailboat should carry:",["An efficient sound-producing device","Only navigation lights","Only a phone","No sound gear in daylight"],0,"Small boats need a sound signal device for rules and emergencies.","/safety",false]
+];
+const shuffle=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);
+let G={order:[],i:0,right:0,streak:0,missed:[],picked:false,mode:"practice"};
+function itemFrom(s){const idx=shuffle([0,1,2,3]);return{topic:s[0],q:s[1],o:idx.map(i=>s[2][i]),a:idx.indexOf(s[3]),why:s[4],link:s[5],hard:s[6]}}
+function startGame(n,mode){G={order:shuffle(SCENARIOS).slice(0,n).map(itemFrom),i:0,right:0,streak:0,missed:[],picked:false,mode:mode};paint()}
+function startHard(){const hard=SCENARIOS.filter(s=>s[6]);G={order:shuffle(hard).concat(shuffle(SCENARIOS.filter(s=>!s[6])).slice(0,8)).map(itemFrom),i:0,right:0,streak:0,missed:[],picked:false,mode:"hard"};paint()}
+function paint(){document.getElementById("modeBox").textContent=G.mode;document.getElementById("scoreBox").textContent=G.order.length?G.right+"/"+G.i:"-";document.getElementById("qBox").textContent=G.order.length?Math.min(G.i+1,G.order.length)+"/"+G.order.length:"-";document.getElementById("streakBox").textContent=G.streak;if(!G.order.length){document.getElementById("stage").innerHTML="<p>Start a run. Each answer includes the rule habit and a link back to the relevant lesson.</p>";return}if(G.i>=G.order.length){const pct=Math.round(G.right/G.order.length*100);document.getElementById("stage").innerHTML="<div class='callout'><strong>Finished: "+G.right+"/"+G.order.length+" ("+pct+"%).</strong> "+(pct>=80?"Good run.":"Retake after reviewing misses.")+"</div>"+(G.missed.length?"<h2>Misses</h2>"+G.missed.map(m=>"<div class='card'><span class='pill'>"+m.topic+"</span><p><strong>"+m.q+"</strong></p><p>Answer: "+m.answer+"</p><p class='mini'>"+m.why+" <a href='"+m.link+"'>Review lesson</a></p></div>").join(""):"<p>No misses.</p>");return}const it=G.order[G.i];document.getElementById("stage").innerHTML="<span class='pill'>"+it.topic+"</span><h2 style='margin-top:8px'>"+it.q+"</h2>"+it.o.map((o,i)=>"<button class='choice' onclick='answer("+i+")'>"+o+"</button>").join("")}
+function answer(i){if(G.picked)return;G.picked=true;const it=G.order[G.i],ok=i===it.a;if(ok){G.right++;G.streak++}else{G.streak=0;G.missed.push({topic:it.topic,q:it.q,answer:it.o[it.a],why:it.why,link:it.link})}[...document.querySelectorAll(".choice")].forEach((b,j)=>{if(j===it.a)b.classList.add("ok");else if(j===i)b.classList.add("no");b.disabled=true});const fb=document.createElement("div");fb.className="callout";fb.innerHTML=(ok?"Correct. ":"Review this. ")+it.why+" <a href='"+it.link+"'>Review lesson</a>";document.getElementById("stage").appendChild(fb);const next=document.createElement("button");next.className="btn";next.textContent=G.i+1>=G.order.length?"Finish run":"Next scenario";next.onclick=()=>{G.i++;G.picked=false;paint()};document.getElementById("stage").appendChild(next);document.getElementById("scoreBox").textContent=G.right+"/"+(G.i+1);document.getElementById("streakBox").textContent=G.streak}
+paint();
+</script>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<!-- /Vercel Web Analytics -->
+</body>
+</html>

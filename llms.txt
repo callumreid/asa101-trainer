@@ -1,0 +1,43 @@
+# Sailing Trainer
+
+Free independent ASA 101 / basic keelboat sailing practice site.
+
+Canonical site: https://sailingtrainer.com/
+Repository: https://github.com/callumreid/asa101-trainer
+Sitemap: https://sailingtrainer.com/sitemap.xml
+
+## Primary Learning Pages
+
+- https://sailingtrainer.com/course-plan - step-by-step ASA 101 learning plan with saved progress.
+- https://sailingtrainer.com/checklist - complete ASA 101 study and on-water skills checklist.
+- https://sailingtrainer.com/study-guide - beginner study guide across the full course map.
+- https://sailingtrainer.com/exam-cram - printable final review sheet.
+- https://sailingtrainer.com/sailing-terms - searchable glossary.
+
+## Interactive Practice
+
+- https://sailingtrainer.com/ - main trainer with points of sail, helm and trim, right-of-way, parts, aids, safety, knots, and written quiz stations.
+- https://sailingtrainer.com/simulator - mission-based sailing simulator.
+- https://sailingtrainer.com/practice-tests - randomized practice tests and weak-area review.
+- https://sailingtrainer.com/flashcards - spaced flashcards.
+- https://sailingtrainer.com/sail-trim - telltale and sail trim trainer.
+- https://sailingtrainer.com/rules-road-game - mixed rules-of-the-road scenarios.
+- https://sailingtrainer.com/chartwork - chartwork, ETA, bearing, buoyage, and anchor-scope trainer.
+- https://sailingtrainer.com/navigation-lights - navigation lights trainer.
+- https://sailingtrainer.com/sound-signals - sound signals trainer.
+- https://sailingtrainer.com/weather-trainer - marine weather decision trainer.
+- https://sailingtrainer.com/crew-overboard - crew overboard trainer.
+- https://sailingtrainer.com/docking-anchoring - docking and anchoring trainer.
+- https://sailingtrainer.com/float-plan - printable float plan builder.
+- https://sailingtrainer.com/vhf-radio - marine VHF trainer and call script builder.
+
+## Reference, Gear, and Next Steps
+
+- https://sailingtrainer.com/resources - official and authoritative sources used by the site.
+- https://sailingtrainer.com/gear - beginner gear guide.
+- https://sailingtrainer.com/community - podcasts, forums, Reddit communities, crewing, and boat marketplaces.
+- https://sailingtrainer.com/boat-buying - first sailboat buying checklist and budget worksheet.
+- https://sailingtrainer.com/search - topic search across the site.
+- https://sailingtrainer.com/faq - ASA 101 study questions and answers.
+
+This site is not affiliated with or endorsed by the American Sailing Association and does not reproduce official exam questions.
