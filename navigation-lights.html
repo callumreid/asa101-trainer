@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navigation Lights Trainer - ASA 101 Red Green White Light Practice</title>
+<meta name="description" content="Practice ASA 101 navigation light recognition: red port, green starboard, white stern and anchor lights, sailing vessels, power-driven vessels, and restricted visibility.">
+<link rel="canonical" href="https://sailingtrainer.com/navigation-lights">
+<meta property="og:title" content="Navigation Lights Trainer">
+<meta property="og:description" content="Interactive red, green, and white navigation light practice for ASA 101 sailors.">
+<meta property="og:type" content="article">
+<!-- SEO enhancements -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#146a8c">
+<meta property="og:site_name" content="ASA 101 Skipper Trainer">
+<meta property="og:url" content="https://sailingtrainer.com/navigation-lights">
+<meta property="og:image" content="https://sailingtrainer.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Navigation Lights Trainer">
+<meta name="twitter:description" content="Interactive red, green, and white navigation light practice for ASA 101 sailors.">
+<meta name="twitter:image" content="https://sailingtrainer.com/og.png">
+<!-- /SEO enhancements -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="stylesheet" href="/site.css">
+<style>
+.light-scene{background:#08151c;border-radius:8px;padding:18px;margin:10px 0;color:#e7e3d6}
+.light-row{display:flex;gap:14px;align-items:center;justify-content:center;min-height:86px;flex-wrap:wrap}
+.nav-light{width:42px;height:42px;border-radius:50%;display:inline-block;border:2px solid rgba(255,255,255,.75)}
+.nav-light.red{background:#de3434;box-shadow:0 0 22px rgba(222,52,52,.9)}
+.nav-light.green{background:#2db66d;box-shadow:0 0 22px rgba(45,182,109,.9)}
+.nav-light.white{background:#f4f0dc;box-shadow:0 0 24px rgba(244,240,220,.95)}
+.light-caption{text-align:center;color:#b8c4ca;font-size:13px;margin-top:10px}
+</style>
+<meta name="google-adsense-account" content="ca-pub-1188658046265173">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","@id":"https://sailingtrainer.com/navigation-lights#learning-resource","url":"https://sailingtrainer.com/navigation-lights","name":"Navigation Lights Trainer - ASA 101 Red Green White Light Practice","headline":"Navigation Lights Trainer - ASA 101 Red Green White Light Practice","description":"Practice ASA 101 navigation light recognition: red port, green starboard, white stern and anchor lights, sailing vessels, power-driven vessels, and restricted visibility.","isAccessibleForFree":true,"inLanguage":"en-US","educationalLevel":"Beginner","audience":{"@type":"EducationalAudience","educationalRole":"student"},"learningResourceType":"Simulation","about":[{"@type":"Thing","name":"navigation lights"},{"@type":"Thing","name":"ASA 101"},{"@type":"Thing","name":"COLREGS Rule 25"}],"isPartOf":{"@id":"https://sailingtrainer.com/#website"}}</script>
+<!-- /Structured data -->
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/">⛵ ASA 101 Skipper Trainer</a>
+  <a href="/simulator">Simulator</a>
+  <a href="/practice-tests">Tests</a>
+  <a href="/flashcards">Cards</a>
+  <a href="/gear">Gear</a>
+  <a href="/community">Community</a>
+  <a href="/study-guide">Study</a>
+  <a href="/checklist">Checklist</a>
+  <a href="/points-of-sail">Points</a>
+  <a href="/maneuvers">Maneuvers</a>
+  <a href="/right-of-way">Rules</a>
+  <a href="/navigation-aids" class="on">Aids</a>
+  <a href="/safety">Safety</a>
+  <a href="/knots">Knots</a>
+  <a href="/weather">Weather</a>
+  <a href="/sailing-terms">Terms</a>
+  <a href="/resources">Resources</a>
+  <a href="/faq">FAQ</a>
+</header>
+<main>
+<h1>Navigation lights trainer</h1>
+<p class="lead">ASA 101 sailing is usually taught in daylight, but the test still expects the basic light picture. Drill what red, green, and white tell you before night or fog makes the answer matter.</p>
+
+<div class="statbar">
+  <div class="stat"><span class="mini">Card</span><b id="cardBox">1/12</b></div>
+  <div class="stat"><span class="mini">Score</span><b id="scoreBox">0</b></div>
+  <div class="stat"><span class="mini">Core memory</span><b>red port / green starboard</b></div>
+  <div class="stat"><span class="mini">Use lights</span><b>sunset to sunrise</b></div>
+</div>
+
+<section id="stage" class="card" aria-live="polite"></section>
+
+<p><button class="btn" onclick="nextCard()">Next card</button><button class="btn secondary" onclick="restart()">Restart</button><a class="btn secondary" href="/navigation-aids">Back to aids</a></p>
+
+<h2>Light rules this drill reinforces</h2>
+<ul>
+  <li><strong>Red</strong> marks the vessel's port side. <strong>Green</strong> marks starboard.</li>
+  <li><strong>White sternlight</strong> is seen from aft. A white all-round light is commonly used for anchoring or small power configurations depending on vessel type.</li>
+  <li>A sailing vessel underway shows sidelights and a sternlight, or an allowed combined lantern on smaller vessels.</li>
+  <li>If a sailboat is using its engine in gear, it is power-driven under the rules.</li>
+  <li>Required lights apply from sunset to sunrise and in restricted visibility.</li>
+</ul>
+
+<h2>Sources</h2>
+<ul class="source-list">
+  <li><a href="https://www.navcen.uscg.gov/navigation-rules-amalgamated">U.S. Coast Guard Navcen - Navigation Rules</a></li>
+  <li><a href="https://www.ecfr.gov/current/title-33/chapter-I/subchapter-E/part-83">eCFR 33 CFR Part 83 - Navigation Rules</a></li>
+  <li><a href="https://boatus.org/study-guide/navigation-maneuvering/navigation-lights/">BoatUS Foundation - Navigation Lights</a></li>
+  <li><a href="https://americansailing.com/certifications/asa-101-keelboat-sailing-1/">American Sailing ASA 101 Keelboat Sailing 1</a></li>
+</ul>
+</main>
+<footer>
+  <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases.</p>
+  <p><a href="/">Trainer</a> · <a href="/simulator">Simulator</a> · <a href="/practice-tests">Practice tests</a> · <a href="/flashcards">Flashcards</a> · <a href="/gear">Gear</a> · <a href="/community">Community</a> · <a href="/checklist">Checklist</a> · <a href="/navigation-lights">Navigation lights</a> · <a href="/resources">Resources</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
+</footer>
+<script>
+const CARDS=[
+ {lights:["red"], caption:"One red sidelight visible", q:"What side of the other vessel are you seeing?", best:0, choices:["Its port side","Its starboard side","Its stern only","An anchor light"], why:"Red is port. If you see only red, you are looking at the vessel's port side."},
+ {lights:["green"], caption:"One green sidelight visible", q:"What side of the other vessel are you seeing?", best:1, choices:["Its port side","Its starboard side","Its stern only","A distress signal"], why:"Green is starboard."},
+ {lights:["red","green"], caption:"Red and green sidelights together", q:"What does seeing both sidelights usually mean?", best:2, choices:["You are looking at the stern","The vessel is anchored","The vessel is generally bow-on or near bow-on to you","The vessel has no way on"], why:"Seeing both sidelights means the bow sector is facing you. Now slow down and assess risk of collision."},
+ {lights:["white"], caption:"Single white light in the dark", q:"What is the safest first interpretation?", best:0, choices:["It may be a sternlight or all-round light; slow down and identify it","It is always a sailboat on starboard tack","It always gives you right of way","It means the vessel is not moving"], why:"White alone is not enough context. It could be a sternlight, anchor light, small vessel light, or other configuration."},
+ {lights:["red","green","white"], caption:"Sidelights plus white light", q:"A small sailing vessel under sail will normally show:", best:1, choices:["Only a red light","Sidelights and a sternlight, or an allowed combined lantern","A blue flashing light","No lights if it is a sailboat"], why:"Rule 25 calls for sidelights and a sternlight for a sailing vessel underway, with allowed combined lantern options on smaller vessels."},
+ {lights:["red","green","white"], caption:"Sails are up, engine is in gear", q:"A sailboat motorsailing with engine in gear is treated as:", best:2, choices:["A vessel at anchor","A vessel not under command","A power-driven vessel","A vessel under oars"], why:"Under the navigation rules, engine in gear makes the sailboat power-driven."},
+ {lights:["white"], caption:"All-round white light while stopped overnight", q:"At anchor, a small vessel commonly shows:", best:0, choices:["An all-round white light where best seen","Only a green sidelight","A red-over-green sailing signal only","No light if close to shore"], why:"An all-round white anchor light is the beginner fact to remember."},
+ {lights:["red","white"], caption:"Red sidelight and white light", q:"What should you avoid doing from this light information alone?", best:3, choices:["Slowing down","Keeping a proper lookout","Taking early action if needed","Assuming you fully know the vessel's course and rights"], why:"Lights identify aspect and type clues, but you still need bearing, range, traffic, and the rules."},
+ {lights:["red","green"], caption:"Sunset is approaching", q:"When do required navigation lights apply?", best:1, choices:["Only after midnight","From sunset to sunrise and in restricted visibility","Only offshore","Only for powerboats"], why:"Lights are required from sunset to sunrise and in restricted visibility."},
+ {lights:["white","white"], caption:"Bright background lights ashore", q:"What is the skipper habit in confusing light conditions?", best:0, choices:["Slow down, post a lookout, and use all available means","Assume the brightest light is a vessel","Turn off your own lights","Ignore sound signals"], why:"Background lights can hide vessels. Safe speed and lookout are essential."},
+ {lights:["red","green","white"], caption:"You see a light combination you do not understand", q:"Best beginner response?", best:2, choices:["Keep the same speed and hope","Guess based on color you like","Slow down, keep clear, and verify the situation","Turn toward the lights"], why:"Uncertainty is a reason to slow, open CPA, and gather more information."},
+ {lights:["red","green"], caption:"Optional sailing vessel recognition", q:"A sailing vessel may show red over green all-round lights at the masthead in addition to normal sailing lights. What memory aid fits?", best:1, choices:["White over red, pilot ahead","Red over green, sailing machine","Green over white, anchored right","Blue over red, vessel dead"], why:"The old memory aid is 'red over green, sailing machine.' It is extra recognition, not the core ASA 101 light set."}
+];
+let order=[], idx=0, score=0, answered=false;
+const shuf=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);
+function restart(){order=shuf(CARDS.map((_,i)=>i));idx=0;score=0;answered=false;paint();}
+function lightHtml(colors){return "<div class='light-scene'><div class='light-row'>"+colors.map(c=>"<span class='nav-light "+c+"' aria-label='"+c+" light'></span>").join("")+"</div><div class='light-caption'>"+CARDS[order[idx]].caption+"</div></div>";}
+function nextCard(){if(idx<order.length-1){idx++;answered=false;paint();}else{document.getElementById("stage").innerHTML="<div class='callout'><strong>Drill complete.</strong> Score: "+score+"/"+CARDS.length+". Retake it until red, green, white, sail, power, and anchor light clues are automatic.</div>";}}
+function answer(i){if(answered)return;answered=true;const card=CARDS[order[idx]];if(i===card.best)score++;paint(i);}
+function paint(picked){const card=CARDS[order[idx]];document.getElementById("cardBox").textContent=(idx+1)+"/"+order.length;document.getElementById("scoreBox").textContent=score;let html=lightHtml(card.lights)+"<h2 style='margin-top:0'>"+card.q+"</h2>"+card.choices.map((choice,i)=>{let cls="choice";if(answered){if(i===card.best)cls+=" ok";else if(i===picked)cls+=" no";}return "<button class='"+cls+"' onclick='answer("+i+")'>"+choice+"</button>";}).join("");if(answered){html+="<div class='callout'><strong>"+(picked===card.best?"Correct.":"Better answer: "+card.choices[card.best]+".")+"</strong> "+card.why+"</div>";}document.getElementById("stage").innerHTML=html;}
+restart();
+</script>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<!-- /Vercel Web Analytics -->
+</body>
+</html>

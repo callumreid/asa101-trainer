@@ -83,6 +83,7 @@ svg [data-part]{cursor:pointer}
     <a href="/docking-anchoring" style="color:var(--accent);text-decoration:none;">Docking</a>
     <a href="/right-of-way" style="color:var(--accent);text-decoration:none;">Right of way</a>
     <a href="/navigation-aids" style="color:var(--accent);text-decoration:none;">Aids</a>
+    <a href="/navigation-lights" style="color:var(--accent);text-decoration:none;">Lights</a>
     <a href="/safety" style="color:var(--accent);text-decoration:none;">Safety</a>
     <a href="/knots" style="color:var(--accent);text-decoration:none;">Knots</a>
     <a href="/weather" style="color:var(--accent);text-decoration:none;">Weather</a>
@@ -111,7 +112,7 @@ svg [data-part]{cursor:pointer}
 </main>
 <footer>
   <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links may be affiliate links; as an Amazon Associate this site earns from qualifying purchases. Fair winds.</p>
-  <p><a href="/simulator" style="color:var(--muted);">Simulator</a> · <a href="/practice-tests" style="color:var(--muted);">Practice tests</a> · <a href="/flashcards" style="color:var(--muted);">Flashcards</a> · <a href="/gear" style="color:var(--muted);">Gear</a> · <a href="/community" style="color:var(--muted);">Community</a> · <a href="/docking-anchoring" style="color:var(--muted);">Docking</a> · <a href="/resources" style="color:var(--muted);">Resources</a> · <a href="/privacy" style="color:var(--muted);">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer" style="color:var(--muted);">GitHub</a></p>
+  <p><a href="/simulator" style="color:var(--muted);">Simulator</a> · <a href="/practice-tests" style="color:var(--muted);">Practice tests</a> · <a href="/flashcards" style="color:var(--muted);">Flashcards</a> · <a href="/gear" style="color:var(--muted);">Gear</a> · <a href="/community" style="color:var(--muted);">Community</a> · <a href="/docking-anchoring" style="color:var(--muted);">Docking</a> · <a href="/navigation-lights" style="color:var(--muted);">Lights</a> · <a href="/resources" style="color:var(--muted);">Resources</a> · <a href="/privacy" style="color:var(--muted);">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer" style="color:var(--muted);">GitHub</a></p>
   <p><button onclick="resetStats()" style="font-size:12px;padding:4px 10px;">Reset saved stats</button></p>
 </footer>
 <script>
@@ -171,6 +172,7 @@ function renderHome(){$("stage").innerHTML='<div class="home">'+
  '<button onclick="setMode(\'row\')"><div class="hT">⚖️ Right of way</div><div class="hD">Eight crossing scenarios — port vs starboard tack, overtaking, sail vs power, big ships in channels.</div></button>'+
  '<button onclick="setMode(\'parts\')"><div class="hT">🛠️ Boat parts</div><div class="hD">Click the rigging, hull, deck hardware, sail controls, and sail parts on a sloop.</div></button>'+
  '<button onclick="setMode(\'nav\')"><div class="hT">🔴 Aids to navigation</div><div class="hD">Red-right-returning, green cans, red nuns, preferred channels, safe water marks, and lights.</div></button>'+
+ '<a class="card" href="/navigation-lights"><div class="hT">● Navigation lights</div><div class="hD">Drill red port, green starboard, white stern and anchor lights, sailing vessels, and motorsailing traps.</div></a>'+
  '<button onclick="setMode(\'safety\')"><div class="hT">🛟 Safety & knots</div><div class="hD">Required gear, float plans, crew overboard, weather choices, and the six ASA 101 knots.</div></button>'+
  '<button onclick="setMode(\'quiz\')"><div class="hT">📝 Written quiz</div><div class="hD">A comprehensive test-style quiz across the whole ASA 101 checklist, scored against the 80% pass mark.</div></button>'+
  '<a class="card" href="/weather-trainer"><div class="hT">☁ Weather decision trainer</div><div class="hD">Practice go, reef, shorten, turn-back, and stay-docked calls from real beginner forecast patterns.</div></a>'+
