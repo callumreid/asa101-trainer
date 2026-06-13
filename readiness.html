@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASA 101 Readiness Dashboard - Sailing Test and Skills Prep</title>
+<meta name="description" content="Check ASA 101 readiness from your saved progress: checklist completion, learning plan, practice logs, quiz stats, weak areas, and final test-day actions.">
+<link rel="canonical" href="https://sailingtrainer.com/readiness">
+<meta property="og:title" content="ASA 101 Readiness Dashboard">
+<meta property="og:description" content="Turn saved trainer progress into next-step recommendations before ASA 101 class or test day.">
+<meta property="og:type" content="article">
+<!-- SEO enhancements -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#146a8c">
+<meta property="og:site_name" content="ASA 101 Skipper Trainer">
+<meta property="og:url" content="https://sailingtrainer.com/readiness">
+<meta property="og:image" content="https://sailingtrainer.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ASA 101 Readiness Dashboard">
+<meta name="twitter:description" content="See saved progress, weak areas, readiness score, and next recommended drills.">
+<meta name="twitter:image" content="https://sailingtrainer.com/og.png">
+<!-- /SEO enhancements -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<meta name="apple-mobile-web-app-title" content="Sailing Trainer">
+<link rel="stylesheet" href="/site.css">
+<meta name="google-adsense-account" content="ca-pub-1188658046265173">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","@id":"https://sailingtrainer.com/readiness#learning-resource","url":"https://sailingtrainer.com/readiness","name":"ASA 101 Readiness Dashboard - Sailing Test and Skills Prep","headline":"ASA 101 Readiness Dashboard - Sailing Test and Skills Prep","description":"Check ASA 101 readiness from your saved progress: checklist completion, learning plan, practice logs, quiz stats, weak areas, and final test-day actions.","isAccessibleForFree":true,"inLanguage":"en-US","educationalLevel":"Beginner","audience":{"@type":"EducationalAudience","educationalRole":"student"},"learningResourceType":"Assessment","about":[{"@type":"Thing","name":"ASA 101 readiness"},{"@type":"Thing","name":"sailing test prep"},{"@type":"Thing","name":"basic keelboat sailing"}],"isPartOf":{"@id":"https://sailingtrainer.com/#website"}}</script>
+<!-- /Structured data -->
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/">⛵ ASA 101 Skipper Trainer</a>
+  <a href="/readiness" class="on">Readiness</a>
+  <a href="/course-plan">Plan</a>
+  <a href="/practice-tests">Tests</a>
+  <a href="/simulator">Simulator</a>
+  <a href="/checklist">Checklist</a>
+  <a href="/logbook">Logbook</a>
+  <a href="/crew-briefing">Briefing</a>
+  <a href="/rules-road-game">Rules game</a>
+  <a href="/chartwork">Charts</a>
+  <a href="/resources">Resources</a>
+</header>
+<main>
+<h1>ASA 101 readiness dashboard</h1>
+<p class="lead">This page turns your saved browser progress into a practical next-action list. It is not an official certification check, but it helps you avoid the common trap of feeling ready because one topic feels easy.</p>
+
+<div class="statbar">
+  <div class="stat"><span class="mini">Readiness score</span><b id="scoreBox">0%</b></div>
+  <div class="stat"><span class="mini">Status</span><b id="statusBox">start</b></div>
+  <div class="stat"><span class="mini">Logged hours</span><b id="hoursBox">0</b></div>
+  <div class="stat"><span class="mini">Weak questions</span><b id="weakBox">0</b></div>
+</div>
+
+<section class="card">
+  <h2 style="margin-top:0">Your saved progress</h2>
+  <div id="progressGrid" class="grid"></div>
+  <p class="mini">The dashboard reads localStorage keys created by the trainer, checklist, learning plan, logbook, and practice tests. No account and no server storage.</p>
+</section>
+
+<section class="card">
+  <h2 style="margin-top:0">Self-check gates</h2>
+  <p class="mini">Mark only the things you can do calmly, not just define from memory.</p>
+  <div id="gateList" class="grid"></div>
+</section>
+
+<section class="card">
+  <h2 style="margin-top:0">Recommended next actions</h2>
+  <div id="actions"></div>
+</section>
+
+<h2>Final 24-hour checklist</h2>
+<ul class="checklist">
+  <li>Pass a 50-question or full-bank <a href="/practice-tests">practice test</a> above 80% without repeating the same misses.</li>
+  <li>Run one <a href="/simulator">simulator</a> mission, one <a href="/rules-road-game">rules game</a>, and one <a href="/weather-trainer">weather decision</a> drill.</li>
+  <li>Print or save your <a href="/crew-briefing">crew briefing</a>, <a href="/float-plan">float plan</a>, and any instructor questions from the <a href="/checklist">checklist</a>.</li>
+  <li>Pack class gear from the <a href="/gear">gear guide</a>: layers, gloves, shoes, sun protection, water, notebook, and foul-weather layer if needed.</li>
+  <li>Sleep, hydrate, and show up early enough to rig slowly and ask questions before leaving the dock.</li>
+</ul>
+
+<h2>What readiness does not mean</h2>
+<p>ASA 101 readiness does not mean you are ready for every boat, harbor, weather pattern, or crew. It means you can explain the basics, make conservative decisions, and execute beginner keelboat skills under instructor supervision in light-to-moderate conditions.</p>
+
+<p><a class="btn" href="/practice-tests">Run a practice test</a><a class="btn secondary" href="/course-plan">Open learning plan</a><a class="btn secondary" href="/logbook">Open logbook</a></p>
+</main>
+<footer>
+  <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases.</p>
+  <p><a href="/">Trainer</a> · <a href="/readiness">Readiness</a> · <a href="/course-plan">Learning plan</a> · <a href="/practice-tests">Practice tests</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
+</footer>
+<script>
+const gateKey="asa101.readiness.v1";
+const gates=[
+["Boat and rig","I can point to the main parts, rigging, sail corners, sheets, halyards, winches, and cleats."],
+["Wind and trim","I can name the point of sail, tack, and trim change from a boat's angle to the wind."],
+["Maneuvers","I can explain and perform tacks, jibes, heading up, bearing away, and getting out of irons."],
+["Rules","I can solve port/starboard, windward/leeward, overtaking, power/sail, narrow-channel, and stand-on/give-way situations."],
+["Aids, lights, sounds","I can recognize red/green lateral marks, safe-water marks, basic nav lights, and common sound signals."],
+["Safety","I can brief PFDs, float plan, VHF basics, weather limits, crew-overboard first actions, and docking safety."],
+["Knots","I can tie and explain figure-eight, bowline, cleat hitch, clove hitch, round turn/two half hitches, and square/reef knot."],
+["Weather judgment","I can make conservative go/reef/return/stay-docked calls from marine forecast and visual cues."]
+];
+let gateState=loadJson(gateKey,{});
+function loadJson(key,fallback){try{const raw=JSON.parse(localStorage.getItem(key)||"null");return raw==null?fallback:raw}catch(err){return fallback}}
+function saveGates(){try{localStorage.setItem(gateKey,JSON.stringify(gateState))}catch(err){}}
+function pct(n,d){return d?Math.round(n/d*100):0}
+function trainerStats(){const s=loadJson("asa101.stats.v1",{});const tries=Number(s.tries)||0,hits=Number(s.hits)||0;return{tries,hits,accuracy:pct(hits,tries),score:Number(s.score)||0}}
+function checklistStats(){const arr=loadJson("asa101.checklist.v1",[]);return{done:Array.isArray(arr)?arr.length:0,total:40}}
+function planStats(){const plan=loadJson("asa101.coursePlan.v1",{});const done=Object.keys(plan||{}).length;return{done,total:34}}
+function logStats(){const logs=loadJson("asa101.logbook.v1",[]);const entries=Array.isArray(logs)?logs:[];const hours=entries.reduce((sum,e)=>sum+(Number(e.hours)||0),0);const skills=new Set(entries.flatMap(e=>e.skills||[]));return{entries:entries.length,hours,skills:skills.size}}
+function weakStats(){const weak=loadJson("asa101.weak.v1",[]);return{count:Array.isArray(weak)?weak.length:0}}
+function renderGates(){document.getElementById("gateList").innerHTML=gates.map((g,i)=>"<label class='choice' style='cursor:pointer'><input type='checkbox' "+(gateState[i]?"checked":"")+" onchange='toggleGate("+i+",this.checked)'> <strong>"+g[0]+"</strong><br><span class='mini'>"+g[1]+"</span></label>").join("")}
+function toggleGate(i,val){if(val)gateState[i]=true;else delete gateState[i];saveGates();render()}
+function render(){const tr=trainerStats(), ck=checklistStats(), pl=planStats(), lg=logStats(), wk=weakStats();const gateDone=Object.keys(gateState).length;const parts=[Math.min(25,ck.done/ck.total*25),Math.min(20,pl.done/pl.total*20),Math.min(20,gateDone/gates.length*20),Math.min(15,tr.accuracy/80*15),Math.min(10,lg.hours/6*10),Math.min(10,Math.max(0,10-wk.count/8*10))];const score=Math.round(parts.reduce((a,b)=>a+b,0));document.getElementById("scoreBox").textContent=score+"%";document.getElementById("statusBox").textContent=score>=85?"test-ready":score>=65?"close":score>=35?"building":"start";document.getElementById("hoursBox").textContent=lg.hours.toFixed(lg.hours%1?1:0);document.getElementById("weakBox").textContent=wk.count;document.getElementById("progressGrid").innerHTML=[
+["Checklist",ck.done+"/"+ck.total+" items","/checklist"],
+["Learning plan",pl.done+"/"+pl.total+" tasks","/course-plan"],
+["Trainer accuracy",tr.tries?tr.accuracy+"% over "+tr.tries+" tries":"no reps yet","/"],
+["Logbook",lg.entries+" entries, "+lg.skills+" skill areas","/logbook"],
+["Self-check gates",gateDone+"/"+gates.length+" confident","/readiness"],
+["Weak-area queue",wk.count+" saved misses","/practice-tests"]
+].map(card=>"<a class='card' href='"+card[2]+"' style='text-decoration:none;color:var(--text)'><h3 style='margin-top:0'>"+card[0]+"</h3><p>"+card[1]+"</p></a>").join("");const actions=[];if(ck.done<ck.total*.75)actions.push(["Finish checklist coverage","Open the saved checklist and mark the next unanswered knowledge or skill item.","/checklist"]);if(pl.done<10)actions.push(["Follow the learning plan","Pick weekend, one-week, or four-week pacing and work the next task.","/course-plan"]);if(tr.tries<40||tr.accuracy<80)actions.push(["Build quiz accuracy","Run a 25-question or 50-question test and review every miss.","/practice-tests"]);if(wk.count>12)actions.push(["Clear weak-area queue","Use weak-area review until repeated misses stop clustering.","/practice-tests"]);if(gateDone<gates.length)actions.push(["Finish self-check gates","Mark only the gates you can explain and perform calmly.","/readiness"]);if(lg.hours<4)actions.push(["Get real or simulated reps","Log an on-water session, simulator run, or dockside drill with notes and next action.","/logbook"]);if(!actions.length)actions.push(["Do final rehearsal","Run one full-bank test, one simulator mission, one rules game, and one weather drill.","/practice-tests"]);document.getElementById("actions").innerHTML=actions.slice(0,4).map(a=>"<div class='card'><h3>"+a[0]+"</h3><p>"+a[1]+"</p><a class='btn secondary' href='"+a[2]+"'>Open</a></div>").join("")}
+renderGates();render();
+</script>
+<!-- Offline support -->
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/service-worker.js").catch(function () {});
+  });
+}
+</script>
+<!-- /Offline support -->
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<!-- /Vercel Web Analytics -->
+</body>
+</html>

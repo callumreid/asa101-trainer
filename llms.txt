@@ -9,6 +9,7 @@ Sitemap: https://sailingtrainer.com/sitemap.xml
 ## Primary Learning Pages
 
 - https://sailingtrainer.com/course-plan - step-by-step ASA 101 learning plan with saved progress.
+- https://sailingtrainer.com/readiness - readiness dashboard and next-action recommendations from saved progress.
 - https://sailingtrainer.com/crew-briefing - pre-departure crew briefing builder and safety script.
 - https://sailingtrainer.com/logbook - saved sailing practice logbook and skills tracker.
 - https://sailingtrainer.com/checklist - complete ASA 101 study and on-water skills checklist.
