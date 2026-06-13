@@ -88,6 +88,8 @@
       <option value="0">1. Beat to the weather mark</option>
       <option value="1">2. Harbor traffic and lateral marks</option>
       <option value="2">3. Squall, reef, and crew overboard</option>
+      <option value="3">4. Dock, moor, and anchor</option>
+      <option value="4">5. Night lights return</option>
     </select>
     <p id="missionText" class="mini"></p>
     <div class="statbar">
@@ -122,7 +124,9 @@ const sea=document.getElementById("simSea"), logBox=document.getElementById("log
 const missions=[
  {name:"Beat to the weather mark", text:"Wind is from the north. Sail from the leeward start to the orange windward mark. You cannot sail straight into the wind, so build a tack ladder.", wind:0, gust:12, start:[340,390], mark:[340,80], heading:45, trim:18, limit:28, cards:[0,1,2]},
  {name:"Harbor traffic and lateral marks", text:"Return through a marked channel, pass red to starboard and green to port, then cross astern of the ship.", wind:320, gust:10, start:[110,350], mark:[590,120], heading:70, trim:45, limit:24, cards:[3,4,5]},
- {name:"Squall, reef, and crew overboard", text:"A gusty afternoon sail. Reef before the squall, recover the crew marker, and finish at the mooring.", wind:25, gust:22, start:[120,330], mark:[560,95], heading:80, trim:50, limit:30, cards:[6,7,8]}
+ {name:"Squall, reef, and crew overboard", text:"A gusty afternoon sail. Reef before the squall, recover the crew marker, and finish at the mooring.", wind:25, gust:22, start:[120,330], mark:[560,95], heading:80, trim:50, limit:30, cards:[6,7,8]},
+ {name:"Dock, moor, and anchor", text:"Sail into the practice basin, prepare early, pick up the mooring, and finish at the anchoring target with enough score left for a clean debrief.", wind:275, gust:14, start:[95,355], mark:[590,360], heading:85, trim:56, limit:26, cards:[9,10,11]},
+ {name:"Night lights return", text:"Return at dusk. Keep the boat moving, identify red/green/white light clues, and make conservative decisions when the picture is uncertain.", wind:310, gust:9, start:[95,120], mark:[575,330], heading:125, trim:44, limit:26, cards:[12,13,14]}
 ];
 const cards=[
  {q:"The mark is directly upwind. What is the right plan?", o:["Sail close-hauled on alternating tacks","Point straight at it and wait","Run wing-on-wing","Drop the sails"], a:0, why:"You make progress upwind by beating - close-hauled on one tack, then the other."},
@@ -133,7 +137,13 @@ const cards=[
  {q:"Five or more short horn blasts means:", o:["Danger or doubt","I am anchored","I am turning to port","All clear"], a:0, why:"Five or more short blasts is the danger/doubt signal."},
  {q:"Gusts are building and the boat has heavy weather helm. Best beginner move?", o:["Reef early","Wait until the rail is underwater","Keep full sail for speed","Head dead downwind"], a:0, why:"Reef before the boat is overpowered. A flatter boat is easier to control."},
  {q:"Crew overboard. First three actions?", o:["Shout, throw flotation, point","Call the marina, tack, eat lunch","Drop anchor, furl jib, write log","Start engine at full reverse"], a:0, why:"Shout, throw, point. Keeping sight is the first job."},
- {q:"Final crew-overboard approach under sail is commonly made on:", o:["A close reach with speed controlled by luffing","A dead run at full speed","A beam reach with sheets hard in","A port-tack-only course"], a:0, why:"A close reach lets you power up or luff to slow alongside."}
+ {q:"Final crew-overboard approach under sail is commonly made on:", o:["A close reach with speed controlled by luffing","A dead run at full speed","A beam reach with sheets hard in","A port-tack-only course"], a:0, why:"A close reach lets you power up or luff to slow alongside."},
+ {q:"Before entering a tight docking basin, what should be done?", o:["Rig fenders and lines and brief crew roles","Wait until alongside to find dock lines","Have guests jump ashore","Leave all lines below"], a:0, why:"Docking starts outside the tight space. Prepare fenders, lines, and crew jobs early."},
+ {q:"If the approach to a slip is going wrong while you still have room, best move?", o:["Abort and go around","Commit because you started","Use a crew member's foot as a fender","Shift hard reverse without looking"], a:0, why:"A controlled go-around is seamanship. Damage happens when a bad approach becomes a forced approach."},
+ {q:"For 7:1 scope in 8 ft of water with a 3 ft bow roller and 1 ft tide allowance, use about:", o:["84 ft of rode","56 ft of rode","12 ft of rode","700 ft of rode"], a:0, why:"Scope uses bow-to-bottom height: 8 + 3 + 1 = 12 ft. 12 x 7 = 84 ft."},
+ {q:"You see only a red sidelight on another vessel. Which side are you seeing?", o:["Its port side","Its starboard side","Its stern only","Its anchor light"], a:0, why:"Red is port. Green is starboard."},
+ {q:"A sailboat with sails up and engine in gear is treated as:", o:["A power-driven vessel","A vessel under sail only","A vessel at anchor","A vessel not under command"], a:0, why:"Motorsailing with the engine in gear makes the vessel power-driven under the rules."},
+ {q:"You see an unfamiliar light combination and cannot judge bearing clearly. Best skipper habit?", o:["Slow down, keep clear, and verify the situation","Keep speed and guess","Turn toward the lights","Turn off your own lights"], a:0, why:"Uncertainty is a reason to slow, open distance, post a lookout, and gather more information."}
 ];
 let S, mi=0;
 function norm(a){a%=360;return a<0?a+360:a}
@@ -163,8 +173,10 @@ function paint(){const m=missions[mi], rel=angDiff(S.heading,m.wind), sp=speed()
  const mark='<circle cx="'+m.mark[0]+'" cy="'+m.mark[1]+'" r="18" fill="#f2a12b" stroke="#603a00" stroke-width="2"/><text x="'+m.mark[0]+'" y="'+(m.mark[1]+5)+'" text-anchor="middle" font-size="13" font-weight="700">GO</text>';
  const wind='<line x1="54" y1="36" x2="54" y2="82" stroke="#fff" stroke-width="3" transform="rotate('+m.wind+' 54 82)"/><path d="M45,75 L54,90 L63,75" fill="none" stroke="#fff" stroke-width="3" transform="rotate('+m.wind+' 54 82)"/><text x="76" y="66" fill="#fff" font-size="13">wind</text>';
  const channel=mi===1?'<line x1="90" y1="300" x2="600" y2="80" stroke="rgba(255,255,255,.35)" stroke-width="58"/><circle cx="210" cy="258" r="12" fill="#1f8b55"/><circle cx="300" cy="220" r="12" fill="#c43d3d"/><circle cx="430" cy="162" r="12" fill="#1f8b55"/><path d="M500,200 h62 v26 h-62 z" fill="#8E8779" stroke="#222"/><text x="531" y="218" font-size="10" text-anchor="middle">SHIP</text>':"";
+ const dock=mi===3?'<rect x="570" y="250" width="80" height="150" fill="#786a55" stroke="#3d3327" stroke-width="2"/><line x1="570" y1="270" x2="650" y2="270" stroke="#3d3327" stroke-width="2"/><line x1="570" y1="310" x2="650" y2="310" stroke="#3d3327" stroke-width="2"/><circle cx="455" cy="322" r="13" fill="#f4f0dc" stroke="#333" stroke-width="2"/><text x="455" y="350" fill="#fff" font-size="12" text-anchor="middle">mooring</text><path d="M540,372 l18,24 l18,-24 z" fill="#444" stroke="#111"/><text x="558" y="420" fill="#fff" font-size="12" text-anchor="middle">anchor</text>':"";
+ const night=mi===4?'<circle cx="300" cy="160" r="8" fill="#de3434"/><circle cx="324" cy="160" r="8" fill="#2db66d"/><circle cx="312" cy="135" r="8" fill="#f4f0dc"/><text x="312" y="190" fill="#fff" font-size="12" text-anchor="middle">traffic</text><circle cx="470" cy="280" r="9" fill="#f4f0dc"/><text x="470" y="306" fill="#fff" font-size="12" text-anchor="middle">anchor light?</text>':"";
  const mob=mi===2&&S.time>9?'<circle cx="390" cy="250" r="14" fill="#ffdf58" stroke="#805d00" stroke-width="2"/><text x="390" y="278" fill="#fff" font-size="12" text-anchor="middle">crew</text>':"";
- sea.innerHTML='<rect width="680" height="460" fill="#2B6E91"/><path d="M0,380 C150,350 260,420 410,382 S610,350 680,390 V460 H0 Z" fill="rgba(255,255,255,.08)"/>'+channel+wind+mark+mob+boat+'<text x="18" y="438" fill="#fff" font-size="13">speed '+sp.toFixed(1)+' kt equivalent · '+point(rel)+' · trim target '+ideal(rel)+'°</text>'}
+ sea.innerHTML='<rect width="680" height="460" fill="'+(mi===4?"#102033":"#2B6E91")+'"/><path d="M0,380 C150,350 260,420 410,382 S610,350 680,390 V460 H0 Z" fill="rgba(255,255,255,.08)"/>'+channel+dock+night+wind+mark+mob+boat+'<text x="18" y="438" fill="#fff" font-size="13">speed '+sp.toFixed(1)+' kt equivalent · '+point(rel)+' · trim target '+ideal(rel)+'°</text>'}
 loadMission(0);
 </script>
 <!-- Vercel Web Analytics -->
