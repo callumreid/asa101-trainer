@@ -1,4 +1,4 @@
-const CACHE_VERSION = "sailingtrainer-2026-06-13-pwa1";
+const CACHE_VERSION = "sailingtrainer-2026-06-13-pwa2";
 const PRECACHE_URLS = [
   "/",
   "/site.css",
@@ -7,6 +7,8 @@ const PRECACHE_URLS = [
   "/icon-512.png",
   "/og.png",
   "/course-plan",
+  "/crew-briefing",
+  "/logbook",
   "/simulator",
   "/practice-tests",
   "/chartwork",

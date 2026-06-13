@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sailing Practice Logbook - ASA 101 Skills Tracker</title>
+<meta name="description" content="Save ASA 101 sailing practice logs in your browser. Track hours, wind, boat, skills practiced, confidence, notes, next drills, and export a CSV summary.">
+<link rel="canonical" href="https://sailingtrainer.com/logbook">
+<meta property="og:title" content="Sailing Practice Logbook">
+<meta property="og:description" content="Track ASA 101 practice hours, skills, confidence, weak spots, and next drills.">
+<meta property="og:type" content="article">
+<!-- SEO enhancements -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#146a8c">
+<meta property="og:site_name" content="ASA 101 Skipper Trainer">
+<meta property="og:url" content="https://sailingtrainer.com/logbook">
+<meta property="og:image" content="https://sailingtrainer.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sailing Practice Logbook">
+<meta name="twitter:description" content="Save sailing practice entries, skills coverage, confidence, notes, and exportable CSV.">
+<meta name="twitter:image" content="https://sailingtrainer.com/og.png">
+<!-- /SEO enhancements -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<meta name="apple-mobile-web-app-title" content="Sailing Trainer">
+<link rel="stylesheet" href="/site.css">
+<meta name="google-adsense-account" content="ca-pub-1188658046265173">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","@id":"https://sailingtrainer.com/logbook#learning-resource","url":"https://sailingtrainer.com/logbook","name":"Sailing Practice Logbook - ASA 101 Skills Tracker","headline":"Sailing Practice Logbook - ASA 101 Skills Tracker","description":"Save ASA 101 sailing practice logs in your browser. Track hours, wind, boat, skills practiced, confidence, notes, next drills, and export a CSV summary.","isAccessibleForFree":true,"inLanguage":"en-US","educationalLevel":"Beginner","audience":{"@type":"EducationalAudience","educationalRole":"student"},"learningResourceType":"Interactive tool","about":[{"@type":"Thing","name":"sailing practice log"},{"@type":"Thing","name":"ASA 101 skills"},{"@type":"Thing","name":"basic keelboat sailing"}],"isPartOf":{"@id":"https://sailingtrainer.com/#website"}}</script>
+<!-- /Structured data -->
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/">⛵ ASA 101 Skipper Trainer</a>
+  <a href="/simulator">Simulator</a>
+  <a href="/practice-tests">Tests</a>
+  <a href="/course-plan">Plan</a>
+  <a href="/crew-briefing">Briefing</a>
+  <a href="/logbook" class="on">Logbook</a>
+  <a href="/chartwork">Charts</a>
+  <a href="/rules-road-game">Rules game</a>
+  <a href="/checklist">Checklist</a>
+  <a href="/maneuvers">Maneuvers</a>
+  <a href="/docking-anchoring">Docking</a>
+  <a href="/weather">Weather</a>
+  <a href="/resources">Resources</a>
+</header>
+<main>
+<h1>Sailing practice logbook</h1>
+<p class="lead">Use this after every lesson, club sail, or practice day. The goal is not just hours. Track what you actually practiced, what conditions you handled, what still feels weak, and what to drill next.</p>
+
+<div class="statbar">
+  <div class="stat"><span class="mini">Entries</span><b id="entryCount">0</b></div>
+  <div class="stat"><span class="mini">Hours logged</span><b id="hourCount">0</b></div>
+  <div class="stat"><span class="mini">Skills touched</span><b id="skillCount">0/0</b></div>
+  <div class="stat"><span class="mini">Avg confidence</span><b id="confBox">-</b></div>
+</div>
+
+<section class="card">
+  <h2 style="margin-top:0">New practice entry</h2>
+  <div class="grid">
+    <label>Date<br><input id="dateIn" type="date" style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit"></label>
+    <label>Boat<br><input id="boatIn" placeholder="Catalina 22, J/24, school boat..." style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit"></label>
+    <label>Location<br><input id="locIn" placeholder="marina, bay, lake..." style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit"></label>
+    <label>Hours<br><input id="hoursIn" inputmode="decimal" value="2" style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit"></label>
+    <label>Wind / weather<br><input id="weatherIn" placeholder="8-12 kt, gusty, fog clearing..." style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit"></label>
+    <label>Confidence<br><select id="confidenceIn" style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit"><option value="1">1 - overwhelmed</option><option value="2">2 - needs coaching</option><option value="3" selected>3 - basic control</option><option value="4">4 - mostly independent</option><option value="5">5 - calm skipper</option></select></label>
+  </div>
+  <h3>Skills practiced</h3>
+  <div id="skillPicker" class="grid"></div>
+  <label>Notes<br><textarea id="notesIn" rows="4" placeholder="What happened? What did you learn? What needs more reps?" style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit"></textarea></label>
+  <label>Next drill<br><input id="nextIn" placeholder="Example: docking go-arounds, reef earlier, five sound-signal reps..." style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit"></label>
+  <p><button class="btn" onclick="addEntry()">Save entry</button><button class="btn secondary" onclick="resetForm()">Clear form</button><button class="btn secondary" onclick="exportCsv()">Export CSV</button></p>
+  <p class="mini" id="saveStatus">Entries stay in this browser unless you export them.</p>
+</section>
+
+<section class="card">
+  <h2 style="margin-top:0">Coverage map</h2>
+  <div id="coverage" class="grid"></div>
+</section>
+
+<section>
+  <h2>Saved entries</h2>
+  <div id="entries"></div>
+</section>
+
+<h2>How to use the log</h2>
+<ol>
+  <li>After every sail, write the conditions first. Wind, current, visibility, and boat type explain why a skill felt easy or hard.</li>
+  <li>Log the skill, not just the outing. "Tacked ten times and got stuck in irons twice" is more useful than "went sailing."</li>
+  <li>Pick one next drill. A short, specific next rep turns each sail into a learning loop.</li>
+  <li>Use the <a href="/course-plan">learning plan</a>, <a href="/practice-tests">practice tests</a>, and <a href="/simulator">simulator</a> between sails to target the weak spots.</li>
+</ol>
+</main>
+<footer>
+  <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases.</p>
+  <p><a href="/">Trainer</a> · <a href="/crew-briefing">Crew briefing</a> · <a href="/logbook">Logbook</a> · <a href="/course-plan">Learning plan</a> · <a href="/resources">Resources</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
+</footer>
+<script>
+const logKey="asa101.logbook.v1";
+const skills=["points of sail","tacking","jibing","sail trim","reefing","heaving-to","crew overboard","docking","undocking","anchoring","mooring pickup","right of way","aids to navigation","lights and signals","VHF radio","weather call","knots","crew briefing"];
+let entries=loadEntries();
+function loadEntries(){try{const raw=JSON.parse(localStorage.getItem(logKey)||"[]");return Array.isArray(raw)?raw:[]}catch(err){return[]}}
+function saveEntries(){try{localStorage.setItem(logKey,JSON.stringify(entries))}catch(err){}}
+function today(){return new Date().toISOString().slice(0,10)}
+document.getElementById("dateIn").value=today();
+function renderSkills(){document.getElementById("skillPicker").innerHTML=skills.map((s,i)=>"<label class='choice' style='cursor:pointer'><input type='checkbox' data-skill='"+i+"'> "+s+"</label>").join("")}
+function selectedSkills(){return [...document.querySelectorAll("[data-skill]")].filter(x=>x.checked).map(x=>skills[Number(x.dataset.skill)])}
+function addEntry(){const entry={id:Date.now(),date:document.getElementById("dateIn").value||today(),boat:document.getElementById("boatIn").value.trim(),location:document.getElementById("locIn").value.trim(),hours:parseFloat(document.getElementById("hoursIn").value)||0,weather:document.getElementById("weatherIn").value.trim(),confidence:Number(document.getElementById("confidenceIn").value),skills:selectedSkills(),notes:document.getElementById("notesIn").value.trim(),next:document.getElementById("nextIn").value.trim()};if(!entry.skills.length&&!entry.notes){document.getElementById("saveStatus").textContent="Add at least one skill or note before saving.";return}entries.unshift(entry);saveEntries();resetForm();render();document.getElementById("saveStatus").textContent="Entry saved."}
+function resetForm(){document.getElementById("dateIn").value=today();["boatIn","locIn","weatherIn","notesIn","nextIn"].forEach(id=>document.getElementById(id).value="");document.getElementById("hoursIn").value="2";document.getElementById("confidenceIn").value="3";document.querySelectorAll("[data-skill]").forEach(x=>x.checked=false)}
+function deleteEntry(id){if(!confirm("Delete this log entry?"))return;entries=entries.filter(e=>e.id!==id);saveEntries();render()}
+function csvCell(value){return '"'+String(value??"").replace(/"/g,'""')+'"'}
+function exportCsv(){const rows=[["date","boat","location","hours","weather","confidence","skills","notes","next drill"]].concat(entries.map(e=>[e.date,e.boat,e.location,e.hours,e.weather,e.confidence,e.skills.join("; "),e.notes,e.next]));const csv=rows.map(row=>row.map(csvCell).join(",")).join("\\n");const blob=new Blob([csv],{type:"text/csv"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="sailing-practice-log.csv";a.click();URL.revokeObjectURL(url)}
+function render(){const totalHours=entries.reduce((sum,e)=>sum+(Number(e.hours)||0),0);const seen=new Set(entries.flatMap(e=>e.skills||[]));const conf=entries.length?entries.reduce((sum,e)=>sum+(Number(e.confidence)||0),0)/entries.length:0;document.getElementById("entryCount").textContent=entries.length;document.getElementById("hourCount").textContent=totalHours.toFixed(totalHours%1?1:0);document.getElementById("skillCount").textContent=seen.size+"/"+skills.length;document.getElementById("confBox").textContent=entries.length?conf.toFixed(1)+"/5":"-";document.getElementById("coverage").innerHTML=skills.map(s=>"<div class='stat'><span class='mini'>"+s+"</span><b>"+(seen.has(s)?"logged":"open")+"</b></div>").join("");document.getElementById("entries").innerHTML=entries.length?entries.map(e=>"<article class='card'><span class='pill'>"+e.date+"</span><h3>"+(e.boat||"practice sail")+" - "+(e.location||"location not set")+"</h3><p class='mini'>"+e.hours+" hr · confidence "+e.confidence+"/5 · "+(e.weather||"weather not logged")+"</p><p><strong>Skills:</strong> "+(e.skills&&e.skills.length?e.skills.join(", "):"none selected")+"</p><p>"+(e.notes||"No notes.")+"</p><p><strong>Next drill:</strong> "+(e.next||"not set")+"</p><button class='btn secondary' onclick='deleteEntry("+e.id+")'>Delete</button></article>").join(""):"<div class='callout'>No practice entries yet. Log your next sail, lesson, simulator session, or dockside drill.</div>"}
+renderSkills();render();
+</script>
+<!-- Offline support -->
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/service-worker.js").catch(function () {});
+  });
+}
+</script>
+<!-- /Offline support -->
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<!-- /Vercel Web Analytics -->
+</body>
+</html>

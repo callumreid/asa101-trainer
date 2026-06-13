@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sailing Crew Briefing Builder - ASA 101 Safety and Skipper Script</title>
+<meta name="description" content="Build a printable sailing crew briefing for ASA 101 practice: PFDs, movement, boom awareness, lines, docking roles, crew overboard, VHF, weather, and return plan.">
+<link rel="canonical" href="https://sailingtrainer.com/crew-briefing">
+<meta property="og:title" content="Sailing Crew Briefing Builder">
+<meta property="og:description" content="Create a practical pre-departure crew briefing for beginner sailing and ASA 101 practice.">
+<meta property="og:type" content="article">
+<!-- SEO enhancements -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#146a8c">
+<meta property="og:site_name" content="ASA 101 Skipper Trainer">
+<meta property="og:url" content="https://sailingtrainer.com/crew-briefing">
+<meta property="og:image" content="https://sailingtrainer.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sailing Crew Briefing Builder">
+<meta name="twitter:description" content="Build a saved pre-departure safety briefing for crew, docking, VHF, and crew-overboard roles.">
+<meta name="twitter:image" content="https://sailingtrainer.com/og.png">
+<!-- /SEO enhancements -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<meta name="apple-mobile-web-app-title" content="Sailing Trainer">
+<link rel="stylesheet" href="/site.css">
+<meta name="google-adsense-account" content="ca-pub-1188658046265173">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","@id":"https://sailingtrainer.com/crew-briefing#learning-resource","url":"https://sailingtrainer.com/crew-briefing","name":"Sailing Crew Briefing Builder - ASA 101 Safety and Skipper Script","headline":"Sailing Crew Briefing Builder - ASA 101 Safety and Skipper Script","description":"Build a printable sailing crew briefing for ASA 101 practice: PFDs, movement, boom awareness, lines, docking roles, crew overboard, VHF, weather, and return plan.","isAccessibleForFree":true,"inLanguage":"en-US","educationalLevel":"Beginner","audience":{"@type":"EducationalAudience","educationalRole":"student"},"learningResourceType":"Worksheet","about":[{"@type":"Thing","name":"sailing safety briefing"},{"@type":"Thing","name":"ASA 101"},{"@type":"Thing","name":"crew overboard"}],"isPartOf":{"@id":"https://sailingtrainer.com/#website"}}</script>
+<!-- /Structured data -->
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/">⛵ ASA 101 Skipper Trainer</a>
+  <a href="/simulator">Simulator</a>
+  <a href="/practice-tests">Tests</a>
+  <a href="/course-plan">Plan</a>
+  <a href="/crew-briefing" class="on">Briefing</a>
+  <a href="/logbook">Logbook</a>
+  <a href="/chartwork">Charts</a>
+  <a href="/rules-road-game">Rules game</a>
+  <a href="/gear">Gear</a>
+  <a href="/community">Community</a>
+  <a href="/safety">Safety</a>
+  <a href="/float-plan">Float plan</a>
+  <a href="/vhf-radio">VHF</a>
+  <a href="/crew-overboard">COB</a>
+  <a href="/resources">Resources</a>
+</header>
+<main>
+<h1>Sailing crew briefing builder</h1>
+<p class="lead">A new skipper should brief the crew before leaving the dock. Use this to create a short, practical script that covers safety gear, movement, boom awareness, docking roles, crew-overboard recovery, communications, weather, and the return plan.</p>
+
+<div class="split">
+  <section class="card">
+    <h2 style="margin-top:0">Trip details</h2>
+    <label class="mini" for="boatName">Boat</label>
+    <input id="boatName" value="school keelboat" oninput="saveBrief()" style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit">
+    <label class="mini" for="skipperName">Skipper</label>
+    <input id="skipperName" value="the skipper" oninput="saveBrief()" style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit">
+    <label class="mini" for="routePlan">Route or practice area</label>
+    <input id="routePlan" value="harbor practice area and return to the same dock" oninput="saveBrief()" style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit">
+    <label class="mini" for="weatherPlan">Weather limit</label>
+    <input id="weatherPlan" value="reef or return if gusts build, lightning appears, fog closes in, or anyone feels unsafe" oninput="saveBrief()" style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit">
+    <label class="mini" for="returnTime">Expected return time</label>
+    <input id="returnTime" value="before sunset" oninput="saveBrief()" style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit">
+    <label class="mini" for="workingChannel">Working VHF channel</label>
+    <input id="workingChannel" value="local working channel after hailing, Channel 16 for distress/safety/calling" oninput="saveBrief()" style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit">
+  </section>
+
+  <aside class="card">
+    <h2 style="margin-top:0">Briefing coverage</h2>
+    <div class="statbar">
+      <div class="stat"><span class="mini">Checked</span><b id="checkedBox">0/0</b></div>
+      <div class="stat"><span class="mini">Minimum</span><b>8 items</b></div>
+    </div>
+    <p class="mini">The generated script updates as you check topics. Save a copy, print, or read it aloud from your phone before departure.</p>
+    <button class="btn secondary" onclick="resetBrief()">Reset saved briefing</button>
+  </aside>
+</div>
+
+<section class="card">
+  <h2 style="margin-top:0">Topics to brief</h2>
+  <div id="briefItems" class="grid"></div>
+</section>
+
+<section class="card">
+  <h2 style="margin-top:0">Generated skipper script</h2>
+  <textarea id="briefOutput" readonly rows="16" style="width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit"></textarea>
+  <p><button class="btn" onclick="copyBrief()">Copy briefing</button><button class="btn secondary" onclick="window.print()">Print</button><a class="btn secondary" href="/float-plan">Build float plan</a></p>
+  <p class="mini" id="copyStatus"></p>
+</section>
+
+<section class="card">
+  <h2 style="margin-top:0">Briefing knowledge check</h2>
+  <div id="quizStage"></div>
+</section>
+
+<h2>Sources</h2>
+<ul class="source-list">
+  <li><a href="https://www.uscgboating.org/assets/1/AssetManager/Boaters-Guide-to-Federal-Requirements-for-Receational-Boats-20231108.pdf">U.S. Coast Guard Boater's Guide to Federal Requirements</a> - pre-departure checklist, float plan, and safety equipment context.</li>
+  <li><a href="https://boatus.org/study-guide/boating-equipment/required-equipment/">BoatUS Foundation Required Equipment</a> - PFDs, distress signals, sound devices, and safety gear basics.</li>
+  <li><a href="https://www.ussailing.org/news/quick-stop-rescue/">US Sailing Quick-Stop Rescue</a> - crew-overboard response context.</li>
+  <li><a href="https://floatplancentral.cgaux.org/resources/safety.htm">USCG Auxiliary Float Plan Central Safety Resources</a> - float plan and pre-departure checklist references.</li>
+</ul>
+
+<p><a class="btn" href="/logbook">Log the practice sail</a><a class="btn secondary" href="/safety">Study safety</a><a class="btn secondary" href="/crew-overboard">Practice crew overboard</a></p>
+</main>
+<footer>
+  <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases.</p>
+  <p><a href="/">Trainer</a> · <a href="/crew-briefing">Crew briefing</a> · <a href="/logbook">Logbook</a> · <a href="/float-plan">Float plan</a> · <a href="/resources">Resources</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
+</footer>
+<script>
+const briefKey="asa101.crewBrief.v1";
+const items=[
+["PFDs and throwable","Point out life jackets, fit, throwable device, and when to wear PFDs."],
+["Moving aboard","One hand for the boat, low center of gravity, no running, stay inside lifelines."],
+["Boom and sails","Stay clear of the boom, traveler, loaded sheets, winches, and flogging sails."],
+["Commands","Explain ready to tack, hard alee, ready to jibe, jibe-ho, duck, ease, trim, and hold."],
+["Crew overboard","Shout, throw flotation, point continuously, assign spotter, mark position, and follow skipper commands."],
+["Docking roles","Step only when safe, never jump, no hands or feet between boat and dock, clear line leads."],
+["VHF and phone","Show radio location, Channel 16 use, working channel plan, and emergency contact method."],
+["Weather limit","Explain the conservative return or reefing triggers for the day."],
+["Float plan","Name the shore contact, route, expected return, and overdue escalation plan."],
+["Fire and first aid","Show extinguisher, first-aid kit, knife, bilge pump, and engine shutoff if relevant."],
+["Head and comfort","Explain head use, seasickness plan, water, sun protection, and warm layers."],
+["Lookout","Assign a lookout and explain traffic calls: vessel type, direction, range, and risk."]
+];
+const quiz=[
+["A new guest asks where the life jackets are after departure. Best habit?",["Show PFDs and throwable before departure","Wait until someone is cold","Assume adults will find them","Only mention them offshore"],0,"Passengers should know where safety gear is before it is needed."],
+["During docking, what instruction belongs in the briefing?",["Step off only when safe; never jump","Catch the dock with a foot","Stand outside the lifelines","Hold loaded lines with bare hands"],0,"Crew bodies are not fenders."],
+["Crew overboard first actions are:",["Shout, throw, point","Drop anchor first","Start a long VHF debate","Send everyone below"],0,"Shout to alert, throw flotation, and point continuously."],
+["Why brief weather limits?",["So everyone knows when the plan changes conservatively","So the forecast never changes","So crew can ignore clouds","So reefing is never needed"],0,"Shared limits reduce hesitation when conditions build."]
+];
+let state=loadBrief(), qi=0, picked=false;
+function loadBrief(){try{const raw=JSON.parse(localStorage.getItem(briefKey)||"{}");return raw&&typeof raw==="object"?raw:{checked:{}}}catch(err){return{checked:{}}}}
+function saveBrief(){["boatName","skipperName","routePlan","weatherPlan","returnTime","workingChannel"].forEach(id=>state[id]=document.getElementById(id).value);try{localStorage.setItem(briefKey,JSON.stringify(state))}catch(err){}renderScript()}
+function resetBrief(){if(!confirm("Clear saved crew briefing?"))return;state={checked:{}};try{localStorage.removeItem(briefKey)}catch(err){};location.reload()}
+function renderItems(){document.getElementById("briefItems").innerHTML=items.map((it,i)=>"<label class='choice' style='cursor:pointer'><input type='checkbox' "+(state.checked&&state.checked[i]?"checked":"")+" onchange='toggleItem("+i+",this.checked)'> <strong>"+it[0]+"</strong><br><span class='mini'>"+it[1]+"</span></label>").join("");renderScript()}
+function toggleItem(i,val){state.checked=state.checked||{};if(val)state.checked[i]=true;else delete state.checked[i];saveBrief();renderItems()}
+function renderScript(){["boatName","skipperName","routePlan","weatherPlan","returnTime","workingChannel"].forEach(id=>{if(state[id])document.getElementById(id).value=state[id]});const checked=items.filter((_,i)=>state.checked&&state.checked[i]);document.getElementById("checkedBox").textContent=checked.length+"/"+items.length;const lines=["Crew briefing for "+document.getElementById("boatName").value,"Skipper: "+document.getElementById("skipperName").value,"Plan: We are sailing in "+document.getElementById("routePlan").value+". Expected return is "+document.getElementById("returnTime").value+".","Weather limit: We will "+document.getElementById("weatherPlan").value+".","Communications: "+document.getElementById("workingChannel").value+".","","Before we cast off:"];checked.forEach((it,i)=>lines.push((i+1)+". "+it[1]));if(!checked.length)lines.push("Check at least eight briefing topics above, then read this aloud before departure.");lines.push("If anyone is unsure or uncomfortable, say so early. The safest plan is the one we can all execute calmly.");document.getElementById("briefOutput").value=lines.join("\\n")}
+function copyBrief(){navigator.clipboard&&navigator.clipboard.writeText(document.getElementById("briefOutput").value).then(()=>document.getElementById("copyStatus").textContent="Copied.").catch(()=>document.getElementById("copyStatus").textContent="Select the text and copy manually.")}
+function paintQuiz(){const q=quiz[qi];document.getElementById("quizStage").innerHTML="<p class='mini'>Question "+(qi+1)+" of "+quiz.length+"</p><h3>"+q[0]+"</h3>"+q[1].map((o,i)=>"<button class='choice' onclick='pick("+i+")'>"+o+"</button>").join("")}
+function pick(i){if(picked)return;picked=true;const q=quiz[qi],ok=i===q[2];[...document.querySelectorAll(".choice")].forEach((b,j)=>{if(j===q[2])b.classList.add("ok");else if(j===i)b.classList.add("no");b.disabled=true});const fb=document.createElement("div");fb.className="callout";fb.textContent=(ok?"Correct. ":"Review this. ")+q[3];document.getElementById("quizStage").appendChild(fb);const next=document.createElement("button");next.className="btn";next.textContent=qi+1>=quiz.length?"Restart check":"Next";next.onclick=()=>{qi=(qi+1)%quiz.length;picked=false;paintQuiz()};document.getElementById("quizStage").appendChild(next)}
+renderItems();paintQuiz();
+</script>
+<!-- Offline support -->
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/service-worker.js").catch(function () {});
+  });
+}
+</script>
+<!-- /Offline support -->
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<!-- /Vercel Web Analytics -->
+</body>
+</html>

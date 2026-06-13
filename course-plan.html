@@ -127,14 +127,14 @@ const plans={
     ["Day 3","Maneuvers, docking, and anchoring","60-90 min",[["Study maneuver sequence and commands","/maneuvers"],["Run docking and anchoring trainer","/docking-anchoring"],["Practice anchor scope math","/chartwork"],["Review knots used for dock and anchor lines","/knots"]]],
     ["Day 4","Rules, lights, signals, and traffic","75-100 min",[["Read the right-of-way guide","/right-of-way"],["Play the rules-of-the-road game","/rules-road-game"],["Drill navigation lights","/navigation-lights"],["Drill sound signals","/sound-signals"]]],
     ["Day 5","Aids, chart basics, VHF, and float plan","75-100 min",[["Study aids to navigation","/navigation-aids"],["Practice chartwork and ETA math","/chartwork"],["Build a float plan","/float-plan"],["Practice VHF radio calls","/vhf-radio"]]],
-    ["Day 6","Safety, weather, and crew overboard","75-100 min",[["Read the safety guide","/safety"],["Run weather decision cases","/weather-trainer"],["Run crew-overboard trainer","/crew-overboard"],["Review required gear and class kit","/gear"]]],
-    ["Day 7","Final review and test reps","90-120 min",[["Read the cram sheet","/exam-cram"],["Take a 50-question practice test","/practice-tests"],["Run weak-area review","/practice-tests"],["Review community and next-step resources","/community"]]]
+    ["Day 6","Safety, weather, and crew overboard","75-100 min",[["Read the safety guide","/safety"],["Build a crew briefing script","/crew-briefing"],["Run weather decision cases","/weather-trainer"],["Run crew-overboard trainer","/crew-overboard"],["Review required gear and class kit","/gear"]]],
+    ["Day 7","Final review and test reps","90-120 min",[["Read the cram sheet","/exam-cram"],["Take a 50-question practice test","/practice-tests"],["Run weak-area review","/practice-tests"],["Set up the practice logbook","/logbook"],["Review community and next-step resources","/community"]]]
   ],
   month:[
     ["Week 1","Language, boat parts, and wind sense","3 sessions",[["Read study guide and checklist","/study-guide"],["Practice boat parts","/#parts"],["Study points of sail","/points-of-sail"],["Do flashcards every other day","/flashcards"]]],
     ["Week 2","Handling under sail","3 sessions",[["Practice sail trim","/sail-trim"],["Run simulator missions","/simulator"],["Study maneuvers and commands","/maneuvers"],["Practice knots with real line","/knots"]]],
     ["Week 3","Rules, navigation, and seamanship","3 sessions",[["Study right of way","/right-of-way"],["Play rules game twice","/rules-road-game"],["Review aids, lights, and signals","/navigation-aids"],["Practice chartwork and ETA math","/chartwork"]]],
-    ["Week 4","Safety, weather, tests, and next steps","4 sessions",[["Build a float plan and VHF call script","/float-plan"],["Run safety, weather, and crew-overboard trainers","/safety"],["Take two full practice tests","/practice-tests"],["Plan your next sail and learning community","/community"]]]
+    ["Week 4","Safety, weather, tests, and next steps","4 sessions",[["Build a float plan, crew briefing, and VHF call script","/crew-briefing"],["Run safety, weather, and crew-overboard trainers","/safety"],["Take two full practice tests","/practice-tests"],["Start a sailing practice logbook","/logbook"],["Plan your next sail and learning community","/community"]]]
   ]
 };
 function loadSaved(){try{const raw=JSON.parse(localStorage.getItem(planKey)||"{}");return raw&&typeof raw==="object"?raw:{}}catch(err){return{}}}
