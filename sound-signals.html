@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sound Signals Trainer - ASA 101 Horn, Whistle, and Fog Signal Practice</title>
+<meta name="description" content="Practice ASA 101 and beginner navigation sound signals: one short, two short, three short, five short danger signal, prolonged blasts, fog signals, and anchor signals.">
+<link rel="canonical" href="https://sailingtrainer.com/sound-signals">
+<meta property="og:title" content="Sound Signals Trainer">
+<meta property="og:description" content="Interactive horn, whistle, maneuvering, danger, fog, and anchor signal practice for beginner sailors.">
+<meta property="og:type" content="article">
+<!-- SEO enhancements -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#146a8c">
+<meta property="og:site_name" content="ASA 101 Skipper Trainer">
+<meta property="og:url" content="https://sailingtrainer.com/sound-signals">
+<meta property="og:image" content="https://sailingtrainer.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sound Signals Trainer">
+<meta name="twitter:description" content="Interactive ASA 101 sound signal practice for horn, whistle, fog, danger, and anchor signals.">
+<meta name="twitter:image" content="https://sailingtrainer.com/og.png">
+<!-- /SEO enhancements -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="stylesheet" href="/site.css">
+<style>
+.signal-panel{background:#0d202b;color:#edf6f7;border-radius:8px;padding:16px;margin:12px 0}
+.signal-row{display:flex;align-items:end;gap:8px;min-height:58px;flex-wrap:wrap}
+.blast{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.45);background:#d9f1f7;color:#0d202b;border-radius:6px;font-size:12px;font-weight:700;letter-spacing:.02em}
+.blast.short{width:34px;height:28px}
+.blast.prolonged{width:112px;height:28px}
+.blast.bell{width:94px;height:42px;background:#f5d77b}
+.signal-caption{font-size:13px;color:#b7cad0;margin-top:8px}
+.builder{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}
+.score-note{font-size:13px;color:var(--muted)}
+</style>
+<meta name="google-adsense-account" content="ca-pub-1188658046265173">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","@id":"https://sailingtrainer.com/sound-signals#learning-resource","url":"https://sailingtrainer.com/sound-signals","name":"Sound Signals Trainer - ASA 101 Horn, Whistle, and Fog Signal Practice","headline":"Sound Signals Trainer - ASA 101 Horn, Whistle, and Fog Signal Practice","description":"Practice ASA 101 and beginner navigation sound signals: one short, two short, three short, five short danger signal, prolonged blasts, fog signals, and anchor signals.","isAccessibleForFree":true,"inLanguage":"en-US","educationalLevel":"Beginner","audience":{"@type":"EducationalAudience","educationalRole":"student"},"learningResourceType":"Simulation","about":[{"@type":"Thing","name":"navigation sound signals"},{"@type":"Thing","name":"ASA 101"},{"@type":"Thing","name":"COLREGS Rule 34"},{"@type":"Thing","name":"COLREGS Rule 35"}],"isPartOf":{"@id":"https://sailingtrainer.com/#website"}}</script>
+<!-- /Structured data -->
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/">⛵ ASA 101 Skipper Trainer</a>
+  <a href="/simulator">Simulator</a>
+  <a href="/practice-tests">Tests</a>
+  <a href="/flashcards">Cards</a>
+  <a href="/gear">Gear</a>
+  <a href="/community">Community</a>
+  <a href="/study-guide">Study</a>
+  <a href="/checklist">Checklist</a>
+  <a href="/points-of-sail">Points</a>
+  <a href="/maneuvers">Maneuvers</a>
+  <a href="/right-of-way">Rules</a>
+  <a href="/navigation-aids">Aids</a>
+  <a href="/navigation-lights">Lights</a>
+  <a href="/sound-signals" class="on">Signals</a>
+  <a href="/safety">Safety</a>
+  <a href="/knots">Knots</a>
+  <a href="/weather">Weather</a>
+  <a href="/sailing-terms">Terms</a>
+  <a href="/resources">Resources</a>
+  <a href="/faq">FAQ</a>
+</header>
+<main>
+<h1>Sound signals trainer</h1>
+<p class="lead">Sound signals are part of the navigation rules and part of safe skippering. Drill the signals a beginner actually needs: maneuvering, danger or doubt, restricted visibility, leaving a dock, and anchoring.</p>
+
+<div class="statbar">
+  <div class="stat"><span class="mini">Quiz card</span><b id="cardBox">1/12</b></div>
+  <div class="stat"><span class="mini">Score</span><b id="scoreBox">0</b></div>
+  <div class="stat"><span class="mini">Short blast</span><b>about 1 sec</b></div>
+  <div class="stat"><span class="mini">Prolonged blast</span><b>4 to 6 sec</b></div>
+</div>
+
+<section id="stage" class="card" aria-live="polite"></section>
+
+<p><button class="btn" onclick="playCurrent()">Play this signal</button><button class="btn secondary" onclick="nextCard()">Next card</button><button class="btn secondary" onclick="restart()">Restart quiz</button></p>
+
+<h2>Build the signal</h2>
+<section class="card" aria-live="polite">
+  <p class="mini" id="buildTopic">Build prompt</p>
+  <h3 id="buildPrompt" style="margin-top:0"></h3>
+  <div id="builtSignal" class="signal-panel"></div>
+  <div class="builder">
+    <button class="btn secondary" onclick="addToken('S')">Add short</button>
+    <button class="btn secondary" onclick="addToken('P')">Add prolonged</button>
+    <button class="btn secondary" onclick="clearBuild()">Clear</button>
+    <button class="btn" onclick="checkBuild()">Check</button>
+    <button class="btn secondary" onclick="nextBuild()">New prompt</button>
+  </div>
+  <div id="buildFeedback" class="callout" style="display:none"></div>
+</section>
+
+<h2>Fast reference</h2>
+<div class="table-wrap">
+<table>
+<tr><th>Signal</th><th>Beginner meaning</th></tr>
+<tr><td>One short</td><td>I am altering course to starboard.</td></tr>
+<tr><td>Two short</td><td>I am altering course to port.</td></tr>
+<tr><td>Three short</td><td>I am operating astern propulsion.</td></tr>
+<tr><td>Five or more short</td><td>Danger or doubt. I do not understand your intentions.</td></tr>
+<tr><td>One prolonged</td><td>Leaving a dock or berth, or warning at a blind bend.</td></tr>
+<tr><td>One prolonged every 2 minutes</td><td>Power-driven vessel making way in restricted visibility.</td></tr>
+<tr><td>Two prolonged every 2 minutes</td><td>Power-driven vessel stopped and making no way in restricted visibility.</td></tr>
+<tr><td>One prolonged plus two short every 2 minutes</td><td>Sailing vessel, towing vessel, fishing vessel, not-under-command vessel, or restricted-maneuverability vessel in restricted visibility.</td></tr>
+<tr><td>Rapid bell about 5 seconds every minute</td><td>Vessel at anchor. Smaller vessels may use another efficient sound signal under the rules.</td></tr>
+</table>
+</div>
+
+<div class="grid">
+  <div class="card"><h3>Exam memory</h3><p>Five short blasts is the one ASA 101 students should never miss. It means danger or doubt. Slow down, keep clear, and clarify intentions.</p></div>
+  <div class="card"><h3>Fog memory</h3><p>A sailing vessel in fog is not silent. Use one prolonged followed by two short at intervals of not more than two minutes.</p></div>
+  <div class="card"><h3>Reality check</h3><p>Small recreational boats still need an efficient way to make sound. A whistle on each PFD is a cheap, practical habit.</p></div>
+</div>
+
+<h2>Sources</h2>
+<ul class="source-list">
+  <li><a href="https://www.navcen.uscg.gov/navigation-rules-amalgamated">U.S. Coast Guard NAVCEN - Amalgamated Navigation Rules</a></li>
+  <li><a href="https://uscgboating.org/regulations/navigation-rules.php">USCG Boating Safety - Navigation Rules</a></li>
+  <li><a href="https://boatus.org/study-guide/navigation-maneuvering/navigation-sounds/">BoatUS Foundation - Navigation Sounds</a></li>
+  <li><a href="https://americansailing.com/certifications/asa-101-keelboat-sailing-1/">American Sailing ASA 101 Keelboat Sailing 1</a></li>
+</ul>
+</main>
+<footer>
+  <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases.</p>
+  <p><a href="/">Trainer</a> · <a href="/simulator">Simulator</a> · <a href="/practice-tests">Practice tests</a> · <a href="/flashcards">Flashcards</a> · <a href="/gear">Gear</a> · <a href="/community">Community</a> · <a href="/checklist">Checklist</a> · <a href="/navigation-lights">Lights</a> · <a href="/sound-signals">Sound signals</a> · <a href="/resources">Resources</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
+</footer>
+<script>
+const SIGNALS=[
+ {topic:"Maneuvering",pattern:["S"],q:"You hear one short blast from a power-driven vessel in sight. What is the intended maneuver?",best:0,choices:["Altering course to starboard","Altering course to port","Operating astern propulsion","Danger or doubt"],why:"One short blast means the vessel is altering course to starboard."},
+ {topic:"Maneuvering",pattern:["S","S"],q:"You hear two short blasts. What is the intended maneuver?",best:1,choices:["Altering course to starboard","Altering course to port","Leaving the dock","Anchored in fog"],why:"Two short blasts means altering course to port."},
+ {topic:"Maneuvering",pattern:["S","S","S"],q:"You hear three short blasts. What should you expect?",best:2,choices:["The vessel is anchoring","The vessel is requesting a tow","The vessel is operating astern propulsion","The vessel is under sail only"],why:"Three short blasts means the vessel is operating astern propulsion."},
+ {topic:"Danger",pattern:["S","S","S","S","S"],q:"You hear five or more short blasts. What does it mean?",best:0,choices:["Danger or doubt","Permission to pass","Sailing vessel in fog","Anchor is set"],why:"Five or more short blasts is the danger or doubt signal."},
+ {topic:"Docking",pattern:["P"],q:"A power-driven vessel sounds one prolonged blast while leaving a berth. What is the purpose?",best:3,choices:["It is anchored","It is motorsailing","It is requesting a race start","It is warning others it is getting underway"],why:"A prolonged blast is used when leaving a dock or berth and at certain blind bends."},
+ {topic:"Restricted visibility",pattern:["P"],q:"In fog, one prolonged blast at intervals of not more than two minutes identifies:",best:1,choices:["A vessel at anchor only","A power-driven vessel making way","A vessel operating astern propulsion","A danger signal"],why:"A power-driven vessel making way sounds one prolonged blast every two minutes in restricted visibility."},
+ {topic:"Restricted visibility",pattern:["P","P"],q:"In fog, two prolonged blasts identify:",best:2,choices:["A sailing vessel making way","Danger or doubt","A power-driven vessel stopped and making no way","A vessel leaving the dock"],why:"Two prolonged blasts at intervals of not more than two minutes means a power-driven vessel is underway but stopped and making no way."},
+ {topic:"Restricted visibility",pattern:["P","S","S"],q:"In fog, one prolonged followed by two short blasts can identify:",best:0,choices:["A sailing vessel underway","A powerboat turning to starboard","A vessel backing down","A preferred channel mark"],why:"Sailing vessels, towing vessels, fishing vessels, not-under-command vessels, and restricted-maneuverability vessels use one prolonged plus two short in restricted visibility."},
+ {topic:"Anchor",pattern:["BELL"],q:"In fog, a vessel at anchor commonly makes:",best:1,choices:["Three short blasts only","Rapid bell ringing for about five seconds at intervals","One short blast every ten seconds","Two short blasts followed by one prolonged"],why:"The Navigation Rules describe a rapid bell signal for vessels at anchor, with modified obligations for smaller vessels."},
+ {topic:"Attention",pattern:["S","P","S"],q:"A vessel at anchor may add one short, one prolonged, one short when another vessel approaches. What is the purpose?",best:2,choices:["To start a race","To signal a tack","To warn of her position and possible collision risk","To request docking help"],why:"An anchored vessel may add this whistle warning when another vessel is approaching."},
+ {topic:"Beginner equipment",pattern:["S"],q:"Which habit best supports sound-signal readiness on a small sailboat?",best:3,choices:["Keep the horn buried below","Rely on shouting only","Assume daylight removes the requirement","Carry an efficient sound device and put whistles on PFDs"],why:"Small recreational vessels need an efficient sound-producing device. PFD whistles are cheap redundancy."},
+ {topic:"Judgment",pattern:["S","S","S","S","S"],q:"You are uncertain what another vessel is doing in close quarters. What is the conservative beginner action?",best:0,choices:["Slow down, open distance, sound danger/doubt if needed, and clarify intentions","Turn randomly toward the vessel","Maintain speed because you are under sail","Ignore the situation if you are stand-on"],why:"Sound signals do not replace collision avoidance. Reduce risk first."}
+];
+const BUILD=[
+ {topic:"Danger",prompt:"Build the danger or doubt signal.",pattern:["S","S","S","S","S"],answer:"Five or more short blasts."},
+ {topic:"Maneuvering",prompt:"Build the signal for altering course to port.",pattern:["S","S"],answer:"Two short blasts."},
+ {topic:"Maneuvering",prompt:"Build the signal for operating astern propulsion.",pattern:["S","S","S"],answer:"Three short blasts."},
+ {topic:"Restricted visibility",prompt:"Build the fog signal for a sailing vessel underway.",pattern:["P","S","S"],answer:"One prolonged followed by two short blasts."},
+ {topic:"Restricted visibility",prompt:"Build the fog signal for a power-driven vessel stopped and making no way.",pattern:["P","P"],answer:"Two prolonged blasts."},
+ {topic:"Docking",prompt:"Build the signal for leaving a dock or berth.",pattern:["P"],answer:"One prolonged blast."}
+];
+const label=t=>t==="P"?"prolonged":t==="S"?"short":"bell";
+const tokenClass=t=>t==="P"?"prolonged":t==="S"?"short":"bell";
+const shuf=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);
+let order=[], idx=0, score=0, answered=false, buildIdx=0, built=[], audioCtx=null;
+function renderPattern(pattern){return "<div class='signal-panel'><div class='signal-row'>"+pattern.map(t=>"<span class='blast "+tokenClass(t)+"'>"+label(t)+"</span>").join("")+"</div><div class='signal-caption'>Practice durations are visually compressed. A real prolonged blast is 4 to 6 seconds.</div></div>";}
+function current(){return SIGNALS[order[idx]];}
+function restart(){order=shuf(SIGNALS.map((_,i)=>i));idx=0;score=0;answered=false;paint();}
+function nextCard(){if(idx<order.length-1){idx++;answered=false;paint();}else{document.getElementById("stage").innerHTML="<div class='callout'><strong>Quiz complete.</strong> Score: "+score+"/"+SIGNALS.length+". Retake until maneuvering, fog, danger, and anchor signals feel automatic.</div>";}}
+function answer(i){if(answered)return;answered=true;if(i===current().best)score++;paint(i);}
+function paint(picked){const card=current();document.getElementById("cardBox").textContent=(idx+1)+"/"+order.length;document.getElementById("scoreBox").textContent=score;let html="<p class='mini'>"+card.topic+"</p>"+renderPattern(card.pattern)+"<h2 style='margin-top:0'>"+card.q+"</h2>"+card.choices.map((choice,i)=>{let cls="choice";if(answered){if(i===card.best)cls+=" ok";else if(i===picked)cls+=" no";}return "<button class='"+cls+"' onclick='answer("+i+")'>"+choice+"</button>";}).join("");if(answered){html+="<div class='callout'><strong>"+(picked===card.best?"Correct.":"Better answer: "+card.choices[card.best]+".")+"</strong> "+card.why+"</div>";}document.getElementById("stage").innerHTML=html;}
+function ensureAudio(){if(!window.AudioContext&&!window.webkitAudioContext)return null;if(!audioCtx)audioCtx=new (window.AudioContext||window.webkitAudioContext)();return audioCtx;}
+function beepAt(ctx,start,duration,freq,type){const osc=ctx.createOscillator();const gain=ctx.createGain();osc.type=type||"sine";osc.frequency.value=freq;gain.gain.setValueAtTime(0.0001,start);gain.gain.exponentialRampToValueAtTime(0.18,start+0.02);gain.gain.exponentialRampToValueAtTime(0.0001,start+duration);osc.connect(gain).connect(ctx.destination);osc.start(start);osc.stop(start+duration+0.03);}
+function playPattern(pattern){const ctx=ensureAudio();if(!ctx)return;let t=ctx.currentTime+0.05;pattern.forEach(token=>{if(token==="BELL"){for(let i=0;i<7;i++){beepAt(ctx,t+i*0.13,0.06,980,"triangle");}t+=1.05;}else{const dur=token==="P"?0.9:0.25;beepAt(ctx,t,dur,440,"sine");t+=dur+0.22;}});}
+function playCurrent(){playPattern(current().pattern);}
+function paintBuild(){const item=BUILD[buildIdx];document.getElementById("buildTopic").textContent=item.topic;document.getElementById("buildPrompt").textContent=item.prompt;document.getElementById("builtSignal").innerHTML=built.length?"<div class='signal-row'>"+built.map(t=>"<span class='blast "+tokenClass(t)+"'>"+label(t)+"</span>").join("")+"</div>":"<p class='score-note'>No blasts added yet.</p>";document.getElementById("buildFeedback").style.display="none";}
+function addToken(token){built.push(token);paintBuild();}
+function clearBuild(){built=[];paintBuild();}
+function samePattern(a,b){return a.length===b.length&&a.every((v,i)=>v===b[i]);}
+function checkBuild(){const item=BUILD[buildIdx];const ok=samePattern(built,item.pattern);const fb=document.getElementById("buildFeedback");fb.style.display="block";fb.innerHTML="<strong>"+(ok?"Correct.":"Not yet.")+"</strong> "+item.answer+" "+renderPattern(item.pattern);if(ok)playPattern(item.pattern);}
+function nextBuild(){buildIdx=(buildIdx+1)%BUILD.length;built=[];paintBuild();}
+restart();
+paintBuild();
+</script>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<!-- /Vercel Web Analytics -->
+</body>
+</html>
