@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Float Plan Builder - Printable Sailing Safety Plan for ASA 101</title>
+<meta name="description" content="Create a printable beginner sailing float plan: boat description, crew, route, return time, emergency contacts, communications, and safety gear.">
+<link rel="canonical" href="https://sailingtrainer.com/float-plan">
+<meta property="og:title" content="Float Plan Builder">
+<meta property="og:description" content="Create a printable sailing float plan to leave with a reliable shore contact before a practice sail.">
+<meta property="og:type" content="article">
+<!-- SEO enhancements -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#146a8c">
+<meta property="og:site_name" content="ASA 101 Skipper Trainer">
+<meta property="og:url" content="https://sailingtrainer.com/float-plan">
+<meta property="og:image" content="https://sailingtrainer.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Float Plan Builder">
+<meta name="twitter:description" content="Create a printable sailing float plan before a beginner practice sail.">
+<meta name="twitter:image" content="https://sailingtrainer.com/og.png">
+<!-- /SEO enhancements -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="stylesheet" href="/site.css">
+<style>
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,textarea{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit}
+textarea{min-height:78px;resize:vertical}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.plan-output{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
+@media print{.nav,.no-print,footer,.source-list{display:none}main{max-width:100%;padding:0}.card{border:0;padding:0}.plan-output{font-size:12px}}
+</style>
+<meta name="google-adsense-account" content="ca-pub-1188658046265173">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","@id":"https://sailingtrainer.com/float-plan#learning-resource","url":"https://sailingtrainer.com/float-plan","name":"Float Plan Builder - Printable Sailing Safety Plan for ASA 101","headline":"Float Plan Builder - Printable Sailing Safety Plan for ASA 101","description":"Create a printable beginner sailing float plan: boat description, crew, route, return time, emergency contacts, communications, and safety gear.","isAccessibleForFree":true,"inLanguage":"en-US","educationalLevel":"Beginner","audience":{"@type":"EducationalAudience","educationalRole":"student"},"learningResourceType":"Worksheet","about":[{"@type":"Thing","name":"float plan"},{"@type":"Thing","name":"sailing safety"},{"@type":"Thing","name":"ASA 101"}],"isPartOf":{"@id":"https://sailingtrainer.com/#website"}}</script>
+<!-- /Structured data -->
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/">⛵ ASA 101 Skipper Trainer</a>
+  <a href="/simulator">Simulator</a>
+  <a href="/practice-tests">Tests</a>
+  <a href="/flashcards">Cards</a>
+  <a href="/gear">Gear</a>
+  <a href="/community">Community</a>
+  <a href="/study-guide">Study</a>
+  <a href="/checklist">Checklist</a>
+  <a href="/safety">Safety</a>
+  <a href="/float-plan" class="on">Float plan</a>
+  <a href="/resources">Resources</a>
+  <a href="/faq">FAQ</a>
+</header>
+<main>
+<h1>Float plan builder</h1>
+<p class="lead">Before a practice sail, leave a clear plan with a reliable shore contact. Do not file this with the Coast Guard as a routine matter; give it to the person who will call for help if you are overdue.</p>
+
+<div class="callout"><strong>Use the plan:</strong> send or print it before leaving, update your contact if plans change, and tell them when you are safely back.</div>
+
+<form id="floatForm" class="card" oninput="renderPlan()">
+  <h2 style="margin-top:0">Boat and operator</h2>
+  <div class="form-grid">
+    <div><label for="operator">Operator / skipper</label><input id="operator" placeholder="Name and phone"></div>
+    <div><label for="boat">Boat name / type</label><input id="boat" placeholder="e.g. Catalina 25 sloop"></div>
+    <div><label for="color">Hull / sail colors</label><input id="color" placeholder="White hull, blue canvas, white sails"></div>
+    <div><label for="registration">Registration / marina</label><input id="registration" placeholder="Registration, slip, club, or school"></div>
+  </div>
+
+  <h2>Crew and contacts</h2>
+  <div class="form-grid">
+    <div><label for="crew">People aboard</label><textarea id="crew" placeholder="Names and phone numbers"></textarea></div>
+    <div><label for="shore">Shore contact</label><textarea id="shore" placeholder="Name, phone, and relationship"></textarea></div>
+    <div><label for="emergency">Emergency contacts</label><textarea id="emergency" placeholder="Marina, school, tow service, local authority"></textarea></div>
+  </div>
+
+  <h2>Trip plan</h2>
+  <div class="form-grid">
+    <div><label for="depart">Departure place and time</label><input id="depart" placeholder="Dock, ramp, marina, date/time"></div>
+    <div><label for="return">Expected return / check-in</label><input id="return" placeholder="Date/time to call if overdue"></div>
+    <div><label for="route">Route and practice area</label><textarea id="route" placeholder="Planned route, boundaries, stops, bailout harbors"></textarea></div>
+    <div><label for="weather">Weather and limits</label><textarea id="weather" placeholder="Forecast checked, wind/gust limits, tide/current notes"></textarea></div>
+  </div>
+
+  <h2>Safety and communications</h2>
+  <div class="form-grid">
+    <div><label for="comms">Communications</label><textarea id="comms" placeholder="Cell phones, VHF channel, handheld VHF, AIS, tracker"></textarea></div>
+    <div><label for="gear">Safety gear aboard</label><textarea id="gear" placeholder="PFDs, throwable, horn/whistle, lights, first aid, VDS, fire extinguisher"></textarea></div>
+    <div><label for="late">If overdue</label><textarea id="late" placeholder="Call skipper, marina/school, then local emergency services/Coast Guard if still overdue"></textarea></div>
+  </div>
+</form>
+
+<section class="card">
+  <h2 style="margin-top:0">Generated plan</h2>
+  <div id="planOutput" class="plan-output"></div>
+  <p class="no-print"><button class="btn" onclick="copyPlan()">Copy plan</button><button class="btn secondary" onclick="window.print()">Print</button><button class="btn secondary" onclick="clearPlan()">Clear saved plan</button></p>
+  <p id="copyStatus" class="mini no-print"></p>
+</section>
+
+<h2>Sources</h2>
+<ul class="source-list">
+  <li><a href="https://uscgboating.org/recreational-boaters/floating-plan.php">USCG Boating Safety - Floating Plan</a></li>
+  <li><a href="https://floatplancentral.cgaux.org/">USCG Auxiliary Float Plan Central</a></li>
+  <li><a href="https://www.boatus.com/expert-advice/expert-advice-archive/2020/june/why-you-should-use-a-float-plan">BoatUS - Why You Should Use a Float Plan</a></li>
+</ul>
+</main>
+<footer>
+  <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases.</p>
+  <p><a href="/">Trainer</a> · <a href="/safety">Safety</a> · <a href="/crew-overboard">Crew overboard</a> · <a href="/weather">Weather</a> · <a href="/float-plan">Float plan</a> · <a href="/resources">Resources</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
+</footer>
+<script>
+const KEY="asa101.floatplan.v1";
+const IDS=["operator","boat","color","registration","crew","shore","emergency","depart","return","route","weather","comms","gear","late"];
+function value(id){return document.getElementById(id).value.trim()||"[not filled]";}
+function planText(){return `FLOAT PLAN - SAILING PRACTICE
+
+Boat and operator
+Operator / skipper: ${value("operator")}
+Boat: ${value("boat")}
+Hull / sail colors: ${value("color")}
+Registration / marina: ${value("registration")}
+
+Crew and contacts
+People aboard:
+${value("crew")}
+
+Shore contact:
+${value("shore")}
+
+Emergency contacts:
+${value("emergency")}
+
+Trip plan
+Departure: ${value("depart")}
+Expected return / check-in: ${value("return")}
+Route and practice area:
+${value("route")}
+
+Weather and limits:
+${value("weather")}
+
+Safety and communications
+Communications:
+${value("comms")}
+
+Safety gear aboard:
+${value("gear")}
+
+If overdue:
+${value("late")}
+
+Instructions for shore contact
+1. Try to reach the skipper and crew.
+2. Call the marina, school, or launch point.
+3. If still overdue or you suspect distress, call local emergency services or the Coast Guard with this plan.
+4. Tell the skipper to update you if plans change and to check in when back.`;
+}
+function renderPlan(){const data={};IDS.forEach(id=>data[id]=document.getElementById(id).value);try{localStorage.setItem(KEY,JSON.stringify(data));}catch(err){}document.getElementById("planOutput").textContent=planText();}
+function loadPlan(){try{const data=JSON.parse(localStorage.getItem(KEY)||"{}");IDS.forEach(id=>{if(data[id])document.getElementById(id).value=data[id];});}catch(err){}renderPlan();}
+async function copyPlan(){try{await navigator.clipboard.writeText(planText());document.getElementById("copyStatus").textContent="Copied."; }catch(err){document.getElementById("copyStatus").textContent="Copy failed. Select the generated plan and copy manually.";}}
+function clearPlan(){if(!confirm("Clear saved float plan fields from this browser?"))return;try{localStorage.removeItem(KEY);}catch(err){}IDS.forEach(id=>document.getElementById(id).value="");renderPlan();}
+loadPlan();
+</script>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<!-- /Vercel Web Analytics -->
+</body>
+</html>
