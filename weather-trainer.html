@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sailing Weather Decision Trainer - ASA 101 Go/No-Go Practice</title>
+<meta name="description" content="Practice beginner sailing weather decisions: go, reef, shorten the plan, turn back, or stay at the dock based on wind, gusts, waves, visibility, advisories, and daylight.">
+<link rel="canonical" href="https://sailingtrainer.com/weather-trainer">
+<meta property="og:title" content="Sailing Weather Decision Trainer">
+<meta property="og:description" content="Go/no-go weather practice for ASA 101 sailors: wind, gusts, waves, fog, advisories, storms, and daylight.">
+<meta property="og:type" content="article">
+<!-- SEO enhancements -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#146a8c">
+<meta property="og:site_name" content="ASA 101 Skipper Trainer">
+<meta property="og:url" content="https://sailingtrainer.com/weather-trainer">
+<meta property="og:image" content="https://sailingtrainer.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sailing Weather Decision Trainer">
+<meta name="twitter:description" content="Go/no-go weather practice for ASA 101 sailors: wind, gusts, waves, fog, advisories, storms, and daylight.">
+<meta name="twitter:image" content="https://sailingtrainer.com/og.png">
+<!-- /SEO enhancements -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="stylesheet" href="/site.css">
+<meta name="google-adsense-account" content="ca-pub-1188658046265173">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","@id":"https://sailingtrainer.com/weather-trainer#learning-resource","url":"https://sailingtrainer.com/weather-trainer","name":"Sailing Weather Decision Trainer - ASA 101 Go/No-Go Practice","headline":"Sailing Weather Decision Trainer - ASA 101 Go/No-Go Practice","description":"Practice beginner sailing weather decisions: go, reef, shorten the plan, turn back, or stay at the dock based on wind, gusts, waves, visibility, advisories, and daylight.","isAccessibleForFree":true,"inLanguage":"en-US","educationalLevel":"Beginner","audience":{"@type":"EducationalAudience","educationalRole":"student"},"learningResourceType":"Simulation","about":[{"@type":"Thing","name":"marine weather"},{"@type":"Thing","name":"ASA 101"},{"@type":"Thing","name":"sailing safety"}],"isPartOf":{"@id":"https://sailingtrainer.com/#website"}}</script>
+<!-- /Structured data -->
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/">⛵ ASA 101 Skipper Trainer</a>
+  <a href="/simulator">Simulator</a>
+  <a href="/practice-tests">Tests</a>
+  <a href="/flashcards">Cards</a>
+  <a href="/gear">Gear</a>
+  <a href="/community">Community</a>
+  <a href="/study-guide">Study</a>
+  <a href="/checklist">Checklist</a>
+  <a href="/points-of-sail">Points</a>
+  <a href="/maneuvers">Maneuvers</a>
+  <a href="/right-of-way">Rules</a>
+  <a href="/navigation-aids">Aids</a>
+  <a href="/safety">Safety</a>
+  <a href="/knots">Knots</a>
+  <a href="/weather" class="on">Weather</a>
+  <a href="/sailing-terms">Terms</a>
+  <a href="/resources">Resources</a>
+  <a href="/faq">FAQ</a>
+</header>
+<main>
+<h1>Sailing weather decision trainer</h1>
+<p class="lead">ASA 101 sailing is daylight, familiar waters, and light-to-moderate conditions. This drill trains the skipper habit: read the whole forecast, then choose the safest beginner plan.</p>
+
+<div class="statbar">
+  <div class="stat"><span class="mini">Scenario</span><b id="scenarioBox">1/12</b></div>
+  <div class="stat"><span class="mini">Score</span><b id="scoreBox">0</b></div>
+  <div class="stat"><span class="mini">Streak</span><b id="streakBox">0</b></div>
+  <div class="stat"><span class="mini">Beginner envelope</span><b>daylight / moderate</b></div>
+</div>
+
+<section id="stage" class="card"></section>
+
+<div class="controls" style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0">
+  <button class="btn" onclick="nextScenario()">Next scenario</button>
+  <button class="btn secondary" onclick="restart()">Restart drill</button>
+  <a class="btn secondary" href="/weather">Read weather guide</a>
+</div>
+
+<h2>Decision rules this drill reinforces</h2>
+<div class="grid">
+  <div class="card"><h3>Gusts count</h3><p>Plan for the gust number, not just sustained wind. A 12 kt forecast gusting 22 kt is a reef-or-stay-home problem for many new skippers.</p></div>
+  <div class="card"><h3>Advisories matter</h3><p>Small Craft Advisory thresholds vary by region, and there is no single national definition of "small craft." For ASA 101 practice, treat an advisory as a strong no-go.</p></div>
+  <div class="card"><h3>Exit early</h3><p>Thunder, fog, darkness, fatigue, and an unsafe lee shore are reasons to shorten the plan before the crew is stressed.</p></div>
+  <div class="card"><h3>Choose a smaller win</h3><p>Good seamanship often means protected water, reefed sails, dockside knots, or another day.</p></div>
+</div>
+
+<h2>Sources</h2>
+<ul class="source-list">
+  <li><a href="https://www.weather.gov/marine/">NOAA / National Weather Service Marine Weather Services</a></li>
+  <li><a href="https://www.weather.gov/marine/faq">National Weather Service Marine Forecast FAQ</a></li>
+  <li><a href="https://www.uscgboating.org/assets/1/AssetManager/Boaters-Guide-to-Federal-Requirements-for-Receational-Boats-20231108.pdf">U.S. Coast Guard Boater's Guide to Federal Requirements</a></li>
+  <li><a href="https://americansailing.com/certifications/asa-101-keelboat-sailing-1/">American Sailing ASA 101 Keelboat Sailing 1</a></li>
+</ul>
+</main>
+<footer>
+  <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases.</p>
+  <p><a href="/">Trainer</a> · <a href="/simulator">Simulator</a> · <a href="/practice-tests">Practice tests</a> · <a href="/flashcards">Flashcards</a> · <a href="/gear">Gear</a> · <a href="/community">Community</a> · <a href="/checklist">Checklist</a> · <a href="/weather-trainer">Weather trainer</a> · <a href="/resources">Resources</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
+</footer>
+<script>
+const SCENARIOS=[
+ {forecast:"NW wind 6 to 10 kt. Seas 1 ft. Sunny. Good visibility. Return before 1500.", setting:"Two-hour ASA practice sail in familiar protected water with rested crew.", best:0, choices:["Go practice tacks and sail trim","Stay at the dock","Reef before leaving","Wait until sunset"], why:"This fits the beginner envelope: daylight, familiar water, light wind, low seas, clear visibility, and a short plan."},
+ {forecast:"S wind 10 to 14 kt, gusts to 22 kt by afternoon. Seas 2 to 3 ft.", setting:"New crew, first day after ASA 101, open bay route with a long downwind return.", best:2, choices:["Full-sail open-bay loop","Stay on a reefed protected-water route","Ignore gusts because sustained wind is moderate","Leave late and see what happens"], why:"The gust number drives the beginner decision. A reefed, protected, easy-exit plan is the safer training choice."},
+ {forecast:"Small Craft Advisory in effect from noon through evening. Gusts 25 kt. Steep wind waves.", setting:"You planned a casual skills practice day.", best:1, choices:["Go early and race the forecast","Stay at the dock and practice knots/weather planning","Go only if everyone wears PFDs","Run downwind only"], why:"For a new skipper, an advisory is a strong no-go. PFDs help if things go wrong; they do not make the conditions suitable."},
+ {forecast:"Dense fog through late morning. Visibility one quarter mile, improving after 1300.", setting:"Short harbor sail with lots of ferry and powerboat traffic.", best:1, choices:["Go, but sail slowly","Delay or cancel until visibility improves","Rely on right-of-way under sail","Send one crew to the bow and proceed"], why:"Fog changes lookout, sound signals, navigation, and collision risk. Delay until visibility fits your skill and traffic."},
+ {forecast:"Light morning wind. Thunderstorms possible after 1500. Dark cumulus already building inland.", setting:"You can be back at the slip by 1230 if you choose a short route.", best:0, choices:["Sail a short early route with a hard return time","Start the normal full-day trip","Wait for storms to show before returning","Sail offshore to avoid clouds"], why:"A small early plan with an exit is reasonable. The mistake is stretching the trip toward the thunderstorm window."},
+ {forecast:"Wind 14 kt against a strong ebb current at the channel mouth. Steep chop reported.", setting:"Crew is comfortable in flat water but new to waves.", best:2, choices:["Power through the channel mouth","Treat it as a normal 14 kt day","Choose protected water inside or postpone","Run dead downwind outside"], why:"Wind against current can create steep, tiring chop. Protected water is the smarter beginner plan."},
+ {forecast:"Air 72 F, water 49 F, west wind 8 kt. Sunny.", setting:"Everyone is excited because the air feels warm.", best:2, choices:["No PFDs because it is warm","Go in cotton layers","Wear PFDs and dress for cold water","Swim if someone falls in"], why:"Cold water is a hazard even on warm days. Dress for immersion risk and keep the plan conservative."},
+ {forecast:"Offshore wind 12 kt increasing to 18 kt by afternoon.", setting:"Small lake with a lee shore across the way and no easy downwind landing.", best:1, choices:["Sail offshore until it builds","Stay near the upwind shore or postpone","Run to the lee shore first","Ignore direction and sail normally"], why:"Offshore wind can make the return harder and push trouble away from help. Keep an upwind escape or do not go."},
+ {forecast:"South wind 5 kt becoming calm. Hot afternoon. No storms.", setting:"Crew wants to practice docking, knots, crew communication, and basic sail handling.", best:0, choices:["Go with light-air goals and extra water","Cancel because no whitecaps","Reef before leaving","Practice crew overboard under full speed"], why:"Light wind can be useful for low-stress drills. Set realistic goals and manage heat/hydration."},
+ {forecast:"W wind 16 kt with gusts 20 kt. Lee shore near the marina entrance.", setting:"The boat is unfamiliar and the crew is mixed experience.", best:1, choices:["Go because 16 kt is close to moderate","Postpone or take an instructor","Leave with full sail to learn faster","Only avoid tacking"], why:"A lee shore plus unfamiliar boat and gusts narrows your margin. Add an instructor or pick a different day."},
+ {forecast:"Dark line on the water, sudden cool air, and a fast wind shift while already sailing.", setting:"You are 15 minutes from the harbor entrance.", best:0, choices:["Shorten sail and head in now","Keep practicing until rain starts","Sail deeper downwind","Anchor in the channel"], why:"Those are classic squall/front cues. Reduce sail and return before the crew is fighting the boat."},
+ {forecast:"Wind 8 kt, sunset 1930, current turns foul at 1845.", setting:"It is 1715 and the planned route normally takes two hours in fair current.", best:1, choices:["Start anyway because wind is light","Build a shorter plan or stay at the dock","Skip navigation lights because it is not night yet","Motor out farther to save time"], why:"Daylight and current are part of weather planning. Do not start a route that requires rushing the return."}
+];
+let order=[], idx=0, score=0, streak=0, answered=false;
+const shuf=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);
+function restart(){order=shuf(SCENARIOS.map((_,i)=>i));idx=0;score=0;streak=0;answered=false;paint();}
+function nextScenario(){if(idx<order.length-1){idx++;answered=false;paint();}else{document.getElementById("stage").innerHTML="<div class='callout'><strong>Drill complete.</strong> Final score: "+score+"/"+SCENARIOS.length+". Retake it until the conservative calls feel automatic.</div>";}}
+function answer(i){if(answered)return;answered=true;const s=SCENARIOS[order[idx]], ok=i===s.best;if(ok){score++;streak++;}else{streak=0;}paint(i);}
+function paint(picked){const s=SCENARIOS[order[idx]];document.getElementById("scenarioBox").textContent=(idx+1)+"/"+order.length;document.getElementById("scoreBox").textContent=score;document.getElementById("streakBox").textContent=streak;let html="<p class='mini'>Forecast</p><h2 style='margin-top:0'>"+s.forecast+"</h2><p><strong>Setting:</strong> "+s.setting+"</p><p class='mini'>Choose the best beginner skipper call.</p>";html+=s.choices.map((c,i)=>{let cls="choice";if(answered){if(i===s.best)cls+=" ok";else if(i===picked)cls+=" no";}return "<button class='"+cls+"' onclick='answer("+i+")'>"+c+"</button>";}).join("");if(answered){const ok=picked===s.best;html+="<div class='callout'><strong>"+(ok?"Good call.":"Better call: "+s.choices[s.best]+".")+"</strong> "+s.why+"</div>";}document.getElementById("stage").innerHTML=html;}
+restart();
+</script>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<!-- /Vercel Web Analytics -->
+</body>
+</html>
