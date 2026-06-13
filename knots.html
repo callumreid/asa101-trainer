@@ -69,6 +69,15 @@
 </table>
 </div>
 
+<h2>Knot use trainer</h2>
+<div class="statbar">
+  <div class="stat"><span class="mini">Question</span><b id="knotQ">1/10</b></div>
+  <div class="stat"><span class="mini">Score</span><b id="knotScore">0</b></div>
+  <div class="stat"><span class="mini">Focus</span><b>job first</b></div>
+</div>
+<section id="knotStage" class="card" aria-live="polite"></section>
+<p><button class="btn" onclick="nextKnot()">Next knot job</button><button class="btn secondary" onclick="restartKnots()">Restart knot trainer</button></p>
+
 <h2>What to practice with real rope</h2>
 <ol>
 <li>Tie each knot slowly while saying its job out loud.</li>
@@ -107,6 +116,28 @@
   <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases.</p>
   <p><a href="/">Trainer</a> · <a href="/simulator">Simulator</a> · <a href="/practice-tests">Practice tests</a> · <a href="/flashcards">Flashcards</a> · <a href="/gear">Gear</a> · <a href="/community">Community</a> · <a href="/checklist">Checklist</a> · <a href="/resources">Resources</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
 </footer>
+<script>
+const KNOTS=[
+ {job:"Stop the bitter end of a jib sheet from running through a block.", best:"Figure-eight", why:"A figure-eight is the standard stopper knot because it is bulky and easier to untie than an overhand after loading."},
+ {job:"Make a fixed loop in the end of a dock line so it can go over a piling.", best:"Bowline", why:"A bowline makes a non-slipping fixed loop that usually unties after load."},
+ {job:"Secure a dock line to a cleat for normal mooring.", best:"Cleat hitch", why:"The cleat hitch is readable, secure, and quick to release when tied cleanly."},
+ {job:"Temporarily hang a fender from a lifeline or rail during docking practice.", best:"Clove hitch", why:"A clove hitch is quick for temporary rail or post attachment, but back it up if failure matters."},
+ {job:"Tie a line to a ring on a mooring pendant with good friction and security.", best:"Round turn and two half hitches", why:"The round turn spreads load and adds friction; the half hitches secure the standing part."},
+ {job:"Briefly tie two similar light lines together for a non-critical bundle.", best:"Square / reef knot", why:"A square knot is light-duty only. Do not trust it for critical loads."},
+ {job:"Attach a jib sheet to a sail clew with a loop that will not slip.", best:"Bowline", why:"A bowline is the standard fixed loop for sheets and many temporary attachments."},
+ {job:"Finish a line on a cleat without burying it under too many wraps.", best:"Cleat hitch", why:"A clean cleat hitch has a base turn, figure-eights, and one locking turn when needed."},
+ {job:"Secure a line around a piling where the load may build gradually.", best:"Round turn and two half hitches", why:"This hitch is more secure than a bare clove hitch for many post or ring loads."},
+ {job:"Choose the knot you should not use for a critical load.", best:"Square / reef knot", why:"A square knot can capsize, slip, or jam when misused. Keep it for light-duty joining."}
+];
+const KNOT_CHOICES=["Figure-eight","Bowline","Cleat hitch","Clove hitch","Round turn and two half hitches","Square / reef knot"];
+let knotOrder=[], knotIdx=0, knotScore=0, knotAnswered=false;
+const knotShuffle=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);
+function restartKnots(){knotOrder=knotShuffle(KNOTS.map((_,i)=>i));knotIdx=0;knotScore=0;knotAnswered=false;paintKnot();}
+function nextKnot(){if(knotIdx<knotOrder.length-1){knotIdx++;knotAnswered=false;paintKnot();}else{document.getElementById("knotStage").innerHTML="<div class='callout'><strong>Knot trainer complete.</strong> Score: "+knotScore+"/"+KNOTS.length+". Now tie the ones you missed with real line.</div>";}}
+function answerKnot(choice){if(knotAnswered)return;knotAnswered=true;const item=KNOTS[knotOrder[knotIdx]];if(choice===item.best)knotScore++;paintKnot(choice);}
+function paintKnot(picked){const item=KNOTS[knotOrder[knotIdx]];document.getElementById("knotQ").textContent=(knotIdx+1)+"/"+knotOrder.length;document.getElementById("knotScore").textContent=knotScore;let html="<p class='mini'>Choose the best ASA 101 knot for this job.</p><h3 style='margin-top:0'>"+item.job+"</h3>"+knotShuffle(KNOT_CHOICES).map(choice=>{let cls="choice";if(knotAnswered){if(choice===item.best)cls+=" ok";else if(choice===picked)cls+=" no";}return "<button class='"+cls+"' onclick='answerKnot(\""+choice.replace(/"/g,"&quot;")+"\")'>"+choice+"</button>";}).join("");if(knotAnswered){html+="<div class='callout'><strong>"+(picked===item.best?"Correct.":"Better knot: "+item.best+".")+"</strong> "+item.why+"</div>";}document.getElementById("knotStage").innerHTML=html;}
+restartKnots();
+</script>
 <!-- Vercel Web Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
