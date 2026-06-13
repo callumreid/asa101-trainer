@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search ASA 101 Sailing Topics - Sailing Trainer</title>
+<meta name="description" content="Search the free ASA 101 sailing trainer by topic: points of sail, right of way, knots, weather, docking, anchoring, gear, navigation lights, and practice tests.">
+<link rel="canonical" href="https://sailingtrainer.com/search">
+<meta property="og:title" content="Search ASA 101 Sailing Topics">
+<meta property="og:description" content="Find lessons, games, flashcards, tests, checklists, gear links, and official sources across Sailing Trainer.">
+<meta property="og:type" content="article">
+<!-- SEO enhancements -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#146a8c">
+<meta property="og:site_name" content="ASA 101 Skipper Trainer">
+<meta property="og:url" content="https://sailingtrainer.com/search">
+<meta property="og:image" content="https://sailingtrainer.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Search ASA 101 Sailing Topics">
+<meta name="twitter:description" content="Find ASA 101 lessons, games, tests, checklists, gear, and sources.">
+<meta name="twitter:image" content="https://sailingtrainer.com/og.png">
+<!-- /SEO enhancements -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="stylesheet" href="/site.css">
+<meta name="google-adsense-account" content="ca-pub-1188658046265173">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","@id":"https://sailingtrainer.com/search#learning-resource","url":"https://sailingtrainer.com/search","name":"Search ASA 101 Sailing Topics - Sailing Trainer","headline":"Search ASA 101 Sailing Topics - Sailing Trainer","description":"Search the free ASA 101 sailing trainer by topic: points of sail, right of way, knots, weather, docking, anchoring, gear, navigation lights, and practice tests.","isAccessibleForFree":true,"inLanguage":"en-US","educationalLevel":"Beginner","audience":{"@type":"EducationalAudience","educationalRole":"student"},"learningResourceType":"Search tool","about":[{"@type":"Thing","name":"ASA 101"},{"@type":"Thing","name":"sailing study topics"}],"isPartOf":{"@id":"https://sailingtrainer.com/#website"}}</script>
+<!-- /Structured data -->
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/">⛵ ASA 101 Skipper Trainer</a>
+  <a href="/simulator">Simulator</a>
+  <a href="/practice-tests">Tests</a>
+  <a href="/flashcards">Cards</a>
+  <a href="/exam-cram">Cram</a>
+  <a href="/gear">Gear</a>
+  <a href="/community">Community</a>
+  <a href="/checklist">Checklist</a>
+  <a href="/search" class="on">Search</a>
+  <a href="/resources">Resources</a>
+  <a href="/faq">FAQ</a>
+</header>
+<main>
+<h1>Search ASA 101 topics</h1>
+<p class="lead">Find the page, trainer, checklist, or source for the thing you are trying to learn.</p>
+
+<section class="card">
+  <label for="siteSearch" class="mini">Topic search</label>
+  <input id="siteSearch" type="search" placeholder="Try reefing, scope, starboard, gloves, fog, bowline..." autocomplete="off" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit;margin-top:6px" oninput="renderSearch()">
+  <p class="mini" id="resultCount">Showing all topics</p>
+</section>
+
+<div id="results" class="grid"></div>
+</main>
+<footer>
+  <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases.</p>
+  <p><a href="/">Trainer</a> · <a href="/simulator">Simulator</a> · <a href="/practice-tests">Practice tests</a> · <a href="/flashcards">Flashcards</a> · <a href="/exam-cram">Cram sheet</a> · <a href="/gear">Gear</a> · <a href="/community">Community</a> · <a href="/search">Search</a> · <a href="/resources">Resources</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
+</footer>
+<script>
+const PAGES=[
+ {title:"Sailing simulator", url:"/simulator", type:"game", text:"Mission simulator for steering, trim, tacking, reefing, harbor traffic, docking, anchoring, night lights, crew overboard, and skipper decision cards."},
+ {title:"Practice tests", url:"/practice-tests", type:"test", text:"102-question ASA 101 question bank with 25-question, 50-question, full-bank, weak-area, and category drills."},
+ {title:"Flashcards", url:"/flashcards", type:"cards", text:"Spaced review for terms, parts, rules, aids, safety, weather, maneuvers, docking, anchoring, and knots."},
+ {title:"Exam cram sheet", url:"/exam-cram", type:"printable", text:"Printable last-minute review for points of sail, right of way, aids, lights, weather, safety, docking, anchoring, and knots."},
+ {title:"Skills checklist", url:"/checklist", type:"progress", text:"Saved progress checklist mapping the complete ASA 101 knowledge and on-water skill path."},
+ {title:"Study guide", url:"/study-guide", type:"lesson", text:"Study sequence for ASA 101: terms, parts, points of sail, maneuvers, rules, safety, knots, aids, weather."},
+ {title:"Points of sail", url:"/points-of-sail", type:"lesson", text:"No-go zone, in irons, close-hauled, close reach, beam reach, broad reach, run, by the lee, wing on wing, sail trim."},
+ {title:"Maneuvers", url:"/maneuvers", type:"lesson", text:"Heading up, bearing away, tacking, jibing, irons recovery, crew overboard, docking, anchoring, reefing, helm commands."},
+ {title:"Docking and anchoring trainer", url:"/docking-anchoring", type:"game", text:"Fenders, spring lines, go-arounds, mooring pickups, anchor scope, swing room, dragging anchor, lee shore decisions."},
+ {title:"Right of way", url:"/right-of-way", type:"lesson", text:"Port tack, starboard tack, windward, leeward, overtaking, stand-on, give-way, power vs sail, narrow channels, motorsailing."},
+ {title:"Aids to navigation", url:"/navigation-aids", type:"lesson", text:"Red right returning, green cans, red nuns, preferred channels, safe water, regulatory markers, dayboards, sound signals."},
+ {title:"Navigation lights trainer", url:"/navigation-lights", type:"game", text:"Red port, green starboard, white sternlight, anchor light, sailing vessel lights, motorsailing, restricted visibility."},
+ {title:"Safety", url:"/safety", type:"lesson", text:"PFDs, throwable devices, sound signal, visual distress signals, fire extinguisher, float plan, crew overboard, cold water."},
+ {title:"Crew overboard trainer", url:"/crew-overboard", type:"game", text:"Shout, throw flotation, point, mark, return under control, close reach approach, recover safely."},
+ {title:"Knots", url:"/knots", type:"game", text:"Figure-eight, bowline, cleat hitch, clove hitch, round turn and two half hitches, square reef knot, knot use trainer."},
+ {title:"Weather", url:"/weather", type:"lesson", text:"Marine forecast, gusts, Small Craft Advisory, fog, lightning, squalls, reefing, cold water, wind against current."},
+ {title:"Weather decision trainer", url:"/weather-trainer", type:"game", text:"Go, reef, shorten, stay docked, turn back, and protected-water weather decisions for beginner skippers."},
+ {title:"Sailing terms glossary", url:"/sailing-terms", type:"reference", text:"Searchable glossary for bow, stern, port, starboard, windward, leeward, rigging, sails, maneuvers, rules, and knots."},
+ {title:"Gear guide", url:"/gear", type:"gear", text:"Sailing gloves, foulies, PFDs, deck shoes, sun protection, dry bags, layers, day-pack checklist, Amazon and retailer links."},
+ {title:"Community and boats", url:"/community", type:"links", text:"Sailing podcasts, Reddit communities, forums, crewing, YachtWorld, Boat Trader, Sailboat Listings, buyer homework."},
+ {title:"Resources and sources", url:"/resources", type:"sources", text:"Official ASA standard, USCG rules, NWS weather, BoatUS, US Sailing, docking, anchoring, navigation lights, safety sources."},
+ {title:"FAQ", url:"/faq", type:"faq", text:"ASA 101 difficulty, pass score, question count, textbook, experience needed, course length, what to study first."}
+];
+const siteSearch=document.getElementById("siteSearch"), results=document.getElementById("results"), resultCount=document.getElementById("resultCount");
+function renderSearch(){const q=siteSearch.value.trim().toLowerCase();const words=q.split(/\s+/).filter(Boolean);const matches=PAGES.map(page=>{const hay=(page.title+" "+page.type+" "+page.text).toLowerCase();const score=words.reduce((sum,word)=>sum+(hay.includes(word)?1:0),0);return {...page,score};}).filter(page=>!words.length||page.score>0).sort((a,b)=>b.score-a.score||a.title.localeCompare(b.title));resultCount.textContent=q?"Showing "+matches.length+" matching topics":"Showing all "+PAGES.length+" topics";results.innerHTML=matches.map(page=>"<a class='card' href='"+page.url+"' style='text-decoration:none;color:var(--text)'><span class='pill'>"+page.type+"</span><h2 style='margin-top:8px'>"+page.title+"</h2><p>"+page.text+"</p></a>").join("")||"<div class='callout'>No match. Try a broader term like rules, safety, weather, knots, docking, or gear.</div>";}
+const initial=new URLSearchParams(location.search).get("q");if(initial)siteSearch.value=initial;renderSearch();
+</script>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<!-- /Vercel Web Analytics -->
+</body>
+</html>
