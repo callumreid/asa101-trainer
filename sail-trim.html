@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sail Trim Trainer - ASA 101 Telltale and Sheet Practice</title>
+<meta name="description" content="Practice beginner sail trim for ASA 101: ease, trim in, hold, feather, reef, and read jib and mainsail telltales with interactive sailing scenarios.">
+<link rel="canonical" href="https://sailingtrainer.com/sail-trim">
+<meta property="og:title" content="Sail Trim Trainer">
+<meta property="og:description" content="Interactive ASA 101 sail trim and telltale practice for beginner keelboat sailors.">
+<meta property="og:type" content="article">
+<!-- SEO enhancements -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#146a8c">
+<meta property="og:site_name" content="ASA 101 Skipper Trainer">
+<meta property="og:url" content="https://sailingtrainer.com/sail-trim">
+<meta property="og:image" content="https://sailingtrainer.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sail Trim Trainer">
+<meta name="twitter:description" content="Practice beginner sail trim, sheet, telltale, feathering, and reefing decisions.">
+<meta name="twitter:image" content="https://sailingtrainer.com/og.png">
+<!-- /SEO enhancements -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="stylesheet" href="/site.css">
+<style>
+.trim-scene{background:#2b6e91;border-radius:8px;margin:10px 0;padding:10px}
+.trim-scene svg{display:block;width:100%;max-width:560px;margin:0 auto}
+.tell{stroke-width:3;stroke-linecap:round;fill:none}
+.tell.good{stroke:#f7e66a}
+.tell.bad{stroke:#f26b6b;stroke-dasharray:5 4}
+.trim-label{fill:#fff;font-size:12px}
+.action-row{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+</style>
+<meta name="google-adsense-account" content="ca-pub-1188658046265173">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","@id":"https://sailingtrainer.com/sail-trim#learning-resource","url":"https://sailingtrainer.com/sail-trim","name":"Sail Trim Trainer - ASA 101 Telltale and Sheet Practice","headline":"Sail Trim Trainer - ASA 101 Telltale and Sheet Practice","description":"Practice beginner sail trim for ASA 101: ease, trim in, hold, feather, reef, and read jib and mainsail telltales with interactive sailing scenarios.","isAccessibleForFree":true,"inLanguage":"en-US","educationalLevel":"Beginner","audience":{"@type":"EducationalAudience","educationalRole":"student"},"learningResourceType":"Simulation","about":[{"@type":"Thing","name":"sail trim"},{"@type":"Thing","name":"telltales"},{"@type":"Thing","name":"ASA 101"},{"@type":"Thing","name":"basic keelboat sailing"}],"isPartOf":{"@id":"https://sailingtrainer.com/#website"}}</script>
+<!-- /Structured data -->
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/">⛵ ASA 101 Skipper Trainer</a>
+  <a href="/simulator">Simulator</a>
+  <a href="/practice-tests">Tests</a>
+  <a href="/flashcards">Cards</a>
+  <a href="/gear">Gear</a>
+  <a href="/community">Community</a>
+  <a href="/study-guide">Study</a>
+  <a href="/checklist">Checklist</a>
+  <a href="/points-of-sail">Points</a>
+  <a href="/sail-trim" class="on">Trim</a>
+  <a href="/maneuvers">Maneuvers</a>
+  <a href="/right-of-way">Rules</a>
+  <a href="/navigation-aids">Aids</a>
+  <a href="/safety">Safety</a>
+  <a href="/knots">Knots</a>
+  <a href="/weather">Weather</a>
+  <a href="/sailing-terms">Terms</a>
+  <a href="/resources">Resources</a>
+  <a href="/faq">FAQ</a>
+</header>
+<main>
+<h1>Sail trim and telltale trainer</h1>
+<p class="lead">Good trim is not "pull everything tight." Match the sail to the apparent wind, watch telltales, keep the boat balanced, and make small changes early.</p>
+
+<div class="statbar">
+  <div class="stat"><span class="mini">Card</span><b id="cardBox">1/12</b></div>
+  <div class="stat"><span class="mini">Score</span><b id="scoreBox">0</b></div>
+  <div class="stat"><span class="mini">Core rule</span><b>ease, then trim</b></div>
+  <div class="stat"><span class="mini">Goal</span><b>attached flow</b></div>
+</div>
+
+<section id="stage" class="card" aria-live="polite"></section>
+
+<p><button class="btn" onclick="nextCard()">Next card</button><button class="btn secondary" onclick="restart()">Restart</button><a class="btn secondary" href="/#helm">Helm simulator</a></p>
+
+<h2>Trim rules this drill reinforces</h2>
+<div class="grid">
+  <div class="card"><h3>Golden rule</h3><p>Ease the sail until it just begins to luff, then trim in only enough to stop the luff. If in doubt, let it out.</p></div>
+  <div class="card"><h3>Jib telltales</h3><p>Both streaming aft is good. Windward/inside telltale lifting usually means trim in a little or bear away. Leeward/outside telltale stalled usually means ease.</p></div>
+  <div class="card"><h3>Mainsail balance</h3><p>If the boat heels too much or fights the helm, ease mainsheet/traveler, feather, flatten, or reef. Comfort and control beat perfect telltales.</p></div>
+</div>
+
+<h2>Beginner trim sequence</h2>
+<ol>
+  <li>Set the course and identify the point of sail.</li>
+  <li>Ease sheets as you bear away; trim sheets as you head up.</li>
+  <li>Watch the leading edge and telltales. Make one small change at a time.</li>
+  <li>If overpowered, depower first: ease, flatten, feather, or reef.</li>
+  <li>Keep checking after every tack, jibe, puff, lull, or course change.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="source-list">
+  <li><a href="https://www.ussailing.org/news/jib-and-mainsail-trim-how-telltales-work/">US Sailing - Jib and Mainsail Trim: How Telltales Work</a></li>
+  <li><a href="https://www.quantumsails.com/en/resources-and-expertise/articles/what-are-your-telltales-trying-to-tell-you">Quantum Sails - What Are Your Telltales Trying to Tell You?</a></li>
+  <li><a href="https://americansailing.com/certifications/asa-101-keelboat-sailing-1/">American Sailing ASA 101 Keelboat Sailing 1</a></li>
+</ul>
+</main>
+<footer>
+  <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases.</p>
+  <p><a href="/">Trainer</a> · <a href="/simulator">Simulator</a> · <a href="/practice-tests">Practice tests</a> · <a href="/flashcards">Flashcards</a> · <a href="/points-of-sail">Points</a> · <a href="/sail-trim">Sail trim</a> · <a href="/gear">Gear</a> · <a href="/community">Community</a> · <a href="/resources">Resources</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
+</footer>
+<script>
+const CARDS=[
+ {state:"good",topic:"Jib telltales",q:"Both jib telltales stream straight aft on a close reach. What should the trimmer do?",best:2,choices:["Trim in hard","Ease until both collapse","Hold trim and keep scanning","Immediately reef"],why:"Streaming telltales mean attached flow. Hold trim until course, wind, or heel changes."},
+ {state:"luff",topic:"Jib trim",q:"The windward/inside telltale is lifting and the luff is beginning to flutter. You are trimming, not steering. What is the first adjustment?",best:0,choices:["Trim in slightly","Ease the sheet more","Drop the sail","Move crew forward"],why:"If the sail is too eased for the course, trim in just enough to restore attached flow."},
+ {state:"stall",topic:"Jib trim",q:"The leeward/outside telltale is drooping and the sail looks strapped in tight. What is the best sheet adjustment?",best:1,choices:["Trim harder","Ease the sheet a little","Head directly into the wind","Tie a stopper knot"],why:"A stalled leeward telltale usually means overtrimmed. Ease until flow reattaches."},
+ {state:"course-up",topic:"Course change",q:"The skipper heads up from a beam reach toward close-hauled. What should happen to the sails?",best:0,choices:["Trim in as the apparent wind moves forward","Ease out farther","Leave them exactly where they were","Switch off the telltales"],why:"Heading up usually requires trimming in."},
+ {state:"course-down",topic:"Course change",q:"The skipper bears away from close reach toward broad reach. What should happen to the sails?",best:1,choices:["Trim in tight","Ease out as the wind moves aft","Center the boom and lock it","Heave-to immediately"],why:"Bearing away usually requires easing sheets."},
+ {state:"overpowered",topic:"Heavy puff",q:"A puff hits, heel increases, and the helm loads up. What is the best beginner response?",best:3,choices:["Trim both sails harder","Ignore heel if telltales stream","Stand on the leeward rail","Ease or feather, then reef if the condition persists"],why:"Control and balance matter more than perfect telltales. Depower early."},
+ {state:"main-stall",topic:"Mainsail",q:"The top mainsail leech telltale is stalled most of the time on a reach. What adjustment usually helps?",best:2,choices:["Tighten everything","Sail by the lee","Ease mainsheet or vang to add twist","Drop the jib"],why:"A stalled top leech telltale often means the leech is too closed. Add twist by easing."},
+ {state:"reach-compromise",topic:"Reaching",q:"On a reach, the middle telltales look good but the top inside telltale lifts slightly. What is a practical beginner takeaway?",best:0,choices:["Some compromise is normal on a reach","Always overtrim until every top telltale is flat","Telltales are useless","It means the anchor is dragging"],why:"Reaches often require compromise. Trim for useful drive, balance, and the middle of the sail."},
+ {state:"light-air",topic:"Light air",q:"In very light wind, the sails collapse whenever you pinch high. What should the helm prioritize?",best:1,choices:["Point as high as possible at any speed","Speed first, then point","Reef immediately","Sail dead downwind only"],why:"In light air, keep flow attached and boat speed alive before trying to point high."},
+ {state:"bad",topic:"Golden rule",q:"You are unsure whether the main is too tight or too loose. What is the safest learning method?",best:2,choices:["Pull until the boom is centered","Ignore the luff","Ease until it luffs, then trim until it just stops","Tie the sheet off permanently"],why:"The beginner trim loop is deliberate: ease to luff, trim to just stop luffing."},
+ {state:"good",topic:"After a tack",q:"Right after a tack, the jib fills on the new side but the boat feels slow. What should the crew do?",best:3,choices:["Stop looking at sails","Overtrim immediately and never adjust","Drop anchor","Settle on course, trim, then fine-tune with telltales"],why:"After maneuvers, get the boat moving, then fine-tune. Small adjustments beat panic trimming."},
+ {state:"overpowered",topic:"Reefing",q:"You keep easing in puffs but the boat remains overpowered for the crew. What is the conservative next step?",best:0,choices:["Reef or shorten sail","Add more sail","Keep full sail for the exam","Sail closer to a lee shore"],why:"If easing is not enough, reef early while the crew and boat are still under control."}
+];
+let order=[], idx=0, score=0, answered=false;
+const shuf=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);
+function restart(){order=shuf(CARDS.map((_,i)=>i));idx=0;score=0;answered=false;paint();}
+function current(){return CARDS[order[idx]];}
+function nextCard(){if(idx<order.length-1){idx++;answered=false;paint();}else{document.getElementById("stage").innerHTML="<div class='callout'><strong>Trim drill complete.</strong> Score: "+score+"/"+CARDS.length+". Retake until ease, trim, hold, feather, and reef decisions are automatic.</div>";}}
+function answer(i){if(answered)return;answered=true;if(i===current().best)score++;paint(i);}
+function tellClass(state,side){if(state==="good"||state==="course-up"||state==="course-down"||state==="light-air")return"good";if(state==="luff"&&side==="windward")return"bad";if(state==="stall"&&side==="leeward")return"bad";if(state==="main-stall"&&side==="mainTop")return"bad";if(state==="overpowered"&&side==="heel")return"bad";if(state==="bad")return"bad";return"good";}
+function scene(state){const heel=state==="overpowered"?-16:0;const boom=state==="course-down"?95:state==="course-up"?30:state==="stall"?24:state==="luff"?68:state==="main-stall"?54:state==="reach-compromise"?72:50;const mainTop=tellClass(state,"mainTop");const windward=tellClass(state,"windward");const leeward=tellClass(state,"leeward");return "<div class='trim-scene'><svg viewBox='0 0 620 330' role='img' aria-label='Sail trim diagram with telltales'><rect x='0' y='0' width='620' height='330' rx='8' fill='#2b6e91'/><line x1='72' y1='42' x2='132' y2='42' stroke='#fff' stroke-width='2'/><path d='M122,35 L136,42 L122,49' fill='none' stroke='#fff' stroke-width='2'/><text class='trim-label' x='70' y='30'>apparent wind</text><g transform='translate(315 190) rotate("+heel+")'><path d='M0,-58 C18,-42 22,6 16,58 L-16,58 C-22,6 -18,-42 0,-58 Z' fill='#f4efe1' stroke='#29343a' stroke-width='2'/><line x1='0' y1='-42' x2='0' y2='42' stroke='#29343a' stroke-width='3'/><path d='M0,-42 C70,-38 108,-4 124,"+(boom-42)+"' fill='rgba(255,255,255,.84)' stroke='#29343a' stroke-width='2'/><line x1='0' y1='16' x2='124' y2='"+(boom-42)+"' stroke='#29343a' stroke-width='3'/><path d='M-4,-38 C-68,-28 -104,6 -116,54' fill='rgba(255,255,255,.76)' stroke='#29343a' stroke-width='2'/><path class='tell "+windward+"' d='M-55,-12 q-16,-10 -30,-8'/><path class='tell "+leeward+"' d='M-48,10 q-24,8 -38,20'/><path class='tell "+mainTop+"' d='M76,-30 q24,-8 45,-2'/><path class='tell good' d='M88,4 q28,4 45,18'/></g><text class='trim-label' x='120' y='286'>jib telltales</text><text class='trim-label' x='405' y='286'>mainsail leech telltales</text></svg></div>";}
+function paint(picked){const card=current();document.getElementById("cardBox").textContent=(idx+1)+"/"+order.length;document.getElementById("scoreBox").textContent=score;let html="<p class='mini'>"+card.topic+"</p>"+scene(card.state)+"<h2 style='margin-top:0'>"+card.q+"</h2>"+card.choices.map((choice,i)=>{let cls='choice';if(answered){if(i===card.best)cls+=' ok';else if(i===picked)cls+=' no';}return "<button class='"+cls+"' onclick='answer("+i+")'>"+choice+"</button>";}).join("");if(answered){html+="<div class='callout'><strong>"+(picked===card.best?"Correct.":"Better answer: "+card.choices[card.best]+".")+"</strong> "+card.why+"</div>";}document.getElementById("stage").innerHTML=html;}
+restart();
+</script>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<!-- /Vercel Web Analytics -->
+</body>
+</html>
