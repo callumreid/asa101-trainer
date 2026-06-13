@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VHF Radio Trainer - Mayday, Pan-Pan, Securite, Channel 16 Basics</title>
+<meta name="description" content="Practice beginner marine VHF radio decisions: Mayday, Pan-Pan, Securite, Channel 16, radio checks, hailing, working channels, and emergency call scripts.">
+<link rel="canonical" href="https://sailingtrainer.com/vhf-radio">
+<meta property="og:title" content="VHF Radio Trainer">
+<meta property="og:description" content="Interactive beginner marine VHF radio practice for safety calls, hailing, and emergency scripts.">
+<meta property="og:type" content="article">
+<!-- SEO enhancements -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#146a8c">
+<meta property="og:site_name" content="ASA 101 Skipper Trainer">
+<meta property="og:url" content="https://sailingtrainer.com/vhf-radio">
+<meta property="og:image" content="https://sailingtrainer.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VHF Radio Trainer">
+<meta name="twitter:description" content="Practice Mayday, Pan-Pan, Securite, Channel 16, hailing, and radio-check decisions.">
+<meta name="twitter:image" content="https://sailingtrainer.com/og.png">
+<!-- /SEO enhancements -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="stylesheet" href="/site.css">
+<style>
+.radio-face{background:#101d25;color:#e9f3f5;border-radius:8px;padding:16px;margin:12px 0}
+.radio-display{background:#b9e3c4;color:#13271b;border:3px solid #26343b;border-radius:6px;padding:12px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:24px;font-weight:700;display:inline-block;min-width:110px;text-align:center}
+.script-output{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
+label{display:block;font-weight:600;margin:10px 0 4px}
+input,select,textarea{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit}
+textarea{min-height:70px;resize:vertical}
+</style>
+<meta name="google-adsense-account" content="ca-pub-1188658046265173">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","@id":"https://sailingtrainer.com/vhf-radio#learning-resource","url":"https://sailingtrainer.com/vhf-radio","name":"VHF Radio Trainer - Mayday, Pan-Pan, Securite, Channel 16 Basics","headline":"VHF Radio Trainer - Mayday, Pan-Pan, Securite, Channel 16 Basics","description":"Practice beginner marine VHF radio decisions: Mayday, Pan-Pan, Securite, Channel 16, radio checks, hailing, working channels, and emergency call scripts.","isAccessibleForFree":true,"inLanguage":"en-US","educationalLevel":"Beginner","audience":{"@type":"EducationalAudience","educationalRole":"student"},"learningResourceType":"Simulation","about":[{"@type":"Thing","name":"marine VHF radio"},{"@type":"Thing","name":"Mayday"},{"@type":"Thing","name":"boating safety"},{"@type":"Thing","name":"ASA 101"}],"isPartOf":{"@id":"https://sailingtrainer.com/#website"}}</script>
+<!-- /Structured data -->
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/">⛵ ASA 101 Skipper Trainer</a>
+  <a href="/simulator">Simulator</a>
+  <a href="/practice-tests">Tests</a>
+  <a href="/flashcards">Cards</a>
+  <a href="/safety">Safety</a>
+  <a href="/sound-signals">Signals</a>
+  <a href="/float-plan">Float plan</a>
+  <a href="/vhf-radio" class="on">VHF</a>
+  <a href="/resources">Resources</a>
+  <a href="/faq">FAQ</a>
+</header>
+<main>
+<h1>VHF radio trainer</h1>
+<p class="lead">A handheld VHF can be a lifeline, but only if you know what to say and when to stay off Channel 16. Drill the beginner calls before you need them.</p>
+
+<div class="statbar">
+  <div class="stat"><span class="mini">Card</span><b id="cardBox">1/10</b></div>
+  <div class="stat"><span class="mini">Score</span><b id="scoreBox">0</b></div>
+  <div class="stat"><span class="mini">Distress/calling</span><b>Channel 16</b></div>
+  <div class="stat"><span class="mini">Radio checks</span><b>Not 16</b></div>
+</div>
+
+<section id="stage" class="card" aria-live="polite"></section>
+<p><button class="btn" onclick="nextCard()">Next card</button><button class="btn secondary" onclick="restart()">Restart</button></p>
+
+<h2>Build a call script</h2>
+<section class="card" oninput="renderScript()">
+  <div class="grid">
+    <div><label for="callType">Call type</label><select id="callType"><option>Mayday</option><option>Pan-Pan</option><option>Securite</option><option>Routine hail</option></select></div>
+    <div><label for="vessel">Vessel name</label><input id="vessel" placeholder="S/V Practice Boat"></div>
+    <div><label for="position">Position</label><input id="position" placeholder="GPS position, landmark, or bearing/range"></div>
+    <div><label for="people">People aboard</label><input id="people" placeholder="4 persons aboard"></div>
+  </div>
+  <label for="problem">Situation</label><textarea id="problem" placeholder="Nature of distress, urgency, safety information, or who you are hailing"></textarea>
+  <h3>Script</h3>
+  <div id="scriptOutput" class="script-output"></div>
+</section>
+
+<h2>Core habits</h2>
+<div class="grid">
+  <div class="card"><h3>Mayday</h3><p>Use only for grave and imminent danger requiring immediate assistance: sinking, fire, life-threatening injury, person in the water you cannot recover, or similar.</p></div>
+  <div class="card"><h3>Pan-Pan</h3><p>Urgent but not immediately life-threatening: disabled and drifting toward danger, medical issue not yet life-threatening, or serious gear failure.</p></div>
+  <div class="card"><h3>Securite</h3><p>Safety information for other vessels: hazard to navigation, restricted visibility warning, floating debris, or other important navigational information.</p></div>
+  <div class="card"><h3>Routine</h3><p>Hail briefly, then move to an appropriate working channel. Do not use Channel 16 for radio checks or conversation.</p></div>
+</div>
+
+<h2>Sources</h2>
+<ul class="source-list">
+  <li><a href="https://boatus.org/boating-safety/marine-communication/the-basics/">BoatUS Foundation - Marine Communication Basics</a></li>
+  <li><a href="https://boatus.org/boating-safety/marine-communication/calling-for-help/">BoatUS Foundation - Calling for Help</a></li>
+  <li><a href="https://www.navcen.uscg.gov/us-vhf-channel-information">U.S. Coast Guard NAVCEN - U.S. VHF Channel Information</a></li>
+  <li><a href="https://www.news.uscg.mil/Press-Releases/Article/3770112/video-available-us-coast-guard-urges-maritime-safety-through-proper-radio-use/">U.S. Coast Guard - Proper Radio Use</a></li>
+</ul>
+</main>
+<footer>
+  <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases.</p>
+  <p><a href="/">Trainer</a> · <a href="/safety">Safety</a> · <a href="/sound-signals">Sound signals</a> · <a href="/float-plan">Float plan</a> · <a href="/vhf-radio">VHF radio</a> · <a href="/resources">Resources</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
+</footer>
+<script>
+const CARDS=[
+ {ch:"16",q:"A crew member is overboard and you cannot recover them quickly. Which call fits?",best:0,choices:["Mayday on Channel 16","Radio check on 16","Routine hail on 09","Securite on a working channel"],why:"Grave and imminent danger to life is a Mayday situation."},
+ {ch:"16",q:"The engine has failed and you are drifting toward a rocky lee shore, but no one is injured yet. Which call fits?",best:1,choices:["Securite","Pan-Pan","Routine weather chat","No call until impact"],why:"Urgent safety problem, not yet grave and imminent distress, is Pan-Pan."},
+ {ch:"16",q:"You see a large floating log in a busy fairway. Which call is most appropriate?",best:2,choices:["Mayday","Pan-Pan","Securite","Radio check"],why:"Securite is for important navigational safety information."},
+ {ch:"09",q:"You want to check whether your VHF transmits. What is the best beginner choice?",best:3,choices:["Call Mayday to test it","Use Channel 16 for a long radio check","Keep transmitting until someone complains","Use Channel 09 or a local working/radio-check channel"],why:"Do not use Channel 16 for radio checks. Use 09 or an authorized local working channel."},
+ {ch:"16",q:"You hail a marina or another boat on 16 and they answer. What next?",best:0,choices:["Move to an appropriate working channel","Stay on 16 for the full conversation","Repeat Mayday three times","Turn the radio off"],why:"Channel 16 is for distress, safety, and calling, not extended conversation."},
+ {ch:"16",q:"What information belongs in a Mayday call?",best:2,choices:["Only the boat color","Only your first name","Vessel name, position, nature of distress, people aboard, help needed","A joke so people listen"],why:"Say who, where, what is wrong, how many aboard, and what help you need."},
+ {ch:"13",q:"You are in potential collision risk with a ship in a channel. Which channel may be relevant for bridge-to-bridge navigation contact?",best:1,choices:["Channel 72 only","Channel 13","AM radio","No radio channel is ever relevant"],why:"USCG NAVCEN notes Channel 13 for navigational use between vessels, bridges, and locks."},
+ {ch:"16",q:"What does Channel 16 mean for a beginner sailor?",best:0,choices:["Distress, safety, and calling frequency","Music channel","Private crew chat","Only for weather forecasts"],why:"Channel 16 is the national distress, safety, and calling frequency."},
+ {ch:"16",q:"You accidentally send a false distress alert. What should you do?",best:3,choices:["Ignore it","Leave the area","Keep pressing buttons","Contact the local Coast Guard sector immediately"],why:"False distress alerts can waste rescue resources; report and cancel them immediately."},
+ {ch:"16",q:"Which spoken pattern starts a classic Mayday voice call?",best:1,choices:["Hello coast guard once","Mayday, Mayday, Mayday; this is vessel name","Radio check radio check","Securite, then a lunch order"],why:"Mayday is spoken three times, followed by identifying the vessel."}
+];
+let order=[], idx=0, score=0, answered=false;
+const shuf=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);
+function restart(){order=shuf(CARDS.map((_,i)=>i));idx=0;score=0;answered=false;paint();}
+function current(){return CARDS[order[idx]];}
+function nextCard(){if(idx<order.length-1){idx++;answered=false;paint();}else{document.getElementById("stage").innerHTML="<div class='callout'><strong>VHF drill complete.</strong> Score: "+score+"/"+CARDS.length+". Retake until the call type and channel choice are automatic.</div>";}}
+function answer(i){if(answered)return;answered=true;if(i===current().best)score++;paint(i);}
+function paint(picked){const card=current();document.getElementById("cardBox").textContent=(idx+1)+"/"+order.length;document.getElementById("scoreBox").textContent=score;let html="<div class='radio-face'><span class='mini'>Channel</span><br><span class='radio-display'>"+card.ch+"</span></div><h2 style='margin-top:0'>"+card.q+"</h2>"+card.choices.map((choice,i)=>{let cls='choice';if(answered){if(i===card.best)cls+=' ok';else if(i===picked)cls+=' no';}return "<button class='"+cls+"' onclick='answer("+i+")'>"+choice+"</button>";}).join("");if(answered){html+="<div class='callout'><strong>"+(picked===card.best?"Correct.":"Better answer: "+card.choices[card.best]+".")+"</strong> "+card.why+"</div>";}document.getElementById("stage").innerHTML=html;}
+function v(id){return document.getElementById(id).value.trim()||"[fill in]";}
+function renderScript(){const type=v("callType"), vessel=v("vessel"), pos=v("position"), people=v("people"), problem=v("problem");let script="";if(type==="Routine hail"){script=`${problem}\\n${problem}\\n${problem}\\nTHIS IS ${vessel}\\nOver.\\n\\nWhen answered, move to an appropriate working channel and keep it brief.`;}else{script=`${type.toUpperCase()}, ${type.toUpperCase()}, ${type.toUpperCase()}\\nTHIS IS ${vessel}, ${vessel}, ${vessel}\\nPOSITION: ${pos}\\nSITUATION: ${problem}\\nPEOPLE ABOARD: ${people}\\nASSISTANCE NEEDED: [state what you need]\\nOVER`; }document.getElementById("scriptOutput").textContent=script;}
+restart();
+renderScript();
+</script>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<!-- /Vercel Web Analytics -->
+</body>
+</html>
