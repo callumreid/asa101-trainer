@@ -9,6 +9,21 @@
 <meta property="og:title" content="Interactive Sailing Simulator for ASA 101">
 <meta property="og:description" content="Steer, trim, tack, reef, answer decision cards, and test your sailing knowledge in browser missions.">
 <meta property="og:type" content="article">
+<!-- SEO enhancements -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#146a8c">
+<meta property="og:site_name" content="ASA 101 Skipper Trainer">
+<meta property="og:url" content="https://sailingtrainer.com/simulator">
+<meta property="og:image" content="https://sailingtrainer.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Interactive Sailing Simulator for ASA 101">
+<meta name="twitter:description" content="Steer, trim, tack, reef, answer decision cards, and test your sailing knowledge in browser missions.">
+<meta name="twitter:image" content="https://sailingtrainer.com/og.png">
+<!-- /SEO enhancements -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
 <link rel="stylesheet" href="/site.css">
 <style>
@@ -21,6 +36,9 @@
 </style>
 <meta name="google-adsense-account" content="ca-pub-1188658046265173">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","@id":"https://sailingtrainer.com/simulator#learning-resource","url":"https://sailingtrainer.com/simulator","name":"Interactive Sailing Simulator - ASA 101 Knowledge Missions","headline":"Interactive Sailing Simulator - ASA 101 Knowledge Missions","description":"A free browser sailing simulator for ASA 101 practice: steer, trim, tack, reef, avoid hazards, answer skipper decision cards, and complete sailing missions.","isAccessibleForFree":true,"inLanguage":"en-US","educationalLevel":"Beginner","audience":{"@type":"EducationalAudience","educationalRole":"student"},"learningResourceType":"Simulation","about":[{"@type":"Thing","name":"sailing simulator"},{"@type":"Thing","name":"ASA 101 simulator"},{"@type":"Thing","name":"sailing decision practice"}],"isPartOf":{"@id":"https://sailingtrainer.com/#website"}}</script>
+<!-- /Structured data -->
 </head>
 <body>
 <header class="nav">
@@ -148,5 +166,11 @@ function paint(){const m=missions[mi], rel=angDiff(S.heading,m.wind), sp=speed()
  sea.innerHTML='<rect width="680" height="460" fill="#2B6E91"/><path d="M0,380 C150,350 260,420 410,382 S610,350 680,390 V460 H0 Z" fill="rgba(255,255,255,.08)"/>'+channel+wind+mark+mob+boat+'<text x="18" y="438" fill="#fff" font-size="13">speed '+sp.toFixed(1)+' kt equivalent · '+point(rel)+' · trim target '+ideal(rel)+'°</text>'}
 loadMission(0);
 </script>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<!-- /Vercel Web Analytics -->
 </body>
 </html>

@@ -9,10 +9,28 @@
 <meta property="og:title" content="ASA 101 Practice Tests">
 <meta property="og:description" content="Randomized 25, 50, and full-bank Basic Keelboat practice tests with answer review.">
 <meta property="og:type" content="article">
+<!-- SEO enhancements -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#146a8c">
+<meta property="og:site_name" content="ASA 101 Skipper Trainer">
+<meta property="og:url" content="https://sailingtrainer.com/practice-tests">
+<meta property="og:image" content="https://sailingtrainer.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ASA 101 Practice Tests">
+<meta name="twitter:description" content="Randomized 25, 50, and full-bank Basic Keelboat practice tests with answer review.">
+<meta name="twitter:image" content="https://sailingtrainer.com/og.png">
+<!-- /SEO enhancements -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
 <link rel="stylesheet" href="/site.css">
 <meta name="google-adsense-account" content="ca-pub-1188658046265173">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","@id":"https://sailingtrainer.com/practice-tests#learning-resource","url":"https://sailingtrainer.com/practice-tests","name":"ASA 101 Practice Tests - Full Question Bank and Review Mode","headline":"ASA 101 Practice Tests - Full Question Bank and Review Mode","description":"Generate ASA 101 practice tests from a large question bank. Choose 25, 50, or full-bank mode and review every missed answer with explanations.","isAccessibleForFree":true,"inLanguage":"en-US","educationalLevel":"Beginner","audience":{"@type":"EducationalAudience","educationalRole":"student"},"learningResourceType":"Practice test","about":[{"@type":"Thing","name":"ASA 101 practice test"},{"@type":"Thing","name":"basic keelboat quiz"},{"@type":"Thing","name":"sailing test questions"}],"isPartOf":{"@id":"https://sailingtrainer.com/#website"}}</script>
+<!-- /Structured data -->
 </head>
 <body>
 <header class="nav">
@@ -163,5 +181,11 @@ function paint(){const stage=document.getElementById("testStage");document.getEl
 function answer(i){if(T.picked)return;T.picked=true;const it=T.order[T.i], ok=i===it.a;if(ok)T.right++;else T.missed.push({cat:it.cat,q:it.q,correct:it.o[it.a],why:it.why});[...document.querySelectorAll(".choice")].forEach((b,j)=>{if(j===it.a)b.classList.add("ok");else if(j===i)b.classList.add("no");b.disabled=true});const raw=BANK.findIndex(q=>q[1]===it.q);if(!ok&&raw>=0){const weak=new Set(weakList());weak.add(raw);localStorage.setItem("asa101.weak.v1",JSON.stringify([...weak].slice(0,80)));}const next=document.createElement("button");next.className="btn";next.textContent=T.i+1>=T.order.length?"Finish and review":"Next question";next.onclick=()=>{T.i++;T.picked=false;paint()};document.getElementById("testStage").appendChild(next);document.getElementById("scoreBox").textContent=`${T.right}/${T.i+1}`}
 paint();
 </script>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<!-- /Vercel Web Analytics -->
 </body>
 </html>

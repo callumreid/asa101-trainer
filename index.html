@@ -6,10 +6,24 @@
 <title>Free ASA 101 Practice Test, Simulator &amp; Sailing Trainer</title>
 <meta name="description" content="Free interactive ASA 101 basic keelboat practice: sailing simulator missions, randomized practice tests, points of sail, helm and trim, right of way, boat parts, navigation aids, safety, knots, weather, gear, and sailing community links.">
 <link rel="canonical" href="https://sailingtrainer.com/">
-<meta property="og:title" content="Free ASA 101 Practice Test &amp; Sailing Trainer">
+<meta property="og:title" content="Free ASA 101 Practice Test, Simulator &amp; Sailing Trainer">
 <meta property="og:description" content="Interactive sailing simulator missions, full practice tests, eight drill stations, and a complete ASA 101 study path. Free, no sign-up.">
 <meta property="og:type" content="website">
+<!-- SEO enhancements -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#146a8c">
+<meta property="og:site_name" content="ASA 101 Skipper Trainer">
 <meta property="og:url" content="https://sailingtrainer.com/">
+<meta property="og:image" content="https://sailingtrainer.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free ASA 101 Practice Test, Simulator &amp; Sailing Trainer">
+<meta name="twitter:description" content="Interactive sailing simulator missions, full practice tests, eight drill stations, and a complete ASA 101 study path. Free, no sign-up.">
+<meta name="twitter:image" content="https://sailingtrainer.com/og.png">
+<!-- /SEO enhancements -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
 <style>
 *{box-sizing:border-box}
@@ -48,6 +62,9 @@ svg [data-part]{cursor:pointer}
 </style>
 <meta name="google-adsense-account" content="ca-pub-1188658046265173">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://sailingtrainer.com/#website","url":"https://sailingtrainer.com/","name":"ASA 101 Skipper Trainer","description":"Free interactive ASA 101 basic keelboat practice: sailing simulator missions, randomized practice tests, points of sail, helm and trim, right of way, boat parts, navigation aids, safety, knots, weather, gear, and sailing community links.","inLanguage":"en-US","publisher":{"@id":"https://sailingtrainer.com/#organization"}},{"@type":"Organization","@id":"https://sailingtrainer.com/#organization","name":"Sailing Trainer","url":"https://sailingtrainer.com/"},{"@type":"WebApplication","@id":"https://sailingtrainer.com/#app","name":"ASA 101 Skipper Trainer","url":"https://sailingtrainer.com/","description":"Free interactive ASA 101 basic keelboat practice: sailing simulator missions, randomized practice tests, points of sail, helm and trim, right of way, boat parts, navigation aids, safety, knots, weather, gear, and sailing community links.","applicationCategory":"EducationalApplication","operatingSystem":"Web browser","isAccessibleForFree":true,"educationalLevel":"Beginner","learningResourceType":["Practice test","Interactive simulation","Study guide"],"teaches":["ASA 101 exam preparation","Basic keelboat sailing","Points of sail","Navigation rules","Navigation aids","Sailing safety","Sailing knots"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}]}</script>
+<!-- /Structured data -->
 </head>
 <body>
 <header>
@@ -397,5 +414,11 @@ function restartQuiz(){Q={order:buildQuizOrder(),i:0,picked:-1,right:0,missed:[]
 paintHeader();
 setMode({"#pos":"pos","#helm":"helm","#row":"row","#parts":"parts","#nav":"nav","#safety":"safety","#quiz":"quiz"}[location.hash]||"home");
 </script>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<!-- /Vercel Web Analytics -->
 </body>
 </html>
