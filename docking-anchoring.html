@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docking and Anchoring Trainer - ASA 101 Seamanship Practice</title>
+<meta name="description" content="Practice ASA 101 docking, mooring, spring line, fender, anchor scope, swing room, and dragging-anchor decisions with interactive beginner scenarios.">
+<link rel="canonical" href="https://sailingtrainer.com/docking-anchoring">
+<meta property="og:title" content="Docking and Anchoring Trainer">
+<meta property="og:description" content="Interactive docking and anchoring decisions for ASA 101 sailors: fenders, spring lines, scope, swing room, and drag checks.">
+<meta property="og:type" content="article">
+<!-- SEO enhancements -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#146a8c">
+<meta property="og:site_name" content="ASA 101 Skipper Trainer">
+<meta property="og:url" content="https://sailingtrainer.com/docking-anchoring">
+<meta property="og:image" content="https://sailingtrainer.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Docking and Anchoring Trainer">
+<meta name="twitter:description" content="Interactive docking and anchoring decisions for ASA 101 sailors: fenders, spring lines, scope, swing room, and drag checks.">
+<meta name="twitter:image" content="https://sailingtrainer.com/og.png">
+<!-- /SEO enhancements -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="stylesheet" href="/site.css">
+<meta name="google-adsense-account" content="ca-pub-1188658046265173">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188658046265173" crossorigin="anonymous"></script>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","@id":"https://sailingtrainer.com/docking-anchoring#learning-resource","url":"https://sailingtrainer.com/docking-anchoring","name":"Docking and Anchoring Trainer - ASA 101 Seamanship Practice","headline":"Docking and Anchoring Trainer - ASA 101 Seamanship Practice","description":"Practice ASA 101 docking, mooring, spring line, fender, anchor scope, swing room, and dragging-anchor decisions with interactive beginner scenarios.","isAccessibleForFree":true,"inLanguage":"en-US","educationalLevel":"Beginner","audience":{"@type":"EducationalAudience","educationalRole":"student"},"learningResourceType":"Simulation","about":[{"@type":"Thing","name":"sailboat docking"},{"@type":"Thing","name":"anchoring a sailboat"},{"@type":"Thing","name":"ASA 101 seamanship"}],"isPartOf":{"@id":"https://sailingtrainer.com/#website"}}</script>
+<!-- /Structured data -->
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/">⛵ ASA 101 Skipper Trainer</a>
+  <a href="/simulator">Simulator</a>
+  <a href="/practice-tests">Tests</a>
+  <a href="/flashcards">Cards</a>
+  <a href="/gear">Gear</a>
+  <a href="/community">Community</a>
+  <a href="/study-guide">Study</a>
+  <a href="/checklist">Checklist</a>
+  <a href="/points-of-sail">Points</a>
+  <a href="/maneuvers" class="on">Maneuvers</a>
+  <a href="/right-of-way">Rules</a>
+  <a href="/navigation-aids">Aids</a>
+  <a href="/safety">Safety</a>
+  <a href="/knots">Knots</a>
+  <a href="/weather">Weather</a>
+  <a href="/sailing-terms">Terms</a>
+  <a href="/resources">Resources</a>
+  <a href="/faq">FAQ</a>
+</header>
+<main>
+<h1>Docking and anchoring trainer</h1>
+<p class="lead">Close-quarters boat handling is mostly preparation, patience, and early aborts. Use these scenarios to practice the beginner calls before you are between pilings, current, and a gelcoat bill.</p>
+
+<div class="statbar">
+  <div class="stat"><span class="mini">Scenario</span><b id="scenarioBox">1/12</b></div>
+  <div class="stat"><span class="mini">Score</span><b id="scoreBox">0</b></div>
+  <div class="stat"><span class="mini">Streak</span><b id="streakBox">0</b></div>
+  <div class="stat"><span class="mini">Rule</span><b>slow is pro</b></div>
+</div>
+
+<section id="stage" class="card" aria-live="polite"></section>
+
+<p><button class="btn" onclick="nextScenario()">Next scenario</button><button class="btn secondary" onclick="restart()">Restart drill</button><a class="btn secondary" href="/maneuvers">Read maneuvers</a></p>
+
+<h2>Anchor scope calculator</h2>
+<div class="card">
+  <div class="grid">
+    <label>Water depth now, ft<br><input id="depth" type="number" min="0" step="1" value="10" style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit" oninput="calcScope()"></label>
+    <label>Bow roller above water, ft<br><input id="bowHeight" type="number" min="0" step="1" value="3" style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit" oninput="calcScope()"></label>
+    <label>Extra tide rise to allow, ft<br><input id="tide" type="number" min="0" step="1" value="2" style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit" oninput="calcScope()"></label>
+    <label>Scope ratio<br><select id="ratio" style="width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font:inherit" onchange="calcScope()"><option value="5">5:1 settled weather</option><option value="7" selected>7:1 conservative beginner default</option><option value="10">10:1 heavy-weather margin</option></select></label>
+  </div>
+  <p class="callout" id="scopeResult" style="margin-bottom:0"></p>
+</div>
+
+<h2>Docking habits worth memorizing</h2>
+<div class="grid">
+  <div class="card"><h3>Set up outside</h3><p>Rig fenders, bow line, stern line, and at least one spring line before entering the fairway or mooring field.</p></div>
+  <div class="card"><h3>Brief the crew</h3><p>Give one job per person. Nobody jumps. Nobody puts hands, feet, or legs between the boat and dock.</p></div>
+  <div class="card"><h3>Use springs</h3><p>Spring lines control movement along the dock and can help pivot the boat when wind pins you against the pier.</p></div>
+  <div class="card"><h3>Abort early</h3><p>If the approach is wrong, go around while you still have room. A calm reset is a skill, not a failure.</p></div>
+</div>
+
+<h2>Anchoring habits worth memorizing</h2>
+<ol>
+  <li>Choose protection, holding ground, depth, traffic clearance, and swing room before you drop.</li>
+  <li>Approach slowly into the stronger of wind or current.</li>
+  <li>Lower the anchor from the bow; do not throw it.</li>
+  <li>Pay out rode as the boat drifts back, then cleat and set gently.</li>
+  <li>Check transits, depth, GPS/anchor alarm, and nearby boats to confirm you are not dragging.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="source-list">
+  <li><a href="https://boatus.org/study-guide/navigation-maneuvering/docking/">BoatUS Foundation - Docking</a></li>
+  <li><a href="https://boatus.org/study-guide/navigation-maneuvering/anchoring-mooring/">BoatUS Foundation - Anchoring and Mooring</a></li>
+  <li><a href="https://www.navcen.uscg.gov/navigation-rules-faqs">U.S. Coast Guard Navcen - Navigation Rules FAQ</a></li>
+  <li><a href="https://americansailing.com/certifications/asa-101-keelboat-sailing-1/">American Sailing ASA 101 Keelboat Sailing 1</a></li>
+</ul>
+</main>
+<footer>
+  <p>A free practice aid for the ASA 101 basic keelboat written exam. Not affiliated with or endorsed by the American Sailing Association. Some links on this site may be affiliate links; as an Amazon Associate this site earns from qualifying purchases.</p>
+  <p><a href="/">Trainer</a> · <a href="/simulator">Simulator</a> · <a href="/practice-tests">Practice tests</a> · <a href="/flashcards">Flashcards</a> · <a href="/gear">Gear</a> · <a href="/community">Community</a> · <a href="/checklist">Checklist</a> · <a href="/docking-anchoring">Docking and anchoring</a> · <a href="/resources">Resources</a> · <a href="/privacy">Privacy</a> · <a href="https://github.com/callumreid/asa101-trainer">GitHub</a></p>
+</footer>
+<script>
+const SCENARIOS=[
+ {topic:"Docking setup", prompt:"You are 200 yards outside the marina fairway. Wind is 9 kt across the slips and the crew is still chatting.", best:0, choices:["Brief the docking plan and rig fenders/lines before entering","Enter first, then rig fenders when close","Ask everyone to jump to the dock if needed","Leave lines coiled in the locker"], why:"Close-quarters work starts before the tight space. Rig fenders and assign line jobs while you still have room."},
+ {topic:"Speed control", prompt:"You are approaching a fuel dock with light headwind and good visibility. The boat feels slow.", best:1, choices:["Add throttle so you can finish quickly","Keep only enough speed for steerage and be ready to neutral/reverse","Coast in from far away with no steerage","Approach faster than walking pace"], why:"Docking speed should be no faster than you are willing to make contact. Maintain steerage, not momentum."},
+ {topic:"Bad approach", prompt:"Halfway into a slip, current sets you sideways and the bow is no longer lined up.", best:2, choices:["Commit because you are already close","Have a crew member fend off with a leg","Abort early and go around","Shift hard reverse without looking aft"], why:"A go-around while you still have control is good seamanship. Do not use crew bodies as fenders."},
+ {topic:"Spring line departure", prompt:"Wind is pressing your starboard side against a long dock. There is room ahead but the stern cannot swing out cleanly.", best:0, choices:["Use an appropriate spring line to pivot before leaving","Cast off every line and hope the wind stops","Push with hands between hull and dock","Accelerate hard in reverse immediately"], why:"Spring lines can hold one point of the boat while engine thrust pivots the other end. Set it up slowly and protect crew fingers."},
+ {topic:"Crew safety", prompt:"A guest stands ready to leap to the dock with a bow line as you approach.", best:3, choices:["Tell them to jump early","Hand them the anchor instead","Ask them to catch a piling with their foot","Tell them to stay aboard until they can step safely"], why:"Crew step, they do not jump. A missed jump turns a docking problem into an injury or crew-overboard problem."},
+ {topic:"Mooring approach", prompt:"You are picking up a mooring buoy in 12 kt wind with a short boat hook.", best:1, choices:["Approach downwind so the buoy comes fast","Approach slowly into wind/current and stop with the buoy near the bow","Circle tightly with the buoy near the prop","Have crew grab the buoy from the stern ladder"], why:"Approach a mooring into the stronger force, keep steerage, stop at the bow, and keep lines away from the prop."},
+ {topic:"Anchorage choice", prompt:"The first anchorage is deep, crowded, and has limited swing room. A second cove is slightly farther but protected and open.", best:2, choices:["Anchor in the crowd because it is closer","Anchor by the stern to reduce swing","Choose the protected cove with swing room","Drop in the channel temporarily"], why:"Good anchoring starts with the spot. Protection, holding, room to swing, and traffic clearance beat convenience."},
+ {topic:"Scope math", prompt:"You anchor in 8 ft of water, the bow roller is 3 ft above the water, and 1 ft more tide may arrive. For 7:1 scope, about how much rode?", best:1, choices:["56 ft","84 ft","21 ft","700 ft"], why:"Scope uses total height from bow roller to bottom: 8 + 3 + 1 = 12 ft. 12 x 7 = 84 ft."},
+ {topic:"Dropping sequence", prompt:"You have picked a good spot and turned into the wind. What is the clean beginner sequence?", best:0, choices:["Stop, lower the anchor from the bow, drift back, pay out rode, cleat, set gently","Throw the anchor as far as possible","Back at high throttle while the anchor falls","Tie the rode to a lifeline"], why:"Lower from the bow and pay out rode under control. A flat pull and clean set matter more than drama."},
+ {topic:"Dragging signs", prompt:"After setting, the same two shore objects no longer line up and the GPS track shows you sliding aft.", best:2, choices:["Assume the anchor is fine","Let out less rode","Reset or move before you are close to trouble","Go below for lunch"], why:"Changing transits and GPS movement are drag clues. Reset early while there is space."},
+ {topic:"Swing room", prompt:"You have enough depth and good holding, but another boat is close downwind and will swing differently.", best:3, choices:["Anchor anyway because your anchor is good","Use a shorter scope to fit","Tie to the other boat's rode","Find another spot with room"], why:"Scope, wind shifts, current, and different rode types create different swing circles. Do not anchor into another boat's space."},
+ {topic:"Leaving anchor", prompt:"The anchor is fouled or heavily loaded and the boat is drifting toward shallows.", best:0, choices:["Slow down, keep crew clear of loaded gear, use engine/helm to reduce load, and abandon with a buoy only if necessary","Stand over the rode with bare feet","Pull harder from the cockpit winch without a plan","Cut the rode immediately in every case"], why:"Loaded anchoring gear can hurt people. Reduce load, protect crew, and use an emergency buoyed release only when needed."}
+];
+let order=[], idx=0, score=0, streak=0, answered=false;
+const shuf=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);
+function restart(){order=shuf(SCENARIOS.map((_,i)=>i));idx=0;score=0;streak=0;answered=false;paint();}
+function nextScenario(){if(idx<order.length-1){idx++;answered=false;paint();}else{document.getElementById("stage").innerHTML="<div class='callout'><strong>Drill complete.</strong> Final score: "+score+"/"+SCENARIOS.length+". Retake it until preparation, go-arounds, and scope math are automatic.</div>";}}
+function answer(i){if(answered)return;answered=true;const s=SCENARIOS[order[idx]], ok=i===s.best;if(ok){score++;streak++;}else{streak=0;}paint(i);}
+function paint(picked){const s=SCENARIOS[order[idx]];document.getElementById("scenarioBox").textContent=(idx+1)+"/"+order.length;document.getElementById("scoreBox").textContent=score;document.getElementById("streakBox").textContent=streak;let html="<p class='mini'>"+s.topic+"</p><h2 style='margin-top:0'>"+s.prompt+"</h2><p class='mini'>Choose the safest beginner skipper call.</p>";html+=s.choices.map((choice,i)=>{let cls="choice";if(answered){if(i===s.best)cls+=" ok";else if(i===picked)cls+=" no";}return "<button class='"+cls+"' onclick='answer("+i+")'>"+choice+"</button>";}).join("");if(answered){const ok=picked===s.best;html+="<div class='callout'><strong>"+(ok?"Correct.":"Better call: "+s.choices[s.best]+".")+"</strong> "+s.why+"</div>";}document.getElementById("stage").innerHTML=html;}
+function num(id){return Number(document.getElementById(id).value)||0;}
+function calcScope(){const total=num("depth")+num("bowHeight")+num("tide");const ratio=num("ratio");const rode=Math.ceil(total*ratio);document.getElementById("scopeResult").innerHTML="<strong>Recommended rode:</strong> about "+rode+" ft for "+ratio+":1 scope. Calculation: ("+num("depth")+" ft depth + "+num("bowHeight")+" ft bow height + "+num("tide")+" ft tide allowance) x "+ratio+".";}
+restart();
+calcScope();
+</script>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<!-- /Vercel Web Analytics -->
+</body>
+</html>
